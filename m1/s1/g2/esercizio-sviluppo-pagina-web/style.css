@@ -44,6 +44,7 @@ main{
 }
 #title{
     margin:30px 0px 15px 0px;
+    color:darkred;
 }
 
 #title h2{
@@ -51,7 +52,7 @@ main{
     margin:0px;
 }
 
-#title h3{
+#title h4{
     margin: 0px;
 }
 p{
@@ -64,7 +65,7 @@ p{
 }
 
 li {
-    color: red;
+    color: darkred;
 }
 
 li p{
@@ -84,7 +85,7 @@ table caption{
     border-bottom: none;
     font-size:18px;
     font-weight:bold;
-    color:red;
+    color:darkred;
 }
 
 table thead{
@@ -99,8 +100,6 @@ table tbody td{
 
 #video{
     padding:10px 0px;
-    display:flex;
-    flex-wrap: wrap;
     border-bottom:none;
 }
 #video p{
