@@ -5,30 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Primi passi operativi per creare un modello di pagina HTML per un post.
         Scopri come iniziare in modo facile">
+    <link rel="stylesheet" href="style.css">
     <title>Sviluppo di una pagina web - Blog EPICODE</title>
 </head>
 <body>
     <header>
-        <img src="img/logo.svg" alt="Logo EPICODE">
+        <img id="logo_epicode" src="img/logo.svg" alt="Logo EPICODE">
         <h1>EPICODE - Il blog dei developers</h1>
+    </header>
+
+    <nav>
         <a href="index.html">Home</a>
         <a href="#">Articoli</a>
         <a href="#">Lavora con noi</a>
-    </header>
+    </nav>
 
     <main>
-        <div>
-            <h2>Come creare un template per i post di Mario Rossi-pubblicato il 25-10-2020</h2>
+        <div id="title">
+            <h2>Come creare un template per i post</h2>
+            <h3>di Mario Rossi-pubblicato il 25-10-2020</h3>
+        </div>
+        <section class="sections">
             <p>
                 La prima cosa da fare è suddividere i blocchi logici della pagina, identificando le parti comuni
                 da applicare a tutte le pagine.<br>Le varie aree saranno quindi suddivise in:
             </p>
 
             <ul>
-                <li><p>Contenuti di intestazione del tag &ltheader&gt</p></li>
-                <li><p>Contenuti centrali variabili nel tag &ltmain&gt (corpo principale)</p></li>
-                <li><p>Contenuti di fine pagina comuni, da inserire nel tag &ltfooter&gt</p></li>
+                <li><p>Contenuti di intestazione del tag &lt;header&gt;</p></li>
+                <li><p>Contenuti centrali variabili nel tag &lt;main&gt; (corpo principale)</p></li>
+                <li><p>Contenuti di fine pagina comuni, da inserire nel tag &lt;footer&gt;</p></li>
             </ul>
+        </section>
+
+        <section class="sections">
             <p>
                 Il testo dell'articolo dovrà essere formattato per identificare tutte le parti da selezionare con i CSS. Perciò i passi saranno:
             </p>
@@ -43,52 +53,66 @@
                 <caption>Diffusione dei CSS</caption>
                 <thead>
                     <tr>
-                        <th>Anno</th>
-                        <th>% di utilizzo</th>
-                        <th>Supporto Browser</th>
+                        <td>Anno</td>
+                        <td>% di utilizzo</td>
+                        <td>Supporto Browser</td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th>2000</th>
-                        <th>20%</th>
-                        <th>17%</th>
+                        <td>2000</td>
+                        <td>20%</td>
+                        <td>17%</td>
                     </tr>
                     <tr>
-                        <th>2002</th>
-                        <th>35%</th>
-                        <th>22%</th>
+                        <td>2002</td>
+                        <td>35%</td>
+                        <td>22%</td>
                     </tr>
                     <tr>
-                        <th>2004</th>
-                        <th>45%</th>
-                        <th>42%</th>
+                        <td>2004</td>
+                        <td>45%</td>
+                        <td>42%</td>
                     </tr>
                     <tr>
-                        <th>2008</th>
-                        <th>80%</th>
-                        <th>51%</th>
+                        <td>2008</th>
+                        <td>80%</th>
+                        <td>51%</th>
                     </tr>
                     <tr>
-                     <th>2012</th>
-                     <th>100%</th>
-                        <th>76%</th>
+                        <td>2012</td>
+                        <td>100%</td>
+                        <td>76%</td>
                     </tr>
                 </tbody>
             </table>
+        </section>
+
+        <section class="sections" id="video">
             <p>
-                Un test di validazione potrà essere fatto tramite il tool online <a href="#">-LINK ESTERNO-</a>
+                Un test di validazione potrà essere fatto tramite il <a href="#">tool online</a>
                 dedicato allo scopo.Una volta ottimizzato tutto,avremo reggiunto il nostro obiettivo ed essere stati
                 dei veri developers come loro:
             </p>
-            <video src="#">-INSERIRE VIDEO YOUTUBE-</video>
-        </div>
+            <iframe src="https://www.youtube.com/embed/JRJNvxoh844" 
+            title="Corso HTML COMPLETO gratis: da PRINCIPIANTE a ESPERTO" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+        </iframe>
+        </section>
+
     </main>
 
+    <aside>
+        <form>
+            <p>Vuoi rimanere aggiornato su altre novità del blog? Iscriviti alla nostra newsletter:</p>
+            <label for="username" name="nome">Nome Utente</label>
+            <input type="text" id="username" name="username" placeholder="Inserire Nome Utente">
+            <input type="submit" value="Invia">
+        </form>
+    </aside>
+
     <footer>
-        <p>Vuoi rimanere aggiornato su altre novità del blog? Iscriviti alla nostra newsletter:</p>
-        <label for="username">Nome Utente</label>
-        <input type="text" id="username" name="username" placeholder="Inserire Nome Utente">
+        
         <div>
             <p>
                 Ariticoli correlati<br>Validare il codice HTML<br>
@@ -107,8 +131,12 @@
                 Data:30-9-2020
             </p>         
         </div>
-        <div>
-            
+        <div id="copyright">
+            <p>
+                Blog Epicode &copy;2023<br>Testata online di Mario Rossi, registrata con prot.
+                n.213/2018 - via Luigi Einaudi 2 - Milano. P.IVA 00112233.<br>
+                <a href="mailto:info@epicode.chool">info@epicode.chool</a>
+            </p>
         </div>
     </footer>
 </body>

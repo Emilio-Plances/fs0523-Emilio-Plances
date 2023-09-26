@@ -1,0 +1,149 @@
+body{
+    margin:0;
+}
+header{
+    margin-left:10px;
+    display:flex;
+}
+
+#logo_epicode{
+    width: 300px;
+}
+
+h1{
+    display:flex;
+    width:100%;
+    font-size:3.5em;
+    justify-content: center;
+}
+
+nav{
+    margin: 20px 0px 0px 10px;
+}
+
+nav a{
+    margin:10px;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+nav a:link{
+    text-decoration: none;
+    color:black;
+}
+
+nav a:visited{
+    color:black;
+}
+
+nav a:active{
+    color:red;
+}
+main{
+    margin-left:10px;
+}
+#title{
+    margin:30px 0px 15px 0px;
+}
+
+#title h2{
+    font-size:2.5em;
+    margin:0px;
+}
+
+#title h3{
+    margin: 0px;
+}
+p{
+    font-size:18px;
+}
+
+.sections{
+    border-style: none none dotted none;
+    
+}
+
+li {
+    color: red;
+}
+
+li p{
+    color:black;
+}
+
+table{
+    table-layout: fixed;
+    width:460px;
+    border: 3px solid black;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+table caption{
+    border: 3px solid black;
+    border-bottom: none;
+    font-size:18px;
+    font-weight:bold;
+    color:red;
+}
+
+table thead{
+    font-weight:bold;
+}
+
+table tbody td{
+    margin:0;
+    width: 150px;
+    font-weight: normal;
+}
+
+#video{
+    padding:10px 0px;
+    display:flex;
+    flex-wrap: wrap;
+    border-bottom:none;
+}
+#video p{
+    margin-right: 10px;
+    width: 50%;
+    text-align: justify;
+}
+
+iframe{
+    width: 600px;
+    height: 400px;
+
+}
+
+aside{
+    padding:10px;
+    background-color: lightblue;
+    width:15%;
+    position: fixed;
+    bottom:0;
+    right:0;
+}
+
+aside p{
+    margin-top:0;
+}
+
+footer{
+
+    padding:10px;
+    width: 100%;
+    display:flex;
+    flex-wrap: wrap;
+    background-color: rgb(16 16 16);
+    color:white
+}
+
+footer div{
+    text-align: center;
+    width: 33%;
+}
+#copyright{
+    border-top: 3px solid white;
+    width:100%;
+    text-align: center;
+}
