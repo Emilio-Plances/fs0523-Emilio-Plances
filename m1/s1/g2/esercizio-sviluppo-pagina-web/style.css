@@ -127,6 +127,20 @@ aside p{
     margin-top:0;
 }
 
+#label_username{
+    width:100%
+}
+
+#input_username{
+    width:70%;
+}
+
+#button{
+    margin:0px 3px;
+    position: absolute;
+    right:0;
+}
+
 footer{
 
     padding:10px;
