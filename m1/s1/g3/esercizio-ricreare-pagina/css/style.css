@@ -34,9 +34,14 @@ figure{
     padding:0;
 }
 
+figure img{
+    width: 100%;
+}
+
 #intro p,ul {
     text-align: left;
 }
+
 
 figcaption{
     margin:15px 0;
@@ -66,13 +71,13 @@ figcaption{
 
 #ingredients h4{
     padding: 15px 0px;
-    font-size:22px;
+    font-size:1.45rem;
     border-bottom: 1px solid rgb(225 249 248);
     color:rgb(51 51 51);
 }
 
 #ingredients h5{
-    font-size: 17px;
+    font-size: 1rem;
 }
 
 footer{
