@@ -3,15 +3,15 @@ main,footer{
     margin: auto;
     width: 50%;
 }
-header{
+#header{
     text-align: center;
     margin-bottom:70px;
 }
-header img{
+#header img{
     width: 18%;
 }
 
-header div{
+#header div{
     height: 55px;
     color:rgb(0 77 76);
     background-color: rgb(253 251 241);
@@ -33,6 +33,7 @@ video{
     margin:0;
     padding:0;
     width: 100%;
+    border-radius: 20px;
 }
 
 #intro p,ul {
