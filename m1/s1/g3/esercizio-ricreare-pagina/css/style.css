@@ -1,0 +1,83 @@
+main,footer{
+    text-align: center;
+    margin: auto;
+    width: 50%;
+}
+header{
+    text-align: center;
+    margin-bottom:70px;
+}
+header img{
+    width: 18%;
+}
+
+header div{
+    height: 55px;
+    color:rgb(0 77 76);
+    background-color: rgb(253 251 241);
+    border-top: 1px solid rgb(255 216 119);
+    text-align: center;
+}
+
+#intro h1{
+    width: 70%;
+    margin:auto;
+    color:rgb(51 51 51);
+}
+
+span{
+    font-weight: normal;
+}
+
+figure{
+    margin:0;
+    padding:0;
+}
+
+#intro p,ul {
+    text-align: left;
+}
+
+figcaption{
+    margin:15px 0;
+    color:rgb(177 177 177);
+}
+
+#featured{
+    border-left: 1px solid rgb(255 216 119);
+    text-align: left;
+    padding-left: 10px;
+    margin:30px 0;
+}
+
+#featured h3{
+    margin:0;
+    color:rgb(188 88 38)
+}
+
+#featured a{
+    margin:0;
+    color:rgb(29 124 124);
+}
+
+#ingredients{
+    text-align:left ;
+}
+
+#ingredients h4{
+    padding: 15px 0px;
+    font-size:22px;
+    border-bottom: 1px solid rgb(225 249 248);
+    color:rgb(51 51 51);
+}
+
+#ingredients h5{
+    font-size: 17px;
+}
+
+footer{
+    text-align: left;
+}
+footer a{
+    color:rgb(29 124 124);;
+}
