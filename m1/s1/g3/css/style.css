@@ -29,12 +29,9 @@ span{
     font-weight: normal;
 }
 
-figure{
+video{
     margin:0;
     padding:0;
-}
-
-figure img{
     width: 100%;
 }
 
@@ -42,8 +39,8 @@ figure img{
     text-align: left;
 }
 
-
-figcaption{
+#video_caption{
+    font-size: 1.4rem;
     margin:15px 0;
     color:rgb(177 177 177);
 }
@@ -62,7 +59,6 @@ figcaption{
 
 #featured a{
     margin:0;
-    color:rgb(29 124 124);
 }
 
 #ingredients{
@@ -71,18 +67,18 @@ figcaption{
 
 #ingredients h4{
     padding: 15px 0px;
-    font-size:1.45rem;
+    font-size:22px;
     border-bottom: 1px solid rgb(225 249 248);
     color:rgb(51 51 51);
 }
 
 #ingredients h5{
-    font-size: 1rem;
+    font-size: 17px;
 }
 
 footer{
     text-align: left;
 }
-footer a{
+a{
     color:rgb(29 124 124);;
 }
