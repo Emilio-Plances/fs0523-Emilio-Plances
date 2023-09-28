@@ -93,7 +93,7 @@ body{
 }
 
 #content ul{
-    list-style-position: inside;
+    list-style:inside;
 }
 
 #content li{
