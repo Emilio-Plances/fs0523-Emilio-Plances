@@ -2,17 +2,19 @@
 @import url('https://fonts.google.com/specimen/Poppins?query=poppin');
 
 body *{
-    line-height: 25px;
+    line-height: 1.8rem;
     font-family: 'Poppins',sans-serif;
+    
 }
 
 img{
     max-width: 100%;
-    max-height: 100;
+    max-height: 100%;
 }
 
 body{
     background-image: url(../img/sfondo.png);
+    
 }
 
 /* HEADER */
@@ -84,8 +86,7 @@ body{
 
 #content p>strong{
     font-weight: bold;
-    color:rgb(170 32 114);
-    
+    color:rgb(170 32 114);   
 }
 
 #content li>p{
@@ -93,24 +94,130 @@ body{
 }
 
 #content ul{
-    list-style:inside;
+    list-style:disc;
+    padding-left: 30px;
 }
 
-#content li{
-
+.grey_box{
+    background-color: rgb(222,222,222);
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding:2px;
 }
 
+#content ol{
+    list-style:decimal;
+    padding-left: 30px;
+}
 
 /* TABELLE */
+table{
+    width: 100%;
+    margin:0 auto;
+}
+table caption{
+    font-weight: bold;
+}
 
+table thead{
+    height: 50px;
+    background-color: rgb(52 106 203);
+    
+}
+
+table thead td{
+    vertical-align: middle;
+    width: 200px;
+    color: white;
+    text-align: center;
+}
+table thead td:not(:first-of-type){
+    border-left: 1px solid rgb(96 133 213);
+}
+
+table tbody td{
+    text-align: center;
+}
+table tbody tr:nth-of-type(even){
+    background-color: rgb(243 243 243);
+    border-top:1px solid rgb(222 222 223); 
+    border-bottom:1px solid rgb(222 222 223);
+}
+table tbody tr:last-of-type{
+    border-bottom: 3px solid rgb(51 102 204);
+}
+
+#article a{
+    font-weight: bold;
+    color:rgb(5 153 188);
+}
 /* FORM */
+iframe{
+    border-radius: 25px;
 
+}
 /* ELEMENTI NELL' ASIDE */
 
+#newsletter{
+    background-color: lightgray;
+    padding:20px 15px;
+}
+
+#newsletter h2, #other_post h2{
+    color:rgb(42 51 56);
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#input_email{
+    border: none;
+    border-bottom: 1px dashed black ;
+}
+
+#send{
+    color:white;
+    background-color:rgb(51 103 204) ;
+    border:none;
+    height: 30px;
+}
+
+#input_email,#send{
+    margin-top:15px;
+}
+
+#other_post,.related_post{
+    margin-top:22px;
+
+}
+
+.related_post{
+    border:1px solid gray;
+    background-color: lightgray;
+    padding: 10px;
+    font-size: 0.8em;
+}
+.left{
+    text-align: left;
+
+}
+.right{
+    text-align: right;
+}
 /* FOOTER */
 #footer{
+    text-align: center;
+    font-size: 0.8em;
     color:white;
     box-shadow: 0px 2px 3px 1px  rgb(78 85 86);
     margin:30px 70px;
     background-image: linear-gradient(rgb(0 85 102),rgb(48 57 55)) ;
+}
+
+#footer p:last-of-type{
+    margin-top: 10px;
+}
+#footer a{
+    color:rgb(170 32 114);
 }

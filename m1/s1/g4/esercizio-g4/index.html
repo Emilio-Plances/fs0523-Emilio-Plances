@@ -18,11 +18,11 @@
         <h2>EPICODE - IL BLOG DEI DEVELOPERS</h2>
       </div>
 
-      <div>
-        <a class="link" href="index.html"> HOME </a>
-        <a class="link" href="#"> ARTICOLI </a>
-        <a class="link" href="#"> LAVORA CON NOI </a>
-      </div>
+      <nav id="menu">
+        <a href="index.html"> HOME </a>
+        <a href="#"> ARTICOLI </a>
+        <a href="#"> LAVORA CON NOI </a>
+      </nav>
     </header>
 
     <div id="container">
@@ -43,7 +43,7 @@
           </p>
           <p>Le varie aree saranno quindi suddivise in:</p>
 
-          <ul id="unordered_item">
+          <ul id="unordered_list">
             <li>
               <p>
                 Contenuti di intestazione del tag 
@@ -66,7 +66,7 @@
             <strong>selezionare con i CSS</strong>. Perciò i passi saranno:
           </p>
           
-          <ol id="ordered_item">
+          <ol id="ordered_list">
             <li>
               <p>
                 Progettare su carta il markup finale, assegnando ad ogni 
@@ -74,10 +74,12 @@
               </p>
             </li>
             <li>
-              Scrivere l'HTML dei tag esterni a quelli interni e dall'alto 
-              verso il basso.
+              <p>
+                Scrivere l'HTML dei tag esterni a quelli interni e dall'alto 
+                verso il basso.
+              </p>
             </li>
-            <li>Applicare il CSS</li>
+            <li><p>Applicare il CSS</p></li>
           </ol>
 
           <p>
@@ -99,7 +101,7 @@
               <tr>
                 <td>2000</td>
                 <td>20%</td>
-                <td>17%%</td>
+                <td>17%</td>
               </tr>
               <tr>
                 <td>2002</td>
@@ -114,7 +116,7 @@
               <tr>
                 <td>2008</td>
                 <td>80%</td>
-                <td>%51</td>
+                <td>51%</td>
               </tr>
               <tr>
                 <td>2012</td>
@@ -131,39 +133,44 @@
           nostro obiettivo ed essere stati dei veri developers come loro:
         </p>
         
-        <!--INSERIRE VIDEO YT-->
+        <iframe src="https://www.youtube.com/embed/IjzdMvuzxDY" title="Diventare web developer e trovare lavoro in 3 mesi - La Storia di Elisa" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
       </article>
       </main>
 
       <aside>
         <div id="newsletter">
-          <h3>
+          <h2>NOVITÀ</h2>
+          <p>
             Vuoi rimanere aggiornato su altre novità del blog?
             Iscriviti alla nostra newsletter:
-          </h3>
-          <input name="email" type="text" placeholder="Inserisci l'e-mail">
-          <input type="summit" value="Iscriviti!">
+          </p>
+          <input id="input_email" name="email" type="text" placeholder="Inserisci l'e-mail">
+          <input id="send" type="submit" value="Iscriviti!">
         </div>
 
-        
-        <article class="related_post">
-          <a href="#">Validare il codice HTML</a>
-          <p>Categoria:develop</p>
-          <p><i class="fas fa-calendar-alt"></i>Data:18-9-2020</p>
-        </article>
+        <div id="other_post">  
+          <h2>
+            ARTICOLI CORRELATI
+          </h2>
+          <article class="related_post">
+            <a class="left" href="#">Validare il codice HTML</a>
+            <p class="left"><i class="fas fa-tag"></i> Categoria:develop</p>
+            <p class="right"><i class="fas fa-calendar-alt"></i> Data:18-9-2020</p>
+          </article>
 
-        <article class="related_post">
-          <a href="#">Correggere la sintassi</a>
-          <p>Categoria:develop</p>
-          <p><i class="fas fa-calendar-alt"></i>Data:16-9-2020</p>
-        </article>
+          <article class="related_post">
+            <a class="left" href="#">Correggere la sintassi</a>
+            <p class="left"><i class="fas fa-tag"></i> Categoria:develop</p>
+            <p class="right"><i class="fas fa-calendar-alt"></i> Data:16-9-2020</p>
+          </article>
 
-        <article class="related_post">
-          <a href="#">Meno Kb nella pagina</a>
-          <p>Categoria:ottimizzazione</p>
-          <p><i class="fas fa-calendar-alt"></i>Data:30-9-2020</p>
-        </article>
+          <article class="related_post">
+            <a  class="left"href="#">Meno Kb nella pagina</a>
+            <p  class="left"><i class="fas fa-tag"></i> Categoria:ottimizzazione</p>
+            <p class="right"><i class="fas fa-calendar-alt"></i> Data:30-9-2020</p>
+          </article>
+        </div>
       </aside>
     </div>
 
