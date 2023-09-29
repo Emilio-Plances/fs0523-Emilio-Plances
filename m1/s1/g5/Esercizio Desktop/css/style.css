@@ -83,7 +83,6 @@ h3{
     text-align: center;
     background-image: url(../images/banner.jpg);
     background-size:100% 500px;
-    back
     background-repeat: no-repeat;
 }
 #promozione_corso p{
@@ -183,4 +182,8 @@ h3{
 }
 #footer p{
     margin-bottom: 30px;
+}
+
+#link_extra a{
+    text-decoration: none;
 }
