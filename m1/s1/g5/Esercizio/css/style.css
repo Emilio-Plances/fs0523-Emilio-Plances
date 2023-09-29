@@ -79,6 +79,8 @@ h3{
 
 #promozione_corso{
     background-image: url(../images/banner.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
 #promozione_corso a{
