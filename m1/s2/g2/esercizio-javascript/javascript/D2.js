@@ -22,10 +22,10 @@ if(num1<num2){
 
 let numero=5
 
-if(numero==6){
-  console.log("Equal");
-}else{
+if(numero!=5){
   console.log("Not equal");
+}else{
+  console.log("Equal");
 }
 
 
