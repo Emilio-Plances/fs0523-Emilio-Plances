@@ -176,14 +176,14 @@ console.log(eyeColor);
   Usa un while loop per calcolare la massa totale dell'equipaggio. Salvala in una variabile chiamata "crewMass".
 */
 let count=0;
-let totalMass=0;
+let crewMass=0;
 
 
 starWarsCharacters.forEach(function(element){
-  return totalMass+= element.mass;
+  return crewMass+= element.mass;
 })
 
-console.log("Total mass is " + totalMass);
+console.log("Total mass is " + crewMass);
 
 /* ESERCIZIO 7
   Crea uno if/else statement per rivelare la tipologia di carico, utilizzando la massa totale, di un'ipotetica astronave contenente i personaggi dell'array "starWarsCharacters".
@@ -196,19 +196,19 @@ console.log("Total mass is " + totalMass);
 
   Una volta fatto, modifica la massa di qualche elemento dell'equipaggio e vedi se riesci ad ottenere un messaggio diverso.
 */
-if (totalMass<500 && totalMass>0){
+if (crewMass<500 && crewMass>0){
   console.log("Ship is under loaded");
   
-}else if(totalMass>=500 && totalMass<700){
+}else if(crewMass>=500 && crewMass<700){
   console.log("Ship is half loaded");
 
-}else if(totalMass>=700 && totalMass<900){
+}else if(crewMass>=700 && crewMass<900){
   console.log("Warning: Load is over 700");
 
-}else if(totalMass>=900 && totalMass<1000){
+}else if(crewMass>=900 && crewMass<1000){
   console.log("Critical Load: Over 900");
 
-}else if(totalMass<0){
+}else if(crewMass<0){
   console.log("ERROR! NEGATIVE MASS!");
 
 }else{
@@ -241,4 +241,7 @@ console.log(noFemaleCharacters);
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
 */
 console.log("Personaggio Randomico");
-console.log(starWarsCharacters[Math.floor(Math.random() * starWarsCharacters.length)]);
+let random=0;
+Math.floor(Math.random() * starWarsCharacters.length);
+console.log('Hi! I\'m '+starWarsCharacters[random].name+' i\'m a '+ starWarsCharacters[random].gender+ 
+" i have "+starWarsCharacters[random].eye_color+" eyes and i'm "+starWarsCharacters[random].height+" cm. MAY THE FORCE BE WITH YOU!");
