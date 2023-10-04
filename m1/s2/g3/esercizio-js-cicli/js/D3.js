@@ -137,7 +137,7 @@ let eyeColor= {
   yellow:[],
   brown:[],
   red:[],
-  blueGray:[]
+  'blue-Gray':[]
 }
 
 /* ESERCIZIO 5
@@ -159,7 +159,7 @@ for(let i=0;i<starWarsCharacters.length;i++){
       eyeColor.red.push(starWarsCharacters[i].name);
       break;
     case 'blue-gray': 
-      eyeColor.blueGray.push(starWarsCharacters[i].name);
+      eyeColor['blue-Gray'].push(starWarsCharacters[i].name);
       break; 
   }
 }

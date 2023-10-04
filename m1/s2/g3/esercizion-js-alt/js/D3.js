@@ -130,7 +130,6 @@ starWarsCharacters.forEach(function(element){
     femaleCharacters.push(element.name)    
   }
 })
-
 console.log(femaleCharacters);
 
 /* ESERCIZIO 4
@@ -142,7 +141,7 @@ let eyeColor= {
   yellow:[],
   brown:[],
   red:[],
-  blueGray:[]
+  'blue-Gray':[]
 }
 
 /* ESERCIZIO 5
@@ -166,7 +165,7 @@ starWarsCharacters.forEach(function(element){
       eyeColor.red.push(element.name);
       break;
     case 'blue-gray': 
-      eyeColor.blueGray.push(element.name);
+      eyeColor['blue-Gray'].push(element.name);
       break; 
   }
 })
