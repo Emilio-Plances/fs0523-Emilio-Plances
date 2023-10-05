@@ -164,14 +164,29 @@ Crea una funzione chiamata "average" che riceve un array come parametro e ne rit
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 function average(...myArray){
-    myArray.
-
+    totale=0;
+    myArray.forEach(num => totale +=num);
+    let media=totale/myArray.length;
+    return media;
 }
+
+console.log("Questa è la media " + average(10,10,10));
 
 /* EXTRA 8
  Crea una funzione chiamata "longest" che trova la stringa più lunga all'interno di un array di stringhe fornito come parametro.
 */
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+function longest(...myArray){
+   memo='0';
+    myArray.forEach(function (element){
+        if(element.length > memo.length)
+            memo=element;
+    });
+    return memo;
+}
+
+console.log("La parola più lunga è " + longest('banana','mela','super','ciao'));
 
 
 /* EXTRA 9
@@ -180,12 +195,35 @@ function average(...myArray){
 */
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+function antiSpam(emailContent){
+    let email=emailContent.toLowerCase();
+    let result;
+    
+    if (email.includes("spam"))
+        return true;
+    if (email.includes("scam"))
+        return true;
+    return false;
+}
+
+if(antiSpam("Questo è un messaggio di spam")){
+    console.log("In questa Mail c'è uno SPAM!");
+}else{
+    console.log("In questa Mail non c'è uno SPAM");
+}
 
 /* EXTRA 10
  Scrivi una funzione che riceve una data come parametro, e calcola il numero di giorni passati da quella data.
 */
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+let data=new Date(2025,10,5);
+function time(tempo){
+    let ora=new Date();
+    tempo=Math.ceil((tempo-ora) / (1000 * 60 * 60 * 24));
+    return tempo;
+} 
+let difference= time(data);
+console.log("Per il giorno "+data.getFullYear()+" "+ data.getMonth()+" " +data.getDay()+" mancano ancora: "+ difference+" giorni");
 
 /* EXTRA 11
  Scrivi una funzione chiamata "matrixGenerator" che riceve come parametri due numeri interi, "x" e "y".
@@ -195,3 +233,18 @@ function average(...myArray){
  "10","11","12"]
 */
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+function matrixGenerator(x,y){
+    matrix=[];
+    for(let i=0; i<x;i++){
+        let newArray=[]
+        for(let a=0;a<y;a++){
+
+           newArray.push(i.toString() +a);
+        }
+        matrix[i]=newArray;
+    }
+    console.log(matrix);
+}
+
+matrixGenerator(5,5);
