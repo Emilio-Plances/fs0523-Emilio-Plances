@@ -247,7 +247,7 @@ console.log(noFemaleCharacters);
 */
 console.log("Personaggio Randomico");
 let random;
-random= Math.floor(Math.random() * starWarsCharacters.length);
-
+random= Math.round(Math.random() * (starWarsCharacters.length-1));
+console.log(random);
 console.log('Hi! I\'m '+starWarsCharacters[random].name+' i\'m a '+ starWarsCharacters[random].gender+ 
 " i have "+starWarsCharacters[random].eye_color+" eyes and i'm "+starWarsCharacters[random].height+" cm. MAY THE FORCE BE WITH YOU!");
