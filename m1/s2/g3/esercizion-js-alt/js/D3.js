@@ -232,8 +232,10 @@ console.log(starWarsCharacters);
   Una volta fatto crea un console.log per controllare la proprietà length di "characters" prima e dopo l'operazione.
 */
 
-let noFemaleCharacters= characters.filter(x => !femaleCharacters.includes(x));
-
+let noFemaleCharacters= characters.filter(function (element){ /* al posto di function posso mettere la funzione freccia   x => !femaleCharacters.includes(x);*/
+  return !femaleCharacters.includes(element);
+})
+  
 console.log(noFemaleCharacters);
 
 
@@ -242,6 +244,6 @@ console.log(noFemaleCharacters);
 */
 console.log("Personaggio Randomico");
 let random=0;
-Math.floor(Math.random() * starWarsCharacters.length);
+random=Math.floor(Math.random() * starWarsCharacters.length);
 console.log('Hi! I\'m '+starWarsCharacters[random].name+' i\'m a '+ starWarsCharacters[random].gender+ 
 " i have "+starWarsCharacters[random].eye_color+" eyes and i'm "+starWarsCharacters[random].height+" cm. MAY THE FORCE BE WITH YOU!");

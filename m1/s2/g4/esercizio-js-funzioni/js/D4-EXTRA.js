@@ -61,7 +61,7 @@ let shoppingCart=[
         price: 2,
         id: 'BT510',
         quantity: 5
-    },
+    }
 ]
 let new_object='computer';
 console.log("Totale è " + shoppingCartTotal(shoppingCart));
@@ -72,6 +72,11 @@ shoppingCart=addToShoppingCart(new_object, shoppingCart);
 console.log("Il nuovo Totale è " + shoppingCartTotal(shoppingCart));
 console.log("L'oggetto più costoso è -> "+maxShoppingCart(shoppingCart));
 console.log("L'ultimo oggetto comprato è -> "+latestShoppingCart(shoppingCart));
+
+
+
+
+
 function shoppingCartTotal(myArray) {
     let somma=0;
     myArray.forEach(element => somma += (element.price*element.quantity));
@@ -85,8 +90,6 @@ function shoppingCartTotal(myArray) {
 */
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-
-
 function addToShoppingCart(oggetto, myArray){
    
     myArray.forEach(function (element){
@@ -96,8 +99,6 @@ function addToShoppingCart(oggetto, myArray){
     })
     return myArray;
 }
-
-
 
 
 /* EXTRA 4
@@ -131,8 +132,7 @@ function maxShoppingCart(myArray){
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 function latestShoppingCart(myArray){
-    let last_item=myArray.pop();
-    return last_item.name;
+    return myArray.pop().name;
 }
 
 /* EXTRA 6
@@ -141,13 +141,13 @@ function latestShoppingCart(myArray){
 */
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-loopUntil(2);
+loopUntil(1);
 function loopUntil(intero){
     let hold=0;
     let count=0;
     let sfizio=0;
     while(count!=3){
-        hold=Math.round(Math.random()*(10-1));
+        hold=Math.round(Math.random()* 9);
         console.log(hold);
         if(hold>=intero)
             count++;
@@ -196,9 +196,8 @@ console.log("La parola più lunga è " + longest('banana','mela','super','ciao')
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 function antiSpam(emailContent){
+
     let email=emailContent.toLowerCase();
-    let result;
-    
     if (email.includes("spam"))
         return true;
     if (email.includes("scam"))
@@ -222,8 +221,8 @@ function time(tempo){
     tempo=Math.ceil((tempo-ora) / (1000 * 60 * 60 * 24));
     return tempo;
 } 
-let difference= time(data);
-console.log("Per il giorno "+data.getFullYear()+" "+ data.getMonth()+" " +data.getDay()+" mancano ancora: "+ difference+" giorni");
+
+console.log("Per il giorno "+data.getFullYear()+" "+ data.getMonth()+" " +data.getDay()+" mancano ancora: "+ time(data)+" giorni");
 
 /* EXTRA 11
  Scrivi una funzione chiamata "matrixGenerator" che riceve come parametri due numeri interi, "x" e "y".

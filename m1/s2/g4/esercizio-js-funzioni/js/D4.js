@@ -17,7 +17,7 @@ function crazySum(int1, int2){
     if(int1!=int2)
         return int1+int2;
     else
-        return (int1+int2)*3
+        return (int1+int2)*3;
 }
 
 
@@ -80,12 +80,14 @@ function check3and7(number){
     else
         return 'Non è divisibile nè per 3 che per 7';
 }
+console.log(check3and7(9));
+
 
 /* ESERCIZIO 7
  Scrivi una funzione di nome "reverseString", il cui scopo è invertire una stringa fornita come parametro (es. "EPICODE" --> "EDOCIPE")
 */
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+//string = variabile
 function reverseString(stringa){
     return stringa.split("").reverse().join("");
 }
@@ -97,11 +99,22 @@ function reverseString(stringa){
 */
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-function upperFirst(myArray){
+function upperFirst(...myArray){
     let newArray=[];
     myArray.forEach(element=> newArray.push(element.charAt(0).toUpperCase()+element.slice(1)));
     return newArray;
 }
+
+
+/*function upperFirst(...myArray){
+    let newArray=[];
+    for(let i=0; i<myArray.length; i++){
+        newArray.push(myArray[i].charAt(0).toUpperCase() + myArray[i].slice(1)) ; //C + iao = Ciao
+    }
+    return newArray;
+}
+*/
+console.log(upperFirst('ciao', 'banana', 'mela','cicoria', 'scazzato','telefono'));
 
 
 /* ESERCIZIO 9
