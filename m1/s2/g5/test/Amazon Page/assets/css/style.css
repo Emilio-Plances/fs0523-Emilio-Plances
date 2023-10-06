@@ -1,4 +1,7 @@
 /* Your styles here */
+
+/* Generals: */
+
 img{
     width: 100%;
     height: 100%;
@@ -26,9 +29,15 @@ a{
     display: flex;
 }
 
+.auto_margin{
+    margin: auto;
+}
+
 #main{
     padding: 0 30px;
 }
+
+/* Header */
 
 #header{
     padding:10px 45px;
@@ -39,6 +48,7 @@ a{
     height: 70px;
 }
  
+/* Nav */
 #nav{
     height: 35px;
     background-color: #364759;
@@ -55,23 +65,23 @@ a{
     margin:5px 15px;
 }
 
+/* Orange Box */
+
 #orange_box{
     background-color: #f56600;
     height: 35px;
     margin: 30px 0;
     
 }
-#orange_box div{
-    margin:auto;
-}
+
+/* Title Box */
+
 #title_box{
     background-image: url(../images/bg-image.png);
+    background-size: 93% 65%;
     height:195px;
 }
 
-#title_box div{
-    margin:auto;
-}
 
 #title_box h1{
     font-size: 2em;
@@ -81,12 +91,14 @@ a{
     margin-top:20px;
 }
 
+/* flex_box */
+
 #flex_box{
     background-color: white;
     margin: 30px 0;
     padding:15px 20px;
-
 }
+
 #flex_box div:first-of-type{
    margin-bottom: 15px;
 }
@@ -96,47 +108,43 @@ a{
     color:#2f6d5e;
     font-weight: bold;
 }
+
 #flex_box div:last-of-type a:not(:last-of-type){
     margin-right: 30px;
 }
+
 .f_box_img{
-    
-    height:420px;
+    height: 800px;
     border-radius: 20px;
     box-shadow: 1px 1px 8px 3px lightgray;
 }
 
+/* Big Box */
+
 .big_box{
     margin-bottom: 30px;
 }
+
 .big_box .quick_access{
     margin-top: 5px;
 }
-.big_box .quick_access div{
-    margin: auto;
-}
 
+/* Footer */
 
 #footer{
     background-color: #222f3f;
 }
-
 
 #return_top{
     background-color: #364759;
     height:45px;
 }
 
-#return_top div{
-    margin:auto;
-}
-
 #return_top a{
     text-decoration: underline;
- }
+}
 
-
- #final_logo img{
+#final_logo img{
     margin:50px;
     width:200px;
  }
