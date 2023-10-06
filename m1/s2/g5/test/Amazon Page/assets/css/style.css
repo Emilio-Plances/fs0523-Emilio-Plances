@@ -1,0 +1,143 @@
+/* Your styles here */
+img{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    font-size: 1.2em;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #e9edee;
+}
+
+.white_text{
+    color:white;
+}
+
+a{
+    text-decoration: none;
+}
+
+.center{
+    text-align: center;
+}
+
+.d_flex{
+    display: flex;
+}
+
+#main{
+    padding: 0 30px;
+}
+
+#header{
+    padding:10px 45px;
+    background-color: #222f3f;
+}
+#header img{
+    width: 200px;
+    height: 70px;
+}
+ 
+#nav{
+    height: 35px;
+    background-color: #364759;
+}
+
+#menu{
+    display: flex;
+    padding: 8px;
+    margin-left: 17px;
+
+} 
+
+.link_nav{
+    margin:5px 15px;
+}
+
+#orange_box{
+    background-color: #f56600;
+    height: 35px;
+    margin: 30px 0;
+    
+}
+#orange_box div{
+    margin:auto;
+}
+#title_box{
+    background-image: url(../images/bg-image.png);
+    height:195px;
+}
+
+#title_box div{
+    margin:auto;
+}
+
+#title_box h1{
+    font-size: 2em;
+}
+
+#title_box p{
+    margin-top:20px;
+}
+
+#flex_box{
+    background-color: white;
+    margin: 30px 0;
+    padding:15px 20px;
+
+}
+#flex_box div:first-of-type{
+   margin-bottom: 15px;
+}
+
+.link{
+    margin-left:20px;
+    color:#2f6d5e;
+    font-weight: bold;
+}
+#flex_box div:last-of-type a:not(:last-of-type){
+    margin-right: 30px;
+}
+.f_box_img{
+    
+    height:420px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 8px 3px lightgray;
+}
+
+.big_box{
+    margin-bottom: 30px;
+}
+.big_box .quick_access{
+    margin-top: 5px;
+}
+.big_box .quick_access div{
+    margin: auto;
+}
+
+
+#footer{
+    background-color: #222f3f;
+}
+
+
+#return_top{
+    background-color: #364759;
+    height:45px;
+}
+
+#return_top div{
+    margin:auto;
+}
+
+#return_top a{
+    text-decoration: underline;
+ }
+
+
+ #final_logo img{
+    margin:50px;
+    width:200px;
+ }
+ 
