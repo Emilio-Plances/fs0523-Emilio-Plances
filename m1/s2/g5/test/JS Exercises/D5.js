@@ -12,7 +12,11 @@ REGOLE
 */
 const pets = ['dog', 'cat', 'hamster', 'redfish']
 
-//pets.forEach(element => console.log(element));
+//readString(pets);
+
+function readString(myArray){
+   myArray.forEach(element => console.log(element));
+}
 
 
 /* ESERCIZIO 2
@@ -22,10 +26,8 @@ const pets = ['dog', 'cat', 'hamster', 'redfish']
 //console.log(sortPets(pets));
 
 function sortPets(myArray){
-  myArray.sort();
-  return myArray;
+  return myArray.sort();
 }
-
 
 
 
@@ -36,8 +38,7 @@ function sortPets(myArray){
 //console.log(reversePets(pets));
 
 function reversePets(myArray){
-  myArray.reverse();
-  return myArray;
+  return myArray.reverse();
 }
 
 
@@ -54,10 +55,10 @@ function firstIsLast(myArray){
 }
  
 
-
 /* ESERCIZIO 5
     Dato il seguente array di oggetti, scrivi del codice per aggiungere ad ognuno di essi una proprietà "licensePlate" con valore a tua scelta.
 */
+
 const cars = [
   {
     brand: 'Ford',
@@ -77,17 +78,19 @@ const cars = [
     color: 'black',
     trims: ['life', 'style', 'r-line'],
   },
-]
+];
 
 //console.log(licensePlate(cars));
 
 function licensePlate(myArray){
   let plate='';
+
   myArray.forEach(function (element){
     plate = Math.random().toString(36).slice(3,9);
     plate= plate.toUpperCase();
     element['licensePlate']=plate;
   });
+
   return myArray;
 }
 
@@ -96,7 +99,6 @@ function licensePlate(myArray){
     Scrivi del codice per aggiungere un nuovo oggetto in ultima posizione nell'array "cars", rispettando la struttura degli altri elementi.
     Successivamente, rimuovi l'ultimo elemento della proprietà "trims" da ogni auto.
 */
-
 
 const car={
   brand: 'Fiat',
@@ -109,15 +111,13 @@ const car={
 
 function addCar(myArray, item){
   myArray.push(item);
+
   myArray.forEach(function (element){
     element.trims.pop();
   })
+
   return myArray;
 }
-
-
-
-
 
 
 /* ESERCIZIO 7
@@ -129,7 +129,7 @@ const justTrims = [];
 
 function getFirstTrims(myArray, trimContainer=[]){
   let memo='';
- 
+
   myArray.forEach(function (element){
     memo=element.trims.shift();
     trimContainer.push(memo);
@@ -137,6 +137,7 @@ function getFirstTrims(myArray, trimContainer=[]){
 
   return trimContainer;
 }
+
 
 /* ESERCIZIO 8
     Cicla l'array "cars" e costruisci un if/else statament per mostrare due diversi messaggi in console. Se la prima lettera della proprietà
@@ -147,28 +148,33 @@ function getFirstTrims(myArray, trimContainer=[]){
 
 function fizzBuzz(myArray){ 
   let memo='';
+
   myArray.forEach(function (element){
     memo= element.color.charAt(0).toLowerCase();
     console.log( (memo=='b')? "Fizz" : "Buzz");
   })
 }
 
+
 /* ESERCIZIO 9
     Utilizza un ciclo while per stampare in console i valori del seguente array numerico fino al raggiungimento del numero 32.
 */
+
 const numericArray = [
   6, 90, 45, 75, 84, 98, 35, 74, 31, 2, 8, 23, 100, 32, 66, 313, 321, 105,
-]
+];
 
 //console.log(sortUntil(numericArray));
 
 function sortUntil(myArray){
   let newArray=[];
   myArray.sort((a,b) => a-b);
+
   myArray.forEach(function (element){
     if (element<=32)
       newArray.push(element);
   })
+
   return newArray;
 }
 
@@ -178,7 +184,7 @@ function sortUntil(myArray){
     dell'alfabeto italiano.
     es. [f, b, e] --> [6, 2, 5]
 */
-const charactersArray = ['g', 'n', 'u', 'z', 'd','a']
+const charactersArray = ['g', 'n', 'u', 'z', 'd'];
 
 //console.log(charToNum(charactersArray));
 
