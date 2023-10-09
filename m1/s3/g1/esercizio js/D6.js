@@ -236,14 +236,14 @@ const movies = [
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
 
-//console.log(`Il film più vecchio è ${older(movies)}`);
+console.log(`Il film più vecchio è ${older(movies)}`);
 
 function older(myArray){
 
   let memo=myArray[0];
   myArray.forEach(element=>{
     if(memo.Year>element.Year)
-      memo.Year=element.Year;
+      memo=element;
   });
   return memo.Title;
 }
