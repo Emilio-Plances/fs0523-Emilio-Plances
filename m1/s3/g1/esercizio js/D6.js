@@ -221,6 +221,7 @@ const movies = [
 /* ESERCIZIO 9 (forEach)
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
+
 //console.log(`Il film più vecchio è ${older(movies)}`);
 
 function older(myArray){
@@ -248,7 +249,7 @@ function numberFilmList(myArray){
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
 */
 
-//console.log(`I film presenti sono ${titleList(movies)}`);
+//console.log(`I film presenti nei nostri archivi sono ${titleList(movies)}`);
 
 function titleList(myArray) {
   return myArray.map(element=> element.Title);
@@ -280,21 +281,20 @@ function summYears(myArray) {
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
 let index='tt4154796';
-//console.log(`Il film con ID ${index} è: ${findByID(movies, index)}.`);
+console.log(`Il film con ID ${index} è: ${findByID(movies, index)}.`);
 
 function findByID(myArray, index) {
   let memo=myArray.find(element=> index==element.imdbID);
-  return memo.Title;
+  return (memo) ? memo.Title : `Not Found`;
 }
 
 /* ESERCIZIO 15 (findIndex)
   Scrivi una funzione per ottenere dall'array fornito l'indice del primo film uscito nell'anno fornito come parametro.
 */
 let year=`2012`;
-console.log(`Il nostro primo film uscito nell'anno ${year} è: ${findByYear(movies,year)}.`);
+//console.log(`Il nostro primo film uscito nell'anno ${year} è: ${findByYear(movies,year)}.`);
 
 function findByYear(myArray,index){
   let memo=myArray.findIndex(element=> index==element.Year);
-  return myArray[memo].Title;
-
+  return (memo!=-1)? myArray[memo].Title: `Not Found`;
 }
