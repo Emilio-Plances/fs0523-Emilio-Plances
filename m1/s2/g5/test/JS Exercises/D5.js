@@ -80,7 +80,7 @@ const cars = [
   },
 ];
 
-//console.log(licensePlate(cars));
+console.log(licensePlate(cars));
 
 function licensePlate(myArray){
   let plate='';
@@ -186,7 +186,7 @@ function sortUntil(myArray){
 */
 const charactersArray = ['g', 'n', 'u', 'z', 'd'];
 
- console.log(charToNum(charactersArray)); 
+//console.log(charToNum(charactersArray)); 
 
 // function charToNum(myArray){
 //   let newArray=[];
@@ -199,7 +199,6 @@ const charactersArray = ['g', 'n', 'u', 'z', 'd'];
 function charToNum(myArray){
   let newArray=[];
   myArray.forEach(function (element){
-
     element.toLowerCase();
     switch(element){
       case 'a': 
