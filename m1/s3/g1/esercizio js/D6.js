@@ -9,6 +9,7 @@ function fusionah(string1,string2) {
   return string1.slice(0,2) + string2.slice(-3);
 }
 
+
 /* ESERCIZIO 2 (for)
   Scrivi una funzione che torni un array di 10 elementi; ognuno di essi deve essere un valore random compreso tra 0 e 100 (incluso).
 */
@@ -23,23 +24,27 @@ function randomArray(){
   return newArray;
 }
 
+
 /* ESERCIZIO 3 (filter)
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
 */
 
-//console.log(oddEven(5,6,7,8,9,10,56,61));
+let oddEvenControl=[5,6,7,8,9,10,56,61];
+//console.log(oddEven(oddEvenControl));
 
-function oddEven(...myArray) {
+function oddEven(myArray) {
   return myArray.filter( number => number%2==0);
 }
+
 
 /* ESERCIZIO 4 (forEach)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
 
-//console.log(summ(5,10,15));
+let numberList=[5,10,15]
+//console.log(summ(numberList));
 
-function summ(...myArray) {
+function summ(myArray) {
   let risultato=0;
   myArray.forEach(element => {
     risultato+=element;
@@ -47,40 +52,47 @@ function summ(...myArray) {
   return risultato
 }
 
+
 /* ESERCIZIO 5 (reduce)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
 
-//console.log(summReduce(5,10,15));
+//console.log(summReduce(numberList));
 
-function summReduce(...myArray) {
+function summReduce(myArray) {
   return myArray.reduce((a,b)=>a+b);
 }
+
 
 /* ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
 
-//console.log(arrayMap(4,5,10,15));
+let number=4;
+//console.log(arrayMap(number,numberList));
 
-function arrayMap(numero,...myArray) {
-   return myArray.map( element => element += numero);
+function arrayMap(index,myArray) {
+   return myArray.map( element => element += index);
   
 }
+
 
 /* ESERCIZIO 7 (map)
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
 */
+
 //console.log(stringLength('EPICODE','IS','GREAT'));
 
 function stringLength(...myArray) {
   return myArray.map(element => element.length);
 }
 
+
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
 */
+
 //console.log(oddNumbers());
 
 function oddNumbers() {  //Questa funzione svolgerà 49 cicli prima di chiudersi
@@ -234,15 +246,16 @@ function older(myArray){
   return memo.Title;
 }
 
+
 /* ESERCIZIO 10
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
+
 //console.log(`Nell'array movies ci sono ${numberFilmList(movies)} film`);
 
 function numberFilmList(myArray){
   return myArray.length;
 }
-
 
 
 /* ESERCIZIO 11 (map)
@@ -255,6 +268,7 @@ function titleList(myArray) {
   return myArray.map(element=> element.Title);
 }
 
+
 /* ESERCIZIO 12 (filter)
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
 */
@@ -265,6 +279,7 @@ function welcomeTo2000(myArray) {
    let newArray= myArray.filter(element => 2000<= element.Year && element.Year  < 3000 );
    return newArray.map(element=>element.Title);
 }
+
 
 /* ESERCIZIO 13 (reduce)
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
@@ -277,22 +292,26 @@ function summYears(myArray) {
     return newArray.reduce((a,b)=>parseInt(a)+parseInt(b));
 }
 
+
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
+
 let index='tt4154796';
-console.log(`Il film con ID ${index} è: ${findByID(movies, index)}.`);
+//console.log(`Il film con ID ${index} è: ${findByID(movies, index)}.`);
 
 function findByID(myArray, index) {
   let memo=myArray.find(element=> index==element.imdbID);
   return (memo) ? memo.Title : `Not Found`;
 }
 
+
 /* ESERCIZIO 15 (findIndex)
   Scrivi una funzione per ottenere dall'array fornito l'indice del primo film uscito nell'anno fornito come parametro.
 */
 let year=`2012`;
 //console.log(`Il nostro primo film uscito nell'anno ${year} è: ${findByYear(movies,year)}.`);
+
 
 function findByYear(myArray,index){
   let memo=myArray.findIndex(element=> index==element.Year);
