@@ -6,7 +6,9 @@
 //console.log(fusionah('ciao','banana'));
 
 function fusionah(string1,string2) {
-  return string1.slice(0,2) + string2.slice(-3);
+
+   let string =string1.slice(0,2) + string2.slice(-3);
+   return string.toUpperCase();
 }
 
 
