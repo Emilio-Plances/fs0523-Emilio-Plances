@@ -132,30 +132,71 @@ function revealFooterLink (){
 generateTable();
 
 function generateTable (){
-    tableArea=document.getElementById(`tableArea`);
-
-    let th=document.createElement(`th`);
+    const voiceThead=[`immagine`,`Nome Prodotto`,`Quantità`,`Prezzo`,];
+    let tableArea=document.getElementById(`tableArea`)
+    let table=document.createElement(`table`);
+    let thead=document.createElement(`thead`);
     let tr=document.createElement(`tr`);
-    let td1=document.createElement(`td`);
-    let td2=document.createElement(`td`);
-    let td3=document.createElement(`td`);
-    let td4=document.createElement(`td`);
+    let td;
     let tbody=document.createElement(`tbody`);
 
-    td1.append(document.createTextNode(`Immagine`));
-    td2.append(document.createTextNode(`Nome Prodotto`));
-    td3.append(document.createTextNode(`Quantità`));
-    td4.append(document.createTextNode(`Prezzo`));
-    tr.append(td1,td2,td3,td4);
-    th.append(tr);
-    tableArea.append(th);
+    voiceThead.forEach(element=>{
+        td=document.createElement(`td`)
+        td.innerText=element;
+        tr.append(td);
+    })
+    thead.append(tr);
 
-    addRow(tbody);
-    addRow(tbody);
-    addRow(tbody);
 
-    tableArea.append(tbody);
+    const items=[
+        {
+            immagine: `https://picsum.photos/200/300?random=1`,
+            nomeProdotto: `bottiglia`,
+            quantità: `10`,
+            prezzo: `2$`
+        },
+        {
+            immagine: `https://picsum.photos/200/300?random=2`,
+            nomeProdotto: `penna`,
+            quantità: `3`,
+            prezzo: `0.5$`
+        },
+        {
+            immagine: `https://picsum.photos/200/300?random=3`,
+            nomeProdotto: `tazza`,
+            quantità: `1`,
+            prezzo: `10$`
+        },
+        {
+            immagine: `https://picsum.photos/200/300?random=4`,
+            nomeProdotto: `foglio`,
+            quantità: `20`,
+            prezzo: `10$`
+        },
+    ]
+
+    items.forEach(element=>{
+        tr=document.createElement(`tr`);
+        td=document.createElement(`td`);
+        
+        img=document.createElement(`img`);
+        img.src=element.immagine;
+        td.append(img);
+        tr.append(td);
+        
+        for(let prop in element){
+            if(prop!=`immagine`){
+                td=document.createElement(`td`)
+                td.innerText=element[prop];
+                tr.append(td);
+            }
+        }
+        tbody.append(tr);
+    })
+    table.append(thead,tbody);
+    tableArea.append(table);
 }
+
 
 
 /* ESERCIZIO 12
@@ -163,18 +204,10 @@ function generateTable (){
 */
  
 function addRow(tbody){
-    let tr=document.createElement(`tr`);
-    let td1=document.createElement(`td`);
-    let td2=document.createElement(`td`);
-    let td3=document.createElement(`td`);
-    let td4=document.createElement(`td`);
-    td1.append(document.createTextNode(`Immagine Contenuto`));
-    td2.append(document.createTextNode(`Nome Contenuto`));
-    td3.append(document.createTextNode(`Quantità Contenuto`));
-    td4.append(document.createTextNode(`Prezzo Contenuto`));
-    tr.append(td1,td2,td3,td4);
-    tbody.append(tr);
+
 }
+
+
 
 /* ESERCIZIO 14
     Crea una funzione che nasconda le immagini della tabella quando eseguita
@@ -195,8 +228,11 @@ changeColorWithRandom();
 
 function changeColorWithRandom (){
     let h2=document.querySelector(`h2`);
-    let random=Math.floor(100000+ Math.random()*900000);
-    h2.style.backgroundColor=`#${random}`;
+    let random;
+    h2.addEventListener(`click`,()=>{
+        random=Math.floor(100000+ Math.random()*900000);
+        h2.style.backgroundColor=`#${random}`;
+    })
 }
  
 /* EXTRA ESERCIZIO 16
@@ -206,10 +242,8 @@ function changeColorWithRandom (){
 deleteVowels();
 
 function deleteVowels (){
-    let body=document.querySelector(`body`);
-   
-    let noVowel=body.textContent.replace(/[aeiou]/g, ``)
-    console.dir(body)
-    body.append(noVowel)
-
+    let body=document.querySelectorAll(`body div *,footer *`);
+    body.forEach(element=>{
+        element.innerText=element.innerText.replace(/[aeiouAEIOU]/g ,``);
+    })
 }
