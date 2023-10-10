@@ -16,7 +16,7 @@ function generateTable (){
         tr.append(td);
     })
     thead.append(tr);
-
+    
 
     const items=[
         {
@@ -69,30 +69,7 @@ function generateTable (){
 }
 
 
-addRow(nuovoOggetto);
-const nuovoOggetto={
-    immagine: `https://picsum.photos/200/300?random=5`,
-    nomeProdotto: `foglio`,
-    quantità: `20`,
-    prezzo: `10$`
-}
 
-function addRow(obj){
-    tr=document.createElement(`tr`);
-    td=document.createElement(`td`);
-        
-    img=document.createElement(`img`);
-    img.src=obj.immagine;
-    td.append(img);
-    tr.append(td);
-        
-    for(let prop in obj){
-        if(prop!=`immagine`){
-            td=document.createElement(`td`)
-            td.innerText=obj[prop];
-            tr.append(td);
-        }
-    }
-    tbody.append(tr);
+function addRow(){
     
 }
