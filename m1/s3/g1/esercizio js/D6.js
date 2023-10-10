@@ -6,9 +6,7 @@
 //console.log(fusionah('ciao','banana'));
 
 function fusionah(string1,string2) {
-
-   let string =string1.slice(0,2) + string2.slice(-3);
-   return string.toUpperCase();
+   return (string1.slice(0,2) + string2.slice(-3)).toUpperCase();
 }
 
 
@@ -21,7 +19,7 @@ function fusionah(string1,string2) {
 function randomArray(){
   let newArray=[];
   for (let i = 0; i < 10; i++) {
-    newArray.push(Math.round(Math.random()*100));
+    newArray.push(Math.floor(Math.random()*101));
   }
   return newArray;
 }
@@ -43,7 +41,7 @@ function oddEven(myArray) {
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
 
-let numberList=[5,10,15]
+let numberList=[5,10,15,20,4]
 //console.log(summ(numberList));
 
 function summ(myArray) {
@@ -59,10 +57,10 @@ function summ(myArray) {
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
 
-//console.log(summReduce(numberList));
+console.log(summReduce(numberList));
 
 function summReduce(myArray) {
-  return myArray.reduce((a,b)=>a+b);
+  return myArray.reduce((p,c)=>p+c);
 }
 
 
@@ -71,11 +69,10 @@ function summReduce(myArray) {
 */
 
 let number=4;
-//console.log(arrayMap(number,numberList));
+console.log(arrayMap(number,numberList));
 
 function arrayMap(index,myArray) {
-   return myArray.map( element => element += index);
-  
+   return myArray.map( element => element + index);
 }
 
 
@@ -236,7 +233,7 @@ const movies = [
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
 
-console.log(`Il film più vecchio è ${older(movies)}`);
+//console.log(`Il film più vecchio è ${older(movies)}`);
 
 function older(myArray){
 
@@ -245,9 +242,14 @@ function older(myArray){
     if(memo.Year>element.Year)
       memo=element;
   });
-  return memo.Title;
+  return memo;
 }
 
+console.log(`Il film più vecchio è ${oldest(movies)}`);
+
+function oldest(myArray){
+  return myArray.reduce((p,c)=>p.Year < c.Year ? p:c ).Title;
+}
 
 /* ESERCIZIO 10
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
