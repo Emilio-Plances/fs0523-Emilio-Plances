@@ -42,10 +42,14 @@ function pressButton() {
 
         //si occupa di segnare le quest fatte
         li.addEventListener(`click`,()=>{
-            if(!p.style.textDecoration)
+            if(!p.style.textDecoration){
                 p.style.textDecoration=`line-through`;
-            else
-                p.style.textDecoration=``
+                li.style.backgroundColor=`rgb(207 171 133)`;
+            }else{
+                p.style.textDecoration=``;
+                li.style.backgroundColor=``;
+            }
+                
         })
 
         //assegna ai vari alementi delle classi

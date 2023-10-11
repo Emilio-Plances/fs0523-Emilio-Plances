@@ -36,16 +36,12 @@ h1{
     border: 2px solid rgb(237, 211, 130);
 }
 
-
-
-
-
 .newQuest{
     box-shadow: 0px 0px 6px 1px rgb(237, 211, 130);
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    padding:10px;
+    padding:12px;
     width: 500px;
     background-color: rgb(237, 211, 163);
     margin:20px auto;
