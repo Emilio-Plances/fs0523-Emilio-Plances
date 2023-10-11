@@ -25,12 +25,16 @@ function pressButton() {
         let li=document.createElement(`li`);
         let div=document.createElement(`div`);
         let p=document.createElement(`p`);
+        let span=document.createElement(`span`);
         let newButton=document.createElement(`button`);
+        newDate= new Date();
+        let now=`${newDate.getFullYear()}/${newDate.getMonth()}/${newDate.getDay()} | ${newDate.getHours()}:${newDate.getMinutes()}`
+        console.log(now);
         newButton.innerText=`Delete`;
 
         //scrive dentro p il valore dell'input
         p.innerText=formInput.value;
-        
+        span.innerText=now;
         //si occupa dell'Eliminazione
         newButton.addEventListener(`click`,()=>{
             li.remove();
@@ -49,7 +53,7 @@ function pressButton() {
         newButton.className=`deleteButton`;
 
         //attacca tutti gli elementi alla lista
-        div.append(p,newButton);
+        div.append(p,span,newButton);
         li.append(div);
         ul.append(li);
 
