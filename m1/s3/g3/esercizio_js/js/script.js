@@ -10,6 +10,7 @@ function pressButton() {
     let div;
     let div2;
     let buttonsArray=[];
+    let newQuestArray=[];
 
     button.addEventListener(`click`, function(event){
         event.preventDefault();
@@ -21,15 +22,24 @@ function pressButton() {
             newButton.innerText=`Delete`;
             div2=document.createElement(`div`);
             div.className=`newQuest`;
-            
+
             p.append(text.value);
             div2.append(p)
             div.append(div2,newButton);
             questBlock.append(div);
             newButton.className=`deleteButton`;
-     
+            //Parte che si occupa dalla riga delle quest già fatte
+            newQuestArray.push(div);
+            newQuestArray.forEach(newQuest=>{
+                newQuest.addEventListener(`click`,function(event){
+                    event.preventDefault();
+                    if(newQuest.childNodes[0].childNodes[0].style.textDecoration!=`line-through`)
+                        newQuest.childNodes[0].childNodes[0].style.textDecoration=`line-through`;
+                    else
+                        newQuest.childNodes[0].childNodes[0].style.textDecoration=``;
+                })
+            })
 
-            
             //Parte che si occupa della cancellazione
             buttonsArray.push(newButton);
 
@@ -40,7 +50,6 @@ function pressButton() {
                 });
             })
             text.value=``;
-            text.style.border=``;
         }else{
             alert(`Compila il campo`);
         }
