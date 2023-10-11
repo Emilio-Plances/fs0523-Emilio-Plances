@@ -68,8 +68,6 @@ function generateTable (){
     tableArea.append(table);
 }
 
-
-
 function addRow(){
     
 }
