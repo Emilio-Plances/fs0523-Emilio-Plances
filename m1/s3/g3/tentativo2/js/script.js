@@ -30,14 +30,24 @@ function pressButton() {
         newDate= new Date();
         let now=`${newDate.getFullYear()}/${newDate.getMonth()}/${newDate.getDay()} | ${newDate.getHours()}:${newDate.getMinutes()}`
         console.log(now);
-        newButton.innerText=`Delete`;
+        newButton.innerHTML=`<ion-icon name="logo-bitbucket"></ion-icon>`;
 
         //scrive dentro p il valore dell'input
         p.innerText=formInput.value;
         span.innerText=now;
+
         //si occupa dell'Eliminazione
         newButton.addEventListener(`click`,()=>{
             li.remove();
+        })
+
+        //Aggiunge un mousover al button
+        newButton.addEventListener(`mouseover`,()=>{
+            newButton.style.backgroundColor=`red`;
+            newButton.style.cursor=`pointer`;
+        })
+        newButton.addEventListener(`mouseleave`,()=>{
+            newButton.style.backgroundColor=``;
         })
 
         //si occupa di segnare le quest fatte
@@ -49,7 +59,9 @@ function pressButton() {
                 p.style.textDecoration=``;
                 li.style.backgroundColor=``;
             }
-                
+        })
+        li.addEventListener(`mouseover`,()=>{
+            li.style.cursor=`pointer`;
         })
 
         //assegna ai vari alementi delle classi

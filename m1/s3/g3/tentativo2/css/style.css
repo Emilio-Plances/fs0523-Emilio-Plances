@@ -35,6 +35,9 @@ h1{
     border-radius: 10px;
     border: 2px solid rgb(237, 211, 130);
 }
+.formButton:hover{
+    cursor:pointer;
+}
 
 .newQuest{
     box-shadow: 0px 0px 6px 1px rgb(237, 211, 130);
@@ -65,12 +68,14 @@ h1{
 }
 .deleteButton{
     border: 2px solid rgb(237, 211, 130);
+    color:white;
+    background-color: darkred;
     position:absolute;
     right: 0;
     bottom:1px;
     font-size: 1em;
-    border-radius: 50px;
+    border-radius: 100%;
     display:flex;
-    width: 60px;
-    height:25px;
+    
+    
 }
