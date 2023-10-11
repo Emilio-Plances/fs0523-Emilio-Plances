@@ -2,7 +2,6 @@ pressButton();
 
 function pressButton() {
     let form=document.querySelector(`#myForm`)
-    let questList=document.querySelector(`#questList`);
     let formInput=document.querySelector(`.formInput`)
     let formButton=document.querySelector(`.formButton`);
     let ul=document.querySelector(`#questList`);
@@ -41,7 +40,7 @@ function pressButton() {
             li.remove();
         })
 
-        //Aggiunge un mousover al button
+        //Aggiunge un mouseover al button
         newButton.addEventListener(`mouseover`,()=>{
             newButton.style.backgroundColor=`red`;
             newButton.style.cursor=`pointer`;
