@@ -4,15 +4,15 @@
     --wood:burlywood;
 }
 #tombola{
+    border:3px solid var(--red);
     padding:20px;
     font-size: 20px;
-    margin:auto;
+    margin:20px auto;
     width:600px;
     background-color: var(--background);
 }
 
 .tombola-header{
-    
     display: flex;
     padding: 10px;
 }
@@ -73,6 +73,7 @@
     flex-wrap: wrap;
 }
 .numeroTombola{
+    vertical-align: middle;
     padding:10px;
     box-sizing: border-box;
     align-content: center;
@@ -87,4 +88,52 @@
 }
 .border-bottom{
     border-bottom:3px solid var(--red);
+}
+
+
+/***********************************
+*   Caselle Giocatore
+* * */
+.player-tab{
+    margin:20px;
+    background-color: var(--background);
+    width:350px;
+    height:210px;
+    border: 3px solid var(--red);
+}
+.playerHeader{
+    border-bottom:3px solid var(--red);
+}
+.playerHeader h6{
+    margin:15px 0px 20px 15px;
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--red);
+    margin-bottom:20px;
+}
+.playerNum{
+    display: flex;
+    text-align: center;
+}
+.playerNumber{
+    vertical-align: middle;
+    width: 200px;
+    height:33px;
+    margin-bottom:3px;
+    font-size: 1.5em;
+    border-bottom:3px solid var(--red);
+    border-left:3px solid var(--red);
+}
+.no-left{
+    border-left: none;
+}
+.no-bottom{
+    border-bottom: none;
+}
+.player-zone{
+    display:flex;
+    flex-wrap: wrap;
+}
+.playerNumber:hover, .rollButton:hover{
+    cursor: pointer;
 }
