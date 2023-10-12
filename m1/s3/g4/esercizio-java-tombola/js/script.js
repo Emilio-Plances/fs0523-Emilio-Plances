@@ -30,9 +30,14 @@ tombolaBody.className=`tombolaBody`;
  **********************************************/
 
 generateNumeroTombola();
-
+let numeriUsciti=[];
 rollButton.addEventListener(`click`,function(){
+
     p.innerText=Math.floor(Math.random()*90)+1;
+    
+
+    controlEvent(p.innerText);
+    
     tombolaBody.childNodes[Number(p.innerText)-1].style.backgroundColor=`#c7161f`;
     tombolaBody.childNodes[Number(p.innerText)-1].style.color=`rgb(242, 243, 216)`;
 });
@@ -41,6 +46,24 @@ numberInside.append(p);
 numberOut.append(numberInside);
 number.append(numberOut,rollButton);
 tombolaHeader.append(h3,number);
+
+
+function controlEvent(p){
+
+    let verifica;
+    verifica=numeriUsciti.find(element=>element==p);
+
+    if(numeriUsciti.length>=90){
+        alert(`OPS! Sono finiti i numeri!`);
+        return;
+    }
+
+    if(!verifica){
+        numeriUsciti.push(p);
+    }else{
+        controlEvent();
+    }
+}
 
 function generateNumeroTombola(){
     for(let i=1;i<=90;i++){
