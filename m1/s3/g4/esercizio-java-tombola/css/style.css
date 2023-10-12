@@ -1,0 +1,90 @@
+:root{
+    --background:rgb(242, 243, 216);
+    --red:#c7161f;
+    --wood:burlywood;
+}
+#tombola{
+    padding:20px;
+    font-size: 20px;
+    margin:auto;
+    width:600px;
+    background-color: var(--background);
+}
+
+.tombola-header{
+    
+    display: flex;
+    padding: 10px;
+}
+
+.tombola-header h3{
+    position: relative;
+    right: 0;
+    font-size: 3em;
+    font-weight: bold;
+    color: var(--red);
+    margin: 20px;
+}
+.number{
+    display: flex;
+    text-align: center;
+}
+.number-out{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-color: var(--red);
+    position: relative;
+    right:0px;
+}
+
+.number-inside{
+    width: 80px;
+    height: 80px;
+    position: relative;
+    top:10px;
+    left:10px;
+    border-radius: 100%;
+    background-color: var(--wood);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.number-inside p{
+    font-size: 3em;
+    font-weight: bold;
+    color: var(--red);
+    position:relative;
+    top:10px;
+    left:2px;
+}
+
+.rollButton{
+    margin:10px;
+    height:30px;
+    border-radius: 25px;
+    font-weight: bold;
+    background-color: var(--wood);
+    color:var(--red);
+}
+
+.tombolaBody{
+    display:flex;
+    flex-wrap: wrap;
+}
+.numeroTombola{
+    padding:10px;
+    box-sizing: border-box;
+    align-content: center;
+    flex: 0 1 calc(100%/10);
+    height:50px;
+    font-size: 1.5em;
+    border-top:3px solid var(--red);
+    border-left:3px solid var(--red);
+}
+.border-right{
+    border-right: 3px solid var(--red);
+}
+.border-bottom{
+    border-bottom:3px solid var(--red);
+}

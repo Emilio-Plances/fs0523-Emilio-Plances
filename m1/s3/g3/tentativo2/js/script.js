@@ -58,7 +58,7 @@ function pressButton() {
                 p.style.textDecoration=``;
                 li.style.backgroundColor=``;
             }
-        })
+        }) 
         li.addEventListener(`mouseover`,()=>{
             li.style.cursor=`pointer`;
         })
