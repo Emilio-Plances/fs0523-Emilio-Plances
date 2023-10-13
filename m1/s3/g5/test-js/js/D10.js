@@ -125,10 +125,13 @@ function onlyLetters(myString) {
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
 
-//console.log(isThisAnEmail(`emilio.plances@gmail.com`));
+//console.log(isThisAnEmail(``));
 
 function isThisAnEmail(myString) {
-  return /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/.test(myString);
+  if(myString)
+   return /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/.test(myString);
+  
+  return false
 }
 
 /* ESERCIZIO 7
