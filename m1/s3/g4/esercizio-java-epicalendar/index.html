@@ -9,40 +9,41 @@
 </head>
 <body>
     <div id="epicalendar" class="epicalendar">
-        <h3 class="mese">Mese</h3>
+
+        <div class="title">
+            <h3 class="mese"></h3>
+            <div class="arrows">
+                <button class="arrow backward">&lArr;</button>
+                <button class="arrow forward">&rArr;</button>
+            </div>
+        </div>
         <div class="days">
-            <div class="day">1</div>
-            <div class="day">2</div>
-            <div class="day">3</div>
-            <div class="day">4</div>
-            <div class="day">5</div>
-            <div class="day">6</div>
-            <div class="day">7</div>
-            <div class="day">8</div>
-            <div class="day">9</div>
-            <div class="day">10</div>
+            
         </div>
 
+        <h4 class="add-meeting-title">Add meeting</h4>
+
         <div class="add-meeting">
-            <h4 class="add-meeting-title">Add meeting</h4>
-            <div class="meeting-day">
+            
+            <div class="meeting-day meeting">
                 <h5 class="meeting-title">Meeting-day</h5>
                 <label>Click on a Day</label>
                 <input type="date">
             </div>
-            <div class="meeting-time">
-                <h5 class="meeting-title">Meeting-time</h5>
+            <div class="meeting-time meeting">
+                <h5 class="meeting-title">Meeting time</h5>
                 <input type="time">
             </div>
-            <div class="meeting-name">
+            <div class="meeting-name meeting">
                 <h5 class="meeting-title">Meeting Name</h5>
-                <input type="text">
+                <input type="text" placeholder="Insert a name for the meeting">
             </div>
-            <div class="meeting-button">
+            <div class="meeting-button meeting no-margin-right">
                 <h5 class="meeting-title">Add</h5>
                 <button>Save Meeting</button>
             </div>
         </div>
+
     </div>
     <script src="js/script.js"></script>
 </body>
