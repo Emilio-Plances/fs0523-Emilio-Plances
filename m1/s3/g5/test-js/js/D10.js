@@ -190,26 +190,12 @@ function howManyDays(myDate) {
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
 
-//isTodayMyBirthday();
-
-function isTodayMyBirthday() {
-  let now=new Date();
-  let myBirthday=new Date();
-
-  myBirthday.setMonth(2,7);
-
-  if(now.getMonth() == myBirthday.getMonth() && now.getDay()==myBirthday.getDay())
-    console.log(`È IL TUO COMPLEANNO!`);
-  else
-    console.log(`Non è il tuo compleanno.`);
-}
-
 
 let birthdayDate= new Date();
 birthdayDate.setMonth(2,7);
-//isTodayMyBirthday2(birthdayDate);
+//isTodayMyBirthday(birthdayDate);
 
-function isTodayMyBirthday2(myDate) {
+function isTodayMyBirthday(myDate) {
   let now=new Date();
 
   if(now.getMonth() == myDate.getMonth() && now.getDay()==myDate.getDay())
@@ -439,7 +425,7 @@ function searchAndDivide(myString, myArray){
   search[`match`]= myArray.filter(element=> element.Title.includes(myString));
   search[`unmatch`]= newArray.filter(element=> !element.Title.includes(myString));
 
-  return  search;
+  return search;
 }
 
 /* ESERCIZIO 19
@@ -538,7 +524,7 @@ function addClass(){
 
 */
 
-halfTree(6);
+//halfTree(6);
 
 function halfTree(myNumber) {
 
@@ -566,7 +552,7 @@ function halfTree(myNumber) {
 
 */
 
-tree(6);
+//tree(6);
 function tree(myNumber){
   let riga;
   let numeroAsterischi=1;
