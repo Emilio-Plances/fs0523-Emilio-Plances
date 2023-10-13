@@ -115,7 +115,7 @@ function deleteOne(myString, myBoolean) {
   Es.: onlyLetters("I have 4 dogs") => ritorna "I have dogs"
 */
 
-//console.log(onlyLetters(`C73189263981i26387125a4871248o`));
+//console.log(onlyLetters(`731C89263981i2563a87125487o1248`));
 
 function onlyLetters(myString) {
   return myString.replace(/[0-9]/g,``); //L'avevo usato nell'esercizio in cui dovevamo cancellare tutte le vocali dall'html
@@ -125,12 +125,11 @@ function onlyLetters(myString) {
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
 
-//console.log(isThisAnEmail(``));
+//console.log(isThisAnEmail(`emilio.plances@gmail.com`));
 
 function isThisAnEmail(myString) {
   if(myString)
    return /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/.test(myString);
-  
   return false
 }
 
@@ -141,8 +140,8 @@ function isThisAnEmail(myString) {
 //console.log(whatDayIsIt());
 
 function whatDayIsIt() {
-  let oggi=new Date();
-  return oggi.toLocaleDateString(`it-IT`,{weekday:`long`} );
+
+  return new Date().toLocaleDateString(`it-IT`,{weekday:`long`} );
 }
 
 /* ESERCIZIO 8
@@ -157,6 +156,7 @@ function whatDayIsIt() {
       values: [3, 3, 4]
   }
 */
+
 //console.log(rollTheDices(`7`));
 
 function rollTheDices(myNumber) {
