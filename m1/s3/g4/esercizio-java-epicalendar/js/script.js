@@ -9,15 +9,15 @@ let meetingData=epicalendar.querySelector(`.meeting-day input`);
 let meetingName=epicalendar.querySelector(`.meeting-name input`);
 let meetingTime=epicalendar.querySelector(`.meeting-time input`)
 let meetings=[];
+
 oggi=new Date();
 meseAttuale= oggi.getMonth();
 let month=nuovoMese(meseAttuale);
-
 let days=giorni(meseAttuale);
+
 generaGiorni(days);
 controlloAppuntamenti(month);
 backward.addEventListener(`click`,()=>{
-
     meseAttuale--;
     month=nuovoMese(meseAttuale);
     days=giorni(meseAttuale);
@@ -26,7 +26,6 @@ backward.addEventListener(`click`,()=>{
 })
 
 forward.addEventListener(`click`,()=>{
-
     meseAttuale++;
     month=nuovoMese(meseAttuale);
     days=giorni(meseAttuale);
@@ -39,11 +38,6 @@ saveMeetings.addEventListener(`click`,()=>{
     meetingEvent();
 
 })
-
-
-
-
-
 
 
 function meetingEvent(){
@@ -60,7 +54,6 @@ function meetingEvent(){
     }
     position=Number(meetingData.value.slice(-2))-1;
     bloccoNumeri.children[position].append(div);
-    
     
     meeting[`name`]=meetingName.value;
     meeting[`day`]=meetingData.value;
@@ -88,23 +81,6 @@ function giorni(meseAttuale){
     return giorniMese.getDate();
 }
 
-function generaGiorni(days){
-    while(bloccoNumeri.firstChild){
-        bloccoNumeri.removeChild(bloccoNumeri.firstChild);
-      }
-      let dataAttuale=``;
-    for(i=1;i<=days;i++){
-        let div=document.createElement(`div`);
-        div.classList.add(`day`);
-        div.innerText=i;
-        
-        dataAttuale=bottoniGiorni(div,i);
-        console.log(dataAttuale);
-        
-        bloccoNumeri.append(div);
-    }
-}
-
 function bottoniGiorni(div,i){
     div.addEventListener('click',()=>{
         let nuovaData= new Date();
@@ -122,20 +98,34 @@ function bottoniGiorni(div,i){
     })
 }
 
+function generaGiorni(days){
+    while(bloccoNumeri.firstChild){
+        bloccoNumeri.removeChild(bloccoNumeri.firstChild);
+      }
 
+    let dataAttuale=``;
+    for(i=1;i<=days;i++){
+        let div=document.createElement(`div`);
+        div.classList.add(`day`);
+        div.innerText=i;
+        
+        dataAttuale=bottoniGiorni(div,i);
+        console.log(dataAttuale);
+        
+        bloccoNumeri.append(div);
+    }
+}
 
-function controlloAppuntamenti(month){
-    console.log(meetings);
+function controlloAppuntamenti(data){
+
     meetings.forEach(element=>{
         let control=element.day.split(`-`);
         let[yearsM,monthM,dayM]=control;
-        console.log(monthM,month.getMonth());
-        if(monthM-1==month.getMonth()){
+        
+        if(monthM-1==data.getMonth()&&yearsM==data.getFullYear()){
             let div2=document.createElement(`div`);
             div2.classList.add(`notifica`);
             bloccoNumeri.children[dayM-1].append(div2);
         }
     })
-    
-   
 }
