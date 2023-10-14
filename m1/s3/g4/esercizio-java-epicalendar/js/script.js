@@ -11,24 +11,27 @@ let meetingTime=epicalendar.querySelector(`.meeting-time input`)
 let meetings=[];
 oggi=new Date();
 meseAttuale= oggi.getMonth();
-nuovoMese(meseAttuale);
+let month=nuovoMese(meseAttuale);
+
 let days=giorni(meseAttuale);
 generaGiorni(days);
-
+controlloAppuntamenti(month);
 backward.addEventListener(`click`,()=>{
 
     meseAttuale--;
-    nuovoMese(meseAttuale);
+    month=nuovoMese(meseAttuale);
     days=giorni(meseAttuale);
     generaGiorni(days);
+    controlloAppuntamenti(month);
 })
 
 forward.addEventListener(`click`,()=>{
 
     meseAttuale++;
-    nuovoMese(meseAttuale);
+    month=nuovoMese(meseAttuale);
     days=giorni(meseAttuale);
     generaGiorni(days);
+    controlloAppuntamenti(month);
 })
 
 saveMeetings.addEventListener(`click`,()=>{
@@ -69,14 +72,13 @@ function meetingEvent(){
     meetingData.style.display=`none`;
     label.style.display=`block`
     meetings.push(meeting);
-    console.log(meetings);
-    return meetings;
 }
 
 function nuovoMese(meseAttuale){
     let nuovoMese= new Date().setMonth(meseAttuale);
     nuovoMese=new Date(nuovoMese);
     mese.innerText=nuovoMese.toLocaleString(`it-IT`,{month:`long`})+' '+nuovoMese.getFullYear();
+    return nuovoMese;
 }
 
 function giorni(meseAttuale){
@@ -90,18 +92,20 @@ function generaGiorni(days){
     while(bloccoNumeri.firstChild){
         bloccoNumeri.removeChild(bloccoNumeri.firstChild);
       }
+      let dataAttuale=``;
     for(i=1;i<=days;i++){
         let div=document.createElement(`div`);
         div.classList.add(`day`);
         div.innerText=i;
         
-        bottoniGiorni(div,i);
+        dataAttuale=bottoniGiorni(div,i);
+        console.log(dataAttuale);
+        
         bloccoNumeri.append(div);
     }
 }
 
 function bottoniGiorni(div,i){
-    
     div.addEventListener('click',()=>{
         let nuovaData= new Date();
         nuovaData.setMonth(meseAttuale);
@@ -114,24 +118,24 @@ function bottoniGiorni(div,i){
         meetingData.value=`${year}-${month}-${day}`;
         meetingData.style.display=`block`
         label.style.display=`none`;
+    
     })
-    
-    
-    
 }
 
 
 
-function controlloAppuntamenti(div,meetingDataString){
-    console.log(meetingDataString);
-    let newArray=[...meetings];
-    newArray.filter(element=>element.day==meetingDataString);
-    console.log(newArray);
+function controlloAppuntamenti(month){
+    console.log(meetings);
+    meetings.forEach(element=>{
+        let control=element.day.split(`-`);
+        let[yearsM,monthM,dayM]=control;
+        console.log(monthM,month.getMonth());
+        if(monthM-1==month.getMonth()){
+            let div2=document.createElement(`div`);
+            div2.classList.add(`notifica`);
+            bloccoNumeri.children[dayM-1].append(div2);
+        }
+    })
     
-    if(newArray.length<0){
-        let div2=document.createElement(`div`);
-        div2.classList.add(`notifica`);
-        div.append(div2);
-        
-    }
+   
 }
