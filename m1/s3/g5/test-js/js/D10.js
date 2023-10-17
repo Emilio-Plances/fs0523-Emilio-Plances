@@ -162,9 +162,11 @@ function whatDayIsIt() {
 function rollTheDices(myNumber) {
   let rollTheDices={}
   let newArray=[];
+
   for(i=0;i<myNumber;i++){
     newArray.push(dice());
   }
+  
   rollTheDices[`sum`]=newArray.reduce((c,p)=>c+p);
   rollTheDices[`values`]=newArray;
   return rollTheDices;
@@ -393,12 +395,10 @@ function onlyInLastMillennium(myString){
   Scrivi una funzione chiamata "sumAllTheYears" che ritorna la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array "movies" fornito.
 */
 
-//console.log(sumAllTheYears(movies));
+console.log(sumAllTheYears(movies));
 
 function sumAllTheYears(myString){
-  let tot=0;
-  myString.forEach(element=>tot+= Number(element.Year));
-  return tot;
+  return myString.reduce((c,p)=>  c + parseInt(p.Year),0);
 }
 
 /* ESERCIZIO 17
@@ -507,9 +507,11 @@ function emptyList(){
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
 
-function addClass(){
+//addClass();
 
+function addClass(){
   let tr=document.querySelectorAll(`tr`);
+
   tr.forEach(element=>element.classList.add(`test`));
 }
 
@@ -540,7 +542,6 @@ function halfTree(myNumber) {
 
   console.log(asterischi);
   }
-
 }
 
 /* ESERCIZIO 28
@@ -559,7 +560,6 @@ function halfTree(myNumber) {
 function tree(myNumber){
   let riga;
   let numeroAsterischi=1;
-
 
   for(i=myNumber;i>0;i--){
     riga=``;

@@ -3,12 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 <body>
+   
     <div id="epicalendar" class="epicalendar">
+        <div class="saved-meetings">
+            <ul>
+                <h5>Meetings</h5>
+                <li>
+                    <p class="saved-name">Ciccio bello</p>
+                    <p class="saved-time"> 12:50</p>
+                    <button class="delete"><i class="fa-solid fa-eraser"></i></button>
+                </li>
+                <li>
+                    
+                    <p class="saved-name">Ciccio bello</p>
+                    <p class="saved-time"> 12:50</p>
+                    <button class="delete"><i class="fa-solid fa-eraser"></i></button>
+                </li>
+                <li>
+                    <p class="saved-name">Ciccio bello</p>
+                    <p class="saved-time"> 12:50</p>
+                    <button class="delete"><i class="fa-solid fa-eraser"></i></button>
+                </li>
+            </ul>
+        </div>
 
         <div class="title">
             <h3 class="mese"></h3>
@@ -17,6 +43,7 @@
                 <button class="arrow forward">&rArr;</button>
             </div>
         </div>
+
         <div class="days">
             
         </div>
@@ -36,14 +63,14 @@
             </div>
             <div class="meeting-name meeting">
                 <h5 class="meeting-title">Meeting Name</h5>
-                <input type="text" placeholder="Insert a name for the meeting">
+                <input type="text" placeholder="Insert a name">
             </div>
             <div class="meeting-button meeting no-margin-right">
                 <h5 class="meeting-title">Add</h5>
                 <button>Save Meeting</button>
             </div>
         </div>
-
+        
     </div>
     <script src="js/script.js"></script>
 </body>

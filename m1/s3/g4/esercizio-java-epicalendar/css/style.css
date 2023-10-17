@@ -8,6 +8,7 @@
 * Generals
 */
 #epicalendar{
+    font-family: 'Roboto', sans-serif;
     width: 599px;
     min-height:500px;
     background-color: var(--main-theme);
@@ -48,7 +49,8 @@
     position: relative;
     right: 0;
     width: 47px;
-    
+    border:none;
+    margin-left: 5px;
 }
 /******************************************
 * Days
@@ -79,6 +81,7 @@
     top:10px;
     right:10px
 }
+
 .day:hover{
     background-color: var(--main-theme);
 }
@@ -119,8 +122,10 @@
     color:white;
     background-color: var(--color-button);
     height:30px;
+    border:none;
 }
 .meeting-day label{
+    margin-top: 5px;
     font-size: 0.8em
 }
 .no-margin-right{
@@ -132,6 +137,10 @@
     border:none;
     padding-left: 5px;
     width: 90px;
+    height:30px;
+}
+.meeting-day input{
+    height:30px;
 }
 .meeting-time input::-webkit-calendar-picker-indicator,
 .meeting-day input::-webkit-calendar-picker-indicator{
@@ -145,4 +154,48 @@
     border:none;
     padding:3px;
     font-size: 0.7em;
+    width:153px;
+}
+
+/*********************************************
+*   Saved Meetings
+* */
+.saved-meetings{
+    position: absolute;
+    top: 15px;;
+    right:15px;
+    background-color: var(--main-theme);
+    width:300px;
+    min-height: 200px;
+    padding:10px;
+}
+
+.saved-meetings h5{
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.saved-meetings li{
+    position: relative;
+    padding:5px;
+    background-color: var(--main-theme-days);
+    border-bottom: 5px solid var(--main-theme);
+}
+
+.saved-name{
+    margin-bottom: 25px;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+.saved-time{
+   position: absolute;
+   bottom:0;
+}
+
+.delete{
+    position: absolute;
+    bottom:2px;
+    right:2px;
+    border: none;
+    background-color: var(--color-button);
 }
