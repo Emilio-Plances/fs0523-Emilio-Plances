@@ -1,0 +1,7 @@
+float:  permette di affiancare più oggetti ma non si usa più poiché li scollega dal genitore
+        facendogli perdere le dimensioni float si può utilizzare SOLO per affiancare un testo
+        ad un immagine.
+
+per il responsive si usa 
+@media screen and (max-width:"dimensione massima schermo")
+

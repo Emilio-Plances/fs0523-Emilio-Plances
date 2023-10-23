@@ -556,7 +556,7 @@ function halfTree(myNumber) {
 
 */
 
-//tree(6);
+tree(6);
 function tree(myNumber){
   let riga;
   let numeroAsterischi=1;
