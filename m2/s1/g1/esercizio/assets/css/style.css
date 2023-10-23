@@ -303,7 +303,8 @@ footer a {
         vertical-align: middle;
         border-radius: 20px;
         width:calc(100%/2 );
-        margin:0 -0.2rem
+        margin:0 -0.2rem;
+        
     }
 
     aside div{
