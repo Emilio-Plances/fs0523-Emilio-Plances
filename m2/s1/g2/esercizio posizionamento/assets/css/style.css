@@ -352,6 +352,7 @@ footer a {
         font-weight: normal;
     }
     body ul{
+        margin-top:60px;
         margin-left: 30px;
     }
     thead th{
