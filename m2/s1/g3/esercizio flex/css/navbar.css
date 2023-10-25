@@ -12,23 +12,35 @@ img{
    max-width: 100%;
    max-height: 100%;
 }
+
 /****************************************************************************************************
-*     Navbar
+*     Navbar Mobile
 * * */
 
 #navbar{
+   position:fixed;
+   top: 0;
    background-color: var(--bg-cards-color);
    padding:20px 10px;
-   margin-left:-86%;
-   position:relative;
    width:80%;
    height: 100vh;
+   transition:all 1s;
+}
+.to-side{
+   margin-left:-86%;
 }
 
-#open-menu{
-   position:absolute;
-   top:20px;
-   right: -50px;
+.nav-menu{
+   display: flex;
+   flex-direction: column;
+   gap:20px;
+}
+
+.open-menu{
+   position:fixed;
+   opacity:0.3;
+   bottom:5px;
+   right: 5px;
    width:50px;
    height: 50px;
    color: var(--color-text);
@@ -36,69 +48,99 @@ img{
    border:1px solid var(--bg-cards-color);
 }
 
-.shop img{
-   float:left;
-   width:50px;
+.open-menu :hover {
+   opacity:1;
 }
 
-#navbar li{
-   background-color: var(--button-color);
-   text-align: center;
-   height: 50px;
-   text-align: center;
-   font-size: 0.75em;
-   line-height: 50px;
-   border-radius: 25px;
-   margin-bottom: 10px;
-}
-
-.shop .nav-section{
-   font-size: 1.3em;
-}
-
-.shop .nav-section img{
-   margin: 5px -65px 0 15px;
+.clicked{
+   background-color: var(--color-text);;
+   color:var(--button-color);
+   opacity:1;
 }
 
 .nav-section{
+   color: var(--color-text);
+   background-color: var(--button-color);
+   border-radius: 25px;
+   font-size: 0.8em;
    font-weight: bold;
    text-decoration: none;
-   color: var(--color-text);
+   text-align: center;
+   display: block;
+   width: 100%;
+   height: 50px;
+   line-height: 50px;
 }
 
-@media screen and (min-width:576px) {
-   #open-menu{
+.shop{
+   order:-1;
+}
+
+.shop a{
+   position: relative;
+}
+
+.shop span{
+   display: block;
+}
+
+.shop img{
+   position: absolute;
+   left:25%;
+   width:50px;
+}
+
+.shop .nav-section{
+   font-size: 1.2em;
+}
+
+@media screen and (min-width:576px) and (max-width:899px) {
+
+   /****************************************************************************************************
+   *     Navbar Tablet
+   * * */
+   .open-menu{
       display: none;
    }
+
    #navbar{
+      position: static;
       margin:0;
-      background-color: var(--bg-cards-color);
-      padding:20px 10px;
       width:auto;
       height: auto;
    }
+
+   
    .nav-menu{
       display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
       align-items: center;
-      row-gap: 20px;
-      justify-content: space-between;
+      gap:0;
    }
 
-   #navbar li{
-      flex-basis: 14.9%;
-      line-height: 15px;
-      height: 15px;
-      padding:10px;
-      margin-bottom: 0px;
+   .nav-menu li{
+      flex-basis: 16%;
    }
 
-   #navbar .shop{
-      flex-basis: 20%;
-      height: 50px;
-      line-height:50px;
+   .nav-menu .shop{
+      flex-basis: 23%;
+      order:0;
+   }
+   .shop a{ 
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      height: 70px;
       border-radius: 50px;
    }
-   .shop .nav-section img{
-      margin: 0px;
+
+
+   .shop span, .shop img{
+      position: static;
+      margin-left: 0px;
+   }
+   .shop img{
+      width: 25px;
    }
 }
