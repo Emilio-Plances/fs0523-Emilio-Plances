@@ -1,0 +1,65 @@
+body{
+   font-size: 20px;
+}
+
+:root{
+   --color-text:#612406;
+   --bg-cards-color:#fbf7e3;
+   --button-color:#f3df85;
+}
+
+img{
+   max-width: 100%;
+   max-height: 100%;
+}
+/****************************************************************************************************
+*     Navbar
+* * */
+
+@media screen and (min-width:576px) {
+   
+   #navbar{
+      background-color: var(--bg-cards-color);
+      padding:20px 10px;
+   }
+
+   .nav-menu{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   #navbar li{
+      background-color: var(--button-color);
+      border-radius: 25px;
+      flex-basis: 14.9%;
+      text-align: center;
+      line-height: 15px;
+      height: 15px;
+      padding:10px;
+      text-align: center;
+      font-size: 0.75em;
+   }
+
+   #navbar .shop{
+      flex-basis: 20%;
+      height: 50px;
+      line-height:50px;
+      border-radius: 50px;
+   }
+
+   .shop .nav-section{
+      font-size: 1.3em;
+   }
+
+   .nav-section{
+      font-weight: bold;
+      text-decoration: none;
+      color: var(--color-text);
+   }
+
+   .shop img{
+      float:left;
+      width:50px;
+   }
+}

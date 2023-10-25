@@ -1,0 +1,41 @@
+:root{
+   --color-text:#612406;
+   --bg-cards-color:#fbf7e3;
+   --button-color:#f3df85;
+}
+
+body{
+   font-size: 20px;
+}
+
+img{
+   max-width: 100%;
+   max-height: 100%;
+}
+
+/****************************************************************************************************
+*     Article
+* * */
+@media screen and (min-width:576px){
+   h2{
+      font-size: 2em;
+      color: var(--color-text);
+      font-weight: bold;
+      margin-bottom: 15px;
+   }
+   .article{
+      background-color: var(--bg-cards-color);
+      color: var(--color-text);
+      padding:30px;
+      border-radius: 50px;
+   }
+   .article h3{
+      font-size: 1.7em;
+      font-weight: bold;
+      margin-bottom: 20px;
+   }
+
+   .article img{
+      margin-top: 20px;
+   }
+}
