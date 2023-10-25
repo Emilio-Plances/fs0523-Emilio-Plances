@@ -159,7 +159,9 @@ main{
    margin: 15px;
    font-size: 1.3em;
 }
-
+/****************************************************************************************************
+*     Article
+* * */
 h2{
    font-size: 2em;
    color: var(--color-text);
@@ -250,5 +252,69 @@ h2{
 
    .product-card{
       flex:0 1 48%;
+   }
+}
+
+@media screen and (min-width:900px){
+   /****************************************************************************************************
+   *     large Navbar
+   * * */
+   .open-menu{
+      display: none;
+   }
+
+   #page{
+      display: flex;
+      justify-content: space-between;
+   }
+   .to-side{
+      margin-left:0%;
+   }
+   header{
+      flex-basis: 25%;
+   }
+   #navbar{
+      position:sticky;
+      left: 0;
+      width:100%;
+      height: 100vh;
+      transition:all 1s;
+   }
+   main{
+      flex-basis: 70%;
+   }
+   .shop a{ 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70px;
+      border-radius: 50px;
+   }
+   .shop span, .shop img{
+      position: static;
+      margin-left: 0px;
+   }
+   
+   /****************************************************************************************************
+   *     Product-Card tablet
+   * * */
+   #selling-section{
+      text-align: left;
+   }
+
+   .products{
+      display:flex;
+      flex-wrap: wrap;
+   }
+
+   .product-card{
+      flex:0 1 calc(100%/4);
+   }
+   .info-product h5{
+      font-size: 1em;
+   }
+   
+   .info-product p{
+      font-size: 0.7em;
    }
 }
