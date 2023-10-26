@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap');
+
+:root {
+   --yellow: #fefece;
+   --green: #ccfece;
+   --violet: #cacafa;
+   --grey: rgb(113 140 158)
+}
+/****************************************************************
+*  POST-IT
+* * */
+
+@keyframes attack {
+   from{
+      transform:translateZ(400px);
+      opacity: 0;
+   }
+   to{
+      transform:translateZ(0);
+      opacity:1
+   }
+}
+
+.container-post-it{
+   margin-top:100px;
+   margin: 0 auto;
+   width: 500px;
+   height: 325px;
+   perspective: 400px;
+   background-color: #666;
+   display:flex;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+   padding:20px;
+   font-family: 'Just Another Hand', cursive;
+   font-size:25px;
+}
+
+.post-it{
+   flex-basis: 20%;
+   height: 120px;
+   margin-bottom: 20px;
+   border: 1px solid black;
+   box-shadow: inset 0 -9px 10px 0px rgba(0,0,0,0.7);
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   transform: scale(1);
+   transition: transform 1s;
+   animation: attack ease;
+}
+.post-it:hover{
+   transform: scale(1.2);
+}
+
+.yellow{
+   background-image: linear-gradient(var(--yellow) 0%, var(--yellow) 75%, #bdbda3 90%, #bdbda3 100%);
+   transform:rotate(10deg);
+}
+.green{
+   background-image: linear-gradient(var(--green) 0%, var(--green) 75%, #a1b8a1 90%, #a1b8a1 100%);
+   transform:rotate(-10deg);
+}
+.violet{
+   background-image: linear-gradient(var(--violet) 0%, var(--violet) 75%, #8b8c9b 90%, #8b8c9b 100%);
+   transform:rotate(-25deg);
+}
+
+#p1{
+   animation-duration: 1s ;
+}
+#p2{
+   animation-duration: 2s ;
+}
+#p3{
+   animation-duration: 3s ;
+}
+#p4{
+   animation-duration: 4s ;
+}
+#p5{
+   animation-duration: 5s;
+}
+#p6{
+   animation-duration: 6s;
+}
+#p7{
+   animation-duration: 7s;
+}
+#p8{
+   animation-duration: 8s;
+}
+/***************************************************************************
+*  CHANGE WORD
+* * */
+@keyframes dissolvenza{
+   0%{
+      opacity: 0;
+      bottom:50px;
+   }
+   50%{
+      opacity: 1;
+      bottom: 0;
+   }
+   100%{
+      opacity: 0;
+      bottom:-50px;
+   }
+}
+
+.container-text{
+   position: relative;
+   width:300px;
+   margin:50px auto;
+   border: 1px solid black;
+}
+
+.container-text span{
+   position: absolute;
+   color:var(--grey);
+   margin-left:10px;
+   font-weight: bold;
+   bottom:0px;
+}
+
+#s1{
+   opacity: 1;
+   animation: dissolvenza ease-in-out 9s infinite;
+   animation-delay: 0s;
+}
+
+#s2{
+   opacity:0;
+   animation: dissolvenza ease-in-out 9s infinite;
+   animation-delay: 3s;
+}
+
+#s3{
+   opacity:0;
+   animation: dissolvenza ease-in-out 9s infinite;
+   animation-delay: 6s;
+}
+
