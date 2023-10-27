@@ -19,7 +19,7 @@ body{
    font-size:1rem;
    
 }
-img, svg{
+img{
    max-width: 100%;
    max-height:100%;
 }
@@ -47,18 +47,27 @@ button:hover{
 .wrap{
    flex-wrap: wrap;
 }
+.big-container{
+   width: 70%;
+   margin: 0 auto;
+}
+#mobile-foote{
+   display:none;
+}
 /*________________________________HEADER___________________________________*/
 
 
 #header{
    top:0;
    padding:20px 0 15px 0;
-   justify-content: space-around;
-   align-items: center;
    background-color: var(--header-hero-bg);
    border-bottom: 1px solid black; 
    z-index: 1;
    transition: background-color 0.5s linear;
+}
+#header .big-container{
+   justify-content: space-between;
+   align-items: center;
 }
 #menu{
    align-items: center;
@@ -97,11 +106,11 @@ button:hover{
    height: 455px;
    background-color: var(--header-hero-bg);
    border-bottom: 1px solid black; 
+   overflow: hidden;
 }
 #hero-text{
    padding: 75px 0;
    width:600px;
-   margin:0 16%;
 } 
 #hero-text h2{
    margin-top: 20px;
@@ -114,23 +123,18 @@ button:hover{
    width:213px;
    height: 42px;
 }
-
 #svg-box{
-   width: 30%;
    position: absolute;
-   top:-10px;
    right: 0;
+   width: 585px;
 }
 #section-hero svg{
-   transform: translate3d(0px, 0px, 0px);
+   width: 100%; 
+   height: 100%; 
+   transform: translate3d(0px, 0px, 0px); 
 }
 
 /*____________________________________TRANDING_____________________________________________*/
-
-.big-container{
-   width: 70%;
-   margin: 30px auto;
-}
 .title{
    align-items: center;
 }
@@ -139,16 +143,21 @@ button:hover{
    font-size: 1em;
    color: var(--grey-text);
 }
+#trending-big-box{
+   margin-top: 25px;
+}
 .post-box{
    flex-basis: calc(100%/3);
    margin: 15px 0;
 }
+
 .trending-tear{
    flex-basis: 15%;
 }
 .post{
    flex-basis: 70%;
 }
+
 .trending-tear{
    font-size: 1.88em;
    color:var(--trending-tear-color);
@@ -189,9 +198,11 @@ button:hover{
 #main{
    border-bottom: 1px solid var(--trending-tear-color);
 }
+
 /*_____________________________BIG-POST__________________________________________*/
+
 #giant-container, #long-scroll .post{
-   justify-content: space-between;
+   justify-content: space-evenly;
 }
 #long-scroll, .global-info-post{
    flex-basis: 55%;
@@ -239,6 +250,7 @@ span.subtitle{
 
 #aside-footer{  
    top:100px;
+   margin-top: 50px;
 }
 #aside{
    padding-bottom: 30px;
@@ -349,4 +361,105 @@ a.other{
 }
 #terms a{
    text-decoration: underline ;
+}
+
+@media screen and (max-width: 1300px) {
+   .big-container{
+      width:90%
+   }
+}
+
+@media screen and (max-width: 1080px) {
+   #svg-box{
+      right: inherit;
+      left: 550px;
+   }
+   .post-box{
+      flex-basis: calc(100%/2);
+   }
+}
+
+@media screen and (max-width: 730px) {
+   #menu li:nth-of-type(1),
+   #menu li:nth-of-type(2),
+   #menu li:nth-of-type(3){
+      display: none;
+   }
+
+   h1{
+      font-size: 5em;
+   }
+
+
+   #svg-box{
+      display: none;
+   }
+   .post-box{
+      flex-basis: 100%;
+   }
+   .trending-tear{
+      flex-basis: 10%;
+   }
+   .post{
+      flex-basis: 90%;
+   }
+   
+   #giant-container{
+      flex-direction: column;
+      align-items: center;
+      width:100%
+   }
+   #side-container{
+      flex-basis: 100%;
+      order:1;
+   }
+   #long-scroll{
+      order:2;
+   }
+   #aside-footer{
+      border-bottom: 1px solid var(--trending-tear-color);
+   }
+   #aside{
+      width: 80%;
+      margin:0 auto;
+      border:none;
+   }
+   #footer{
+      display:none;
+   }
+   #mobile-footer{
+      display:block;
+      color: white;
+      background-color: black;
+      padding:20px;
+   }
+   #mobile-footer img{
+      height:40px;
+   }
+   #mob-footer-links{
+      border-bottom: 1px solid white;
+   }
+   #mob-footer-links a{
+      font-size: 0.81em;
+      color: white;
+      margin: 15px 15px;
+   }
+   #mob-footer-links a:hover{
+      text-decoration: underline;
+   }
+   #mob-download-links{
+      margin-top: 25px;
+   }
+   #mob-download-links p{
+      margin-bottom: 20px;
+   }
+   .download img{
+      border-radius: 25px;
+      border:1px solid white;
+   }
+}
+@media screen and (max-width:490px){ 
+   h1{
+      font-size: 3em;
+   }
 }

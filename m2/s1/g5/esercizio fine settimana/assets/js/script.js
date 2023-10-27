@@ -6,6 +6,8 @@ let login=document.querySelector(`#login`);
 let closePopup=document.querySelector(`#exit`);
 let heroButton=document.querySelector(`#hero-button`);
 let buttonInfoPost=document.querySelectorAll(`.post-footer button`)
+let arrayM = document.querySelectorAll(`g[stroke-linecap="butt"]`);
+
 
 /*_________________________________Cambio header scrollando_________________________________*/
 window.addEventListener(`scroll`,()=>{
@@ -23,6 +25,7 @@ headerButton.addEventListener(`click`,apriChiudiPopup);
 heroButton.addEventListener(`click`,apriChiudiPopup);
 popup.addEventListener(`click`,apriChiudiPopup);
 closePopup.addEventListener(`click`,apriChiudiPopup);
+
 function apriChiudiPopup() {
    popup.classList.toggle(`hidden`);
    login.classList.toggle(`hidden`);
@@ -41,4 +44,17 @@ buttonInfoPost.forEach(element=>{
       })
    })
 })
+        
+/*___________________________________Animazione Lettere_____________________________________________*/
 
+setInterval(()=> appearDisappear(), 50)
+
+function appearDisappear(){
+   let randomPosition = arrayM[Math.floor(Math.random() * arrayM.length)];
+
+   if (randomPosition.style.opacity==0) {
+      randomPosition.style.opacity=`1`;
+   } else {
+      randomPosition.style.opacity=`0`;
+   }
+}
