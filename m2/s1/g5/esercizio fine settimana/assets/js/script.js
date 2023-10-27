@@ -1,3 +1,4 @@
+let body=document.querySelector(`body`);
 let header=document.querySelector(`#header`);
 let headerButton=header.querySelector(`#nav-button`);
 let heroButton=document.querySelector(`#hero-button`);

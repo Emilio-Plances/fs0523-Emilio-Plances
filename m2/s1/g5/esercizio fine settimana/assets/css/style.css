@@ -231,14 +231,15 @@ span.subtitle{
 }
 
 /*_____________________________ASIDE__________________________________________*/
+#side-container{
+   flex-basis: 30%;
+}
 
 #aside-footer{  
    position:sticky;
    top:100px;
-   flex-basis: 30%;
 }
 #aside{
-   
    margin-bottom: 30px;
 }
 #aside h5{
@@ -266,6 +267,7 @@ a.other{
 }
 /*______________________________FOOTER____________________________________________*/
 #footer{
+   
    margin-top: 40px;
 }
 #link-block{
@@ -277,4 +279,78 @@ a.other{
    margin:0 15px 10px 0;
    font-size:0.87em;
    color: var(--info-post-color);
+}
+
+/*______________________________Login-Popup____________________________________________*/
+
+#popup{
+   position: absolute;
+   width:99.15vw;
+   height: 100vh;
+   top:0;
+   z-index: 100;
+   background-color: rgba(255, 255, 255, 0.705);
+}
+#login{
+   box-shadow: 0 0 8px grey;
+   text-align: center;
+   position: absolute;
+   left: calc(50vw - 339px);
+   top: calc(50vh - 347.5px);
+   width:678px;
+   margin: 0 auto;
+   height: 695px;
+   background-color: white;
+   z-index: 200;
+}
+#exit{
+   position: absolute;
+   right:0;
+   font-weight: normal;
+   font-size: 1.8em;
+   border: none;
+   background-color: transparent;
+   color:var(--info-post-color);
+   transform: rotate(45deg);
+}
+#login h2{
+   margin-top: 100px;
+   color:black;
+   font-size:1.75em;
+   font-weight: bold;
+}
+#login-system{
+   margin-top: 100px;
+
+}
+.login-link{
+   display: block;
+   border: 1px solid black;
+   position: relative;
+   height: 42px;
+   width:300px;
+   line-height:42px;
+   border-radius:25px;
+   margin:10px auto;
+}
+.login-link i{
+   position: absolute;
+   left:15px;
+   top:12px
+}
+#login p{
+   margin-top: 70px;
+}
+#login p>span{
+   color:var(--bg-alternative-button);
+   font-weight: bold;
+}
+#terms{
+   width:350px;
+   font-size: 0.81em;
+   margin:0 auto;
+   color:var(--info-post-color)
+}
+#terms a{
+   text-decoration: underline ;
 }
