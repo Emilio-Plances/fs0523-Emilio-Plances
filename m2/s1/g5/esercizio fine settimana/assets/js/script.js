@@ -1,10 +1,9 @@
 let header=document.querySelector(`#header`);
 let headerButton=header.querySelector(`#nav-button`);
-let heroButton=documet.querySelector(`#hero-button`);
+let heroButton=document.querySelector(`#hero-button`);
 
-{ 
-   /*Cambio header scrollando*/
-addEventListener(`scroll`,()=>{
+/*_________________________________Cambio header scrollando_________________________________*/
+window.addEventListener(`scroll`,()=>{
    let scroll= window.scrollY;
    if (scroll>365){
       header.classList.add(`scrolled`);
@@ -12,4 +11,6 @@ addEventListener(`scroll`,()=>{
       header.classList.remove(`scrolled`);
    }
 })
+
+/*_____________________________________Creazione pop-up___________________________________________*/
 
