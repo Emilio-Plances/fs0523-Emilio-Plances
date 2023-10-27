@@ -5,6 +5,7 @@ let popup=document.querySelector(`#popup`);
 let login=document.querySelector(`#login`);
 let closePopup=document.querySelector(`#exit`);
 let heroButton=document.querySelector(`#hero-button`);
+let buttonInfoPost=document.querySelector(`info-post button`)
 
 /*_________________________________Cambio header scrollando_________________________________*/
 window.addEventListener(`scroll`,()=>{
@@ -28,3 +29,13 @@ function apriChiudiPopup() {
 }
 
 /*___________________________Creazione pop-up Segnalibro___________________________________________*/
+
+// buttonInfoPost.addEventListener(`click`,{
+//    Swal.fire({
+//       position: 'top-end',
+//       icon: 'success',
+//       title: 'Your work has been saved',
+//       showConfirmButton: false,
+//       timer: 1500
+//     })
+// })
