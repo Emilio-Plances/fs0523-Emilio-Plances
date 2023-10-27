@@ -5,6 +5,7 @@
    --bg-alternative-button: #1a8917;
    --trending-tear-color: #e6e6e6;
    --info-post-color: #6b6b6b;
+   --bg-category: #f2f2f2;
 }
 
 /*______________________________GENERALI__________________________________*/
@@ -108,7 +109,7 @@ h1{
 
 /*____________________________________TRANDING_____________________________________________*/
 
-#trending-big-box{
+.big-container{
    width: 70%;
    margin: 30px auto;
 }
@@ -166,11 +167,109 @@ h1{
    color:var(--info-post-color);
    margin-top: 10px;
 }
-.info-post span::before{
+#trending .info-post span::before,
+.post-footer i:first-of-type:before,
+.post-footer i:first-of-type:after{
    content: ".";
    position: relative;
    bottom:3.5px;
    margin:0 5px;
    font-size: 1.7em;
+   background-color:none;
 }
 
+/*_____________________________BIG-POST__________________________________________*/
+#giant-container{
+   display:flex;
+   justify-content: space-between;
+}
+#long-scroll{
+   flex-basis: 55%;
+}
+.global-info-post{
+   flex-basis: 55%;
+}
+.image-post{
+   flex-basis: 35%;
+}
+#long-scroll .post{
+   display: flex; 
+   justify-content: space-between;
+}
+#long-scroll .account{
+   margin-bottom: 10px;
+}
+.global-info-post a{
+   font-size:1.25em
+}
+
+span.subtitle{
+   margin: 10px 0;
+   display: block;
+   font-size: 0.8em;
+   font-weight: normal;
+   color: var(--info-post-color);
+}
+.post-footer{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+#long-scroll .post{
+   margin-top:50px;
+}
+.category{
+   background-color: var(--bg-category);
+   padding:5px 8px;
+   border-radius: 25px;
+   height: 26px;
+   color:var(--info-post-color)
+}
+
+/*_____________________________ASIDE__________________________________________*/
+
+#aside-footer{  
+   flex-basis: 30%;
+}
+#aside{
+   position:sticky;
+   top:100px;
+   margin-bottom: 30px;
+}
+#aside h5{
+   font-size: 1em;
+   font-weight: bold;
+   color: var(--grey-text);
+   margin-bottom: 20px;
+}
+#category-block{
+   display:flex;
+   flex-wrap: wrap;
+   gap:6px;
+}
+#aside .category{
+   margin-bottom: 10px;
+   height: 38px;
+   padding:10px 15px;
+}
+
+a.other{
+   display: block;
+   color:var(--bg-alternative-button);
+   font-size:0.87em;
+   margin-top: 25px;
+}
+/*______________________________FOOTER____________________________________________*/
+#footer{
+   margin-top: 40px;
+}
+#link-block{
+   
+   display: flex;
+   flex-wrap: wrap;
+}
+.footer-link{
+   margin:0 15px 10px 0;
+   font-size:0.87em;
+   color: var(--info-post-color);
+}
