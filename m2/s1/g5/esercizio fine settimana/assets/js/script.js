@@ -28,17 +28,17 @@ function apriChiudiPopup() {
    login.classList.toggle(`hidden`);
 }
 
-/*___________________________Creazione pop-up Segnalibro___________________________________________*/
+/*___________________________________Creazione pop-up Segnalibro___________________________________*/
 
 buttonInfoPost.forEach(element=>{
    element.addEventListener(`click`,()=>{
-   Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: 'Your bookmark has been saved',
-      showConfirmButton: false,
-      timer: 1500
-    })
-})
+      Swal.fire({
+         position: 'top-end',
+         icon: 'success',
+         title: 'Your bookmark has been saved',
+         showConfirmButton: false,
+         timer: 1500
+      })
+   })
 })
 
