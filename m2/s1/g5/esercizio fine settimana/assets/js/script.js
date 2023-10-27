@@ -29,6 +29,7 @@ closePopup.addEventListener(`click`,apriChiudiPopup);
 function apriChiudiPopup() {
    popup.classList.toggle(`hidden`);
    login.classList.toggle(`hidden`);
+   body.classList.toggle(`no-scroll`)
 }
 
 /*___________________________________Creazione pop-up Segnalibro___________________________________*/

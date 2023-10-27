@@ -51,8 +51,12 @@ button:hover{
    width: 70%;
    margin: 0 auto;
 }
-#mobile-foote{
+#mobile-footer{
    display:none;
+}
+.no-scroll{
+   overflow-y: hidden;
+   height: 100vh;
 }
 /*________________________________HEADER___________________________________*/
 
@@ -291,18 +295,18 @@ a.other{
 /*______________________________Login-Popup____________________________________________*/
 
 #popup{
-   position: absolute;
-   width:99.15vw;
+   position: fixed;
+   width:100%;
    height: 100vh;
    top:0;
    z-index: 100;
    background-color: rgba(255, 255, 255, 0.705);
-
+   transition: all 1s;
 }
 #login{
    box-shadow: 0 0 8px grey;
    text-align: center;
-   position: absolute;
+   position: fixed;
    left: calc(50vw - 339px);
    top: calc(50vh - 347.5px);
    width:678px;
@@ -458,6 +462,7 @@ a.other{
       border:1px solid white;
    }
 }
+
 @media screen and (max-width:490px){ 
    h1{
       font-size: 3em;
