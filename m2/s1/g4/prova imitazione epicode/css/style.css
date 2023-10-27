@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
+:root{
+   --side-menu: rgb(17 19 33);
+   --background: rgb(15 16 28);
+   --schedule: rgb(23 25 43);
+   --point-graphic: rgb(136 27 128);
+   --backgroun-icon: rgb(35 25 52);
+
+   --grey-text: rgb(125 127 145);
+   --positive: rgb(102 187 106);
+   --negative: rgb(140 0 0);
+}
+
+/*_______________________________GENERALS________________________________________*/
+body{
+   font-family: 'Outfit', sans-serif;
+   background-color: var(--background);
+   line-height: 1.5;
+   color: white;
+   font-size: 1rem;
+}
+*{
+   box-sizing: border-box;
+}
+img{
+   max-width: 100%;
+   max-height: 100%;
+}
+.grey{
+   color:var(--grey-text)
+}
+#EPICODE{
+   display: flex;
+   
+}
+/*_______________________________Nav_____________________________________________*/
+#header{
+   padding:24px 16px 8px 32px;
+   background-color: var(--side-menu);
+}
+.logo-box img{
+   width:136px;
+}
+#nav{
+   font-size: 0.81em;
+}
+#nav>p{
+   font-size: 0.75em;
+
+   font-weight: bold;
+}

@@ -24,7 +24,7 @@
 .container-post-it{
    margin-top:100px;
    margin: 0 auto;
-   width: 500px;
+   width: 700px;
    height: 325px;
    perspective: 400px;
    background-color: #666;
@@ -38,6 +38,7 @@
 
 .post-it{
    flex-basis: 20%;
+   opacity: 0;
    height: 120px;
    margin-bottom: 20px;
    border: 1px solid black;
@@ -48,7 +49,8 @@
    justify-content: space-evenly;
    transform: scale(1);
    transition: transform 1s;
-   animation: attack ease;
+   animation: attack 1s ease forwards;
+
 }
 .post-it:hover{
    transform: scale(1.2);
@@ -68,28 +70,28 @@
 }
 
 #p1{
-   animation-duration: 1s ;
+   animation-delay: 0.5s ;
 }
 #p2{
-   animation-duration: 2s ;
+   animation-delay: 1s ;
 }
 #p3{
-   animation-duration: 3s ;
+   animation-delay: 1.5s ;
 }
 #p4{
-   animation-duration: 4s ;
+   animation-delay: 2s ;
 }
 #p5{
-   animation-duration: 5s;
+   animation-delay: 2.5s;
 }
 #p6{
-   animation-duration: 6s;
+   animation-delay: 3s;
 }
 #p7{
-   animation-duration: 7s;
+   animation-delay: 3.5s;
 }
 #p8{
-   animation-duration: 8s;
+   animation-delay: 4s;
 }
 /***************************************************************************
 *  CHANGE WORD
@@ -122,23 +124,21 @@
    margin-left:10px;
    font-weight: bold;
    bottom:0px;
+   animation: dissolvenza ease-in-out 6s infinite;
 }
 
 #s1{
    opacity: 1;
-   animation: dissolvenza ease-in-out 9s infinite;
    animation-delay: 0s;
 }
 
 #s2{
    opacity:0;
-   animation: dissolvenza ease-in-out 9s infinite;
-   animation-delay: 3s;
+   animation-delay: 2s;
 }
 
 #s3{
    opacity:0;
-   animation: dissolvenza ease-in-out 9s infinite;
-   animation-delay: 6s;
+   animation-delay: 4s;
 }
 
