@@ -5,7 +5,7 @@ let popup=document.querySelector(`#popup`);
 let login=document.querySelector(`#login`);
 let closePopup=document.querySelector(`#exit`);
 let heroButton=document.querySelector(`#hero-button`);
-let buttonInfoPost=document.querySelector(`info-post button`)
+let buttonInfoPost=document.querySelector(`.post-footer button`)
 
 /*_________________________________Cambio header scrollando_________________________________*/
 window.addEventListener(`scroll`,()=>{
