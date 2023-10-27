@@ -31,7 +31,12 @@ h1{
    
    font-size: 6.625em;
 }
-
+.hidden{
+   display:none;
+}
+button:hover{
+   cursor:pointer;
+}
 /*________________________________HEADER___________________________________*/
 
 #header{
