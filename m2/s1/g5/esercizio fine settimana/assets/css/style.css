@@ -3,9 +3,10 @@
    --buttons: #191919;
    --grey-text: #242424;
    --bg-alternative-button: #1a8917;
-   --trending-tear-color: #e6e6e6;
+   --trending-tear-color: #e6e6e680;
    --info-post-color: #6b6b6b;
    --bg-category: #f2f2f2;
+   --bg-hover-button:#000000;
 }
 
 /*______________________________GENERALI__________________________________*/
@@ -37,13 +38,21 @@ h1{
 button:hover{
    cursor:pointer;
 }
+.flex{
+   display: flex;
+}
+.sticky{
+   position:sticky;
+}
+.wrap{
+   flex-wrap: wrap;
+}
 /*________________________________HEADER___________________________________*/
 
+
 #header{
-   position: sticky;
    top:0;
    padding:20px 0 15px 0;
-   display: flex;
    justify-content: space-around;
    align-items: center;
    background-color: var(--header-hero-bg);
@@ -52,7 +61,6 @@ button:hover{
    transition: background-color 0.5s linear;
 }
 #menu{
-   display:flex;
    align-items: center;
 }
 .menu-list{
@@ -71,13 +79,17 @@ button:hover{
    height: 38px;
    transition: background-color 0.5s linear;
 }
-
+.button:hover{
+   background-color: var(--bg-hover-button);
+}
 #header.scrolled{
    background-color: white;
 }
 .scrolled #nav-button{
    background-color: var(--bg-alternative-button);
 }
+
+
 /*_____________________________________HERO_________________________________*/
 
 #section-hero{
@@ -89,7 +101,7 @@ button:hover{
 #hero-text{
    padding: 75px 0;
    width:600px;
-   margin:0 300px;
+   margin:0 16%;
 } 
 #hero-text h2{
    margin-top: 20px;
@@ -102,6 +114,7 @@ button:hover{
    width:213px;
    height: 42px;
 }
+
 #svg-box{
    width: 30%;
    position: absolute;
@@ -119,7 +132,6 @@ button:hover{
    margin: 30px auto;
 }
 .title{
-   display: flex;
    align-items: center;
 }
 .title h3{
@@ -127,16 +139,9 @@ button:hover{
    font-size: 1em;
    color: var(--grey-text);
 }
-#trending{
-   display: flex;
-   flex-wrap: wrap;
-   margin-bottom: ;
-}
 .post-box{
    flex-basis: calc(100%/3);
    margin: 15px 0;
-   display: flex;
-   
 }
 .trending-tear{
    flex-basis: 15%;
@@ -150,7 +155,6 @@ button:hover{
    font-weight: bold;
 }
 .account{
-   display: flex;
    align-items: center;
    margin-bottom: 5px;
 }
@@ -182,24 +186,18 @@ button:hover{
    font-size: 1.7em;
    background-color:none;
 }
-
+#main{
+   border-bottom: 1px solid var(--trending-tear-color);
+}
 /*_____________________________BIG-POST__________________________________________*/
-#giant-container{
-   display:flex;
+#giant-container, #long-scroll .post{
    justify-content: space-between;
 }
-#long-scroll{
-   flex-basis: 55%;
-}
-.global-info-post{
+#long-scroll, .global-info-post{
    flex-basis: 55%;
 }
 .image-post{
    flex-basis: 35%;
-}
-#long-scroll .post{
-   display: flex; 
-   justify-content: space-between;
 }
 #long-scroll .account{
    margin-bottom: 10px;
@@ -216,7 +214,6 @@ span.subtitle{
    color: var(--info-post-color);
 }
 .post-footer{
-   display: flex;
    justify-content: space-between;
    align-items: center;
 }
@@ -241,11 +238,11 @@ span.subtitle{
 }
 
 #aside-footer{  
-   position:sticky;
    top:100px;
 }
 #aside{
-   margin-bottom: 30px;
+   padding-bottom: 30px;
+   border-bottom: 1px solid var(--trending-tear-color);
 }
 #aside h5{
    font-size: 1em;
@@ -254,8 +251,6 @@ span.subtitle{
    margin-bottom: 20px;
 }
 #category-block{
-   display:flex;
-   flex-wrap: wrap;
    gap:6px;
 }
 #aside .category{
@@ -274,11 +269,6 @@ a.other{
 #footer{
    
    margin-top: 40px;
-}
-#link-block{
-   
-   display: flex;
-   flex-wrap: wrap;
 }
 .footer-link{
    margin:0 15px 10px 0;
@@ -347,7 +337,7 @@ a.other{
 #login p{
    margin-top: 70px;
 }
-#login p>span{
+#ask a{
    color:var(--bg-alternative-button);
    font-weight: bold;
 }
