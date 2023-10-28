@@ -501,5 +501,5 @@ a.other{
 }
 
 .follow .button{
-   background-color: var(--bg-alternative-button)!important;
+   background-color: var(--bg-alternative-button);
 }

@@ -68,8 +68,8 @@ let profiles=[];
 for(let i=0; i<arrayNames.length; i++){
    profiles.push(createProfiles(arrayNames[i].innerText, arrayProfilesPhoto[i].currentSrc));
 }
+createBlock();
 
-arrayNames.forEach(element=>element.addEventListener(`mouseover`,createBlock))
 console.log(profiles);
 
 function createProfiles(person,image) {
@@ -85,12 +85,47 @@ function createProfiles(person,image) {
    return profile;
 }
 
+function createBlock(){
+   let profilePopup=document.createElement(`div`);
+   profilePopup.id=`profile-Popup`;
 
+   //Creazione div Nickname
+   let nickname=document.createElement(`div`);
+   let linkImage=document.createElement(`a`);
+   let urlImage=document.createElement(`img`);
+   let linkName=document.createElement(`a`);
+   nickname.id=`nickname`;
+   nickname.classList.add(`flex`);
+   urlImage.currentSrc=profiles[0].image;
+   appearDisappear.innerText=profiles[0].name;
+
+   //creazione Descrizione
+   let describe=document.createElement(`a`);
+   describe.innerText=profiles[0].description;
+
+   //creazione Follow
+
+   let follow=document.createElement(`div`);
+   follow.classList.add(`follow`,`flex`);
+
+   let numberFollower=document.createElement(`p`);
+   numberFollower.innerText=`${profiles[0].follower} Followers`
+   let followMe=document.createElement(`button`);
+   followMe.classList.add(`button`);
+
+
+   
+   linkImage.append(urlImage);
+   nickname.append(linkImage,linkName);
+   follow.append(numberFollower,followMe)
+   profilePopup.append(nickname,describe, follow);
+   body.append(profilePopup);
+}
 /* 
 
-   <div id="profile-popup">
-        <div id="nickname" class="flex">
-            <a href="#"><img src="assets/imgs/image01.jpeg" alt="Profile"></a>
+   <div id="profile-popup"> V
+        <div id="nickname" class="flex"> V
+            <a href="#"><img src="assets/imgs/image01.jpeg" alt="Profile"></a> V
             <a href="#">Name</a>
         </div>
         <a href="#">Description</a>
