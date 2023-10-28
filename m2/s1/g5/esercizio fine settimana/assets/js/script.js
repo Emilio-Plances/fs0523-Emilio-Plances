@@ -62,15 +62,22 @@ function appearDisappear(){
 /*___________________________________Profile Popup_______________________________________________*/
 
 let arrayNames=document.querySelectorAll(`.account .name`);
-let arrayProfilesPhoto=document.querySelectorAll(`.account-photo`)
+let arrayProfilesPhoto=document.querySelectorAll(`.account-photo`);
+let profilePopup=document.querySelector(`#profile-popup`);
 let profiles=[];
 
 for(let i=0; i<arrayNames.length; i++){
    profiles.push(createProfiles(arrayNames[i].innerText, arrayProfilesPhoto[i].currentSrc));
-}
-createBlock();
 
-console.log(profiles);
+   arrayNames[i].addEventListener(`mouseover`,()=>{
+      profilePopup.classList.remove(`hidden`);
+      createBlock(i);
+   })
+
+   arrayNames[i].addEventListener(`mouseleave`,()=>{
+      profilePopup.classList.add(`hidden`);
+   })
+}
 
 function createProfiles(person,image) {
    let profile={
@@ -85,9 +92,11 @@ function createProfiles(person,image) {
    return profile;
 }
 
-function createBlock(){
-   let profilePopup=document.createElement(`div`);
-   profilePopup.id=`profile-Popup`;
+function createBlock(i){
+
+   while(profilePopup.firstChild){
+      profilePopup.removeChild(profilePopup.firstChild);
+   }
 
    //Creazione div Nickname
    let nickname=document.createElement(`div`);
@@ -96,12 +105,16 @@ function createBlock(){
    let linkName=document.createElement(`a`);
    nickname.id=`nickname`;
    nickname.classList.add(`flex`);
-   urlImage.currentSrc=profiles[0].image;
-   appearDisappear.innerText=profiles[0].name;
+
+   urlImage.src = profiles[i].image;
+   linkName.innerText=profiles[i].name;
+
+   console.log( urlImage.currentSrc);
+   console.log(profiles[i].image);
 
    //creazione Descrizione
    let describe=document.createElement(`a`);
-   describe.innerText=profiles[0].description;
+   describe.innerText=profiles[i].description;
 
    //creazione Follow
 
@@ -109,11 +122,10 @@ function createBlock(){
    follow.classList.add(`follow`,`flex`);
 
    let numberFollower=document.createElement(`p`);
-   numberFollower.innerText=`${profiles[0].follower} Followers`
+   numberFollower.innerText=`${profiles[i].follower} Followers`
    let followMe=document.createElement(`button`);
+   followMe.innerText=`Follow`;
    followMe.classList.add(`button`);
-
-
    
    linkImage.append(urlImage);
    nickname.append(linkImage,linkName);
@@ -121,18 +133,3 @@ function createBlock(){
    profilePopup.append(nickname,describe, follow);
    body.append(profilePopup);
 }
-/* 
-
-   <div id="profile-popup"> V
-        <div id="nickname" class="flex"> V
-            <a href="#"><img src="assets/imgs/image01.jpeg" alt="Profile"></a> V
-            <a href="#">Name</a>
-        </div>
-        <a href="#">Description</a>
-        <div class="follow flex">
-            <p>Followers</p>
-            <button class="button">Follow</button>
-        </div>
-    </div>
-
-*/
