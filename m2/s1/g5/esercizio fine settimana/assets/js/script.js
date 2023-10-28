@@ -8,7 +8,6 @@ let heroButton=document.querySelector(`#hero-button`);
 let buttonInfoPost=document.querySelectorAll(`.post-footer button`)
 let arrayM = document.querySelectorAll(`g[stroke-linecap="butt"]`);
 
-
 /*_________________________________Cambio header scrollando_________________________________*/
 window.addEventListener(`scroll`,()=>{
    let scroll= window.scrollY;
@@ -59,3 +58,46 @@ function appearDisappear(){
       randomPosition.style.opacity=`0`;
    }
 }
+
+/*___________________________________Profile Popup_______________________________________________*/
+
+let arrayNames=document.querySelectorAll(`.account .name`);
+let arrayProfilesPhoto=document.querySelectorAll(`.account-photo`)
+let profiles=[];
+
+for(let i=0; i<arrayNames.length; i++){
+   profiles.push(createProfiles(arrayNames[i].innerText, arrayProfilesPhoto[i].currentSrc));
+}
+
+arrayNames.forEach(element=>element.addEventListener(`mouseover`,createBlock))
+console.log(profiles);
+
+function createProfiles(person,image) {
+   let profile={
+      image:``,
+      name:``,
+      description:`Something that describe you!`,
+      follower:``
+   }
+   profile.image=image;
+   profile.name=person;
+   profile.follower=Math.floor(Math.random()*10000);   
+   return profile;
+}
+
+
+/* 
+
+   <div id="profile-popup">
+        <div id="nickname" class="flex">
+            <a href="#"><img src="assets/imgs/image01.jpeg" alt="Profile"></a>
+            <a href="#">Name</a>
+        </div>
+        <a href="#">Description</a>
+        <div class="follow flex">
+            <p>Followers</p>
+            <button class="button">Follow</button>
+        </div>
+    </div>
+
+*/

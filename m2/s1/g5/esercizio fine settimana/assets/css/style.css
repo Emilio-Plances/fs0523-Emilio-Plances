@@ -468,3 +468,38 @@ a.other{
       font-size: 3em;
    }
 }
+/*__________________________________Hover-Box_________________________________________*/
+#profile-popup{
+   position: absolute;
+   padding:10px;
+   width:250px;
+   top:400px;
+   left:10px;
+   background-color: white;
+}
+#nickname{
+   align-items: center;
+   font-size: 1.2em;
+   font-weight: bold;
+}
+#nickname a{
+   margin-right: 10px;
+}
+#nickname img{
+   width:35px;
+   border-radius:50%;
+}
+#profile-popup>a{
+   display: block;
+   padding: 20px 0;
+   border-bottom: 1px solid var(--grey-text);
+}
+.follow{
+   justify-content: space-between;
+   align-items: center;
+   margin-top: 10px;
+}
+
+.follow .button{
+   background-color: var(--bg-alternative-button)!important;
+}
