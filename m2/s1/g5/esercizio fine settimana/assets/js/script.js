@@ -64,19 +64,33 @@ function appearDisappear(){
 let arrayNames=document.querySelectorAll(`.account .name`);
 let arrayProfilesPhoto=document.querySelectorAll(`.account-photo`);
 let profilePopup=document.querySelector(`#profile-popup`);
+let corner=document.querySelector(`#corner`)
 let profiles=[];
+let insideName;
+let insideBox;
 
 for(let i=0; i<arrayNames.length; i++){
    profiles.push(createProfiles(arrayNames[i].innerText, arrayProfilesPhoto[i].currentSrc));
 
    arrayNames[i].addEventListener(`mouseover`,()=>{
       profilePopup.classList.remove(`hidden`);
+      console.dir(arrayNames[i]);
+      insideName=true;
+      setCoordinates(i);
       createBlock(i);
    })
 
    arrayNames[i].addEventListener(`mouseleave`,()=>{
-      profilePopup.classList.add(`hidden`);
+      insideName=false
+      control();
    })
+
+   profilePopup.addEventListener(`mouseover`,()=>insideBox=true);
+   profilePopup.addEventListener(`mouseleave`,()=>{
+      insideBox=false;
+      control();
+   })
+
 }
 
 function createProfiles(person,image) {
@@ -93,12 +107,12 @@ function createProfiles(person,image) {
 }
 
 function createBlock(i){
-
-   while(profilePopup.firstChild){
-      profilePopup.removeChild(profilePopup.firstChild);
+   while(profilePopup.lastChild!=corner){
+      profilePopup.removeChild(profilePopup.lastChild);
    }
 
    //Creazione div Nickname
+
    let nickname=document.createElement(`div`);
    let linkImage=document.createElement(`a`);
    let urlImage=document.createElement(`img`);
@@ -109,14 +123,11 @@ function createBlock(i){
    urlImage.src = profiles[i].image;
    linkName.innerText=profiles[i].name;
 
-   console.log( urlImage.currentSrc);
-   console.log(profiles[i].image);
-
-   //creazione Descrizione
+   //Creazione Descrizione
    let describe=document.createElement(`a`);
    describe.innerText=profiles[i].description;
 
-   //creazione Follow
+   //Creazione Follow
 
    let follow=document.createElement(`div`);
    follow.classList.add(`follow`,`flex`);
@@ -127,9 +138,35 @@ function createBlock(i){
    followMe.innerText=`Follow`;
    followMe.classList.add(`button`);
    
+   followMe.addEventListener(`click`,()=>{
+      Swal.fire({
+         position: 'top-end',
+         icon: 'success',
+         title: 'Follow',
+         showConfirmButton: false,
+         timer: 1500
+      })
+   }
+   )
    linkImage.append(urlImage);
    nickname.append(linkImage,linkName);
    follow.append(numberFollower,followMe)
    profilePopup.append(nickname,describe, follow);
    body.append(profilePopup);
 }
+
+function setCoordinates(i){
+   let x=arrayNames[i].offsetLeft+arrayNames[i].offsetWidth;
+   let y=arrayNames[i].offsetTop;
+   profilePopup.style.left = `${x+20}px`;
+   profilePopup.style.top=`${y-50}px`;
+}
+
+function control(){
+   setTimeout(()=>{ 
+      if(!insideName && !insideBox)
+         profilePopup.classList.add(`hidden`);
+   },500);
+   
+}
+
