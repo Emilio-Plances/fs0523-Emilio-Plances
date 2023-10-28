@@ -31,7 +31,7 @@ function apriChiudiPopup() {
    body.classList.toggle(`no-scroll`)
 }
 
-/*___________________________________Creazione pop-up Segnalibro___________________________________*/
+/*___________________________________Creazione pop-up Segnalibro + Load more___________________________________*/
 
 buttonInfoPost.forEach(element=>{
    element.addEventListener(`click`,()=>{
@@ -44,7 +44,17 @@ buttonInfoPost.forEach(element=>{
       })
    })
 })
-        
+
+let loadMore=document.querySelector(`#more-button`);
+loadMore.addEventListener(`click`,()=>{
+   Swal.fire({
+      position: 'top-end',
+      icon: 'error',
+      title: 'That page is long enough',
+      showConfirmButton: false,
+      timer: 1000
+   })
+})
 /*___________________________________Animazione Lettere_____________________________________________*/
 
 setInterval(()=> appearDisappear(), 50)

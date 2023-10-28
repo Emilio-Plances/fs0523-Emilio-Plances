@@ -250,6 +250,9 @@ span.subtitle{
    height: 26px;
    color:var(--info-post-color)
 }
+#more-button{
+   display: none;
+}
 
 /*_____________________________ASIDE__________________________________________*/
 #side-container{
@@ -479,6 +482,16 @@ a.other{
    }
    #long-scroll{
       order:2;
+   }
+   #more-button{
+      display: block;
+      margin: 50px auto;
+      background-color: transparent;
+      border: 1px solid black;
+      height:40px;
+      border-radius: 20px;
+      padding: 0 20px;
+      color:var(--grey-text)
    }
    #aside-footer{
       border-bottom: 1px solid var(--trending-tear-color);
