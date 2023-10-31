@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+   <link rel="stylesheet" href="css/style.css">
+   <title>Document</title>
+</head>
+<body>
+   <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+         <div class="container">
+            <a class="navbar-brand" href="#"><img src="img/Logo.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+               aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                     <a class="nav-link text-secondary active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link text-secondary active" aria-current="page" href="#">Saldi</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link text-secondary active" aria-current="page" href="#">Welcome Summer</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link text-secondary active" aria-current="page" href="#">Last Minute</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link text-secondary active" aria-current="page" href="#">Recensioni</a>
+                  </li>
+               </ul>
+               <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Cerca posti da sogno" aria-label="Search">
+                  <button class="btn btn-outline-danger" type="submit">Cerca</button>
+               </form>
+            </div>
+         </div>
+      </nav>
+   </header>
+
+   <section id="hero">
+      <div class="container p-5 my-5 bg-body-tertiary">
+            <h1 class="display-4 text-muted pb-3 border-bottom border-secondary">Eveline-R-<span>Feel the freedom</span></h1>
+         <div class="col-lg-6">
+           <p class="lead mb-5">Scopri le destinazioni più calde del momento!</p>
+         </div>
+         <div class="d-grid gap-2 d-flex mt-5 justify-content-center justify-content-lg-start">
+            <button type="button" class="btn btn-info btn-lg px-4 me-sm-3 text-white">Prenota ora</button>
+         </div>
+      </div>
+   </section>
+
+   <main>
+      <section id="saldiSection">
+         <div class="container px-5">
+            <div class="row">
+               <div class="col">
+                  <h3>Saldi</h3>
+               </div>
+               <div class="col text-end p-0">
+                  <button class="btn text-info border-none" type="button" data-bs-toggle="collapse" data-bs-target="#saldi"
+                  aria-controls="saldi" aria-expanded="false" aria-label="Toggle navigation">
+                  Nascondi sezione
+               </button>
+               </div>
+            </div>
+            <div id="saldi" class="row justify-content-between">
+               <div class="col-5 card p-0 mb-3 border border-info">
+                  <img src="https://picsum.photos/200/200?random=1" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Voluptate quasi quod dolore, velit reiciendis officiis suscipit ipsa aut 
+                        explicabo natus autem facilis officia similique voluptatum sint a corrupti 
+                        quis possimus.
+                     </p>
+                     <a href="#" class="btn btn-info">Prenota</a>
+                  </div>
+               </div>
+               <div class="col-5 card p-0 mb-3 border border-info">
+                  <img src="https://picsum.photos/200/200?random=2" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Voluptate quasi quod dolore, velit reiciendis officiis suscipit ipsa aut 
+                        explicabo natus autem facilis officia similique voluptatum sint a corrupti 
+                        quis possimus.
+                     </p>
+                     <a href="#" class="btn btn-info">Prenota</a>
+                  </div>
+               </div>
+               <div class="col-5 card p-0 mb-3 border border-info">
+                  <img src="https://picsum.photos/200/200?random=3" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Voluptate quasi quod dolore, velit reiciendis officiis suscipit ipsa aut 
+                        explicabo natus autem facilis officia similique voluptatum sint a corrupti 
+                        quis possimus.
+                     </p>
+                     <a href="#" class="btn btn-info">Prenota</a>
+                  </div>
+               </div>
+               <div class="col-5 card p-0 mb-3 border border-info">
+                  <img src="https://picsum.photos/200/200?random=4" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Voluptate quasi quod dolore, velit reiciendis officiis suscipit ipsa aut 
+                        explicabo natus autem facilis officia similique voluptatum sint a corrupti 
+                        quis possimus.
+                     </p>
+                     <a href="#" class="btn btn-info">Prenota</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+   </main>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

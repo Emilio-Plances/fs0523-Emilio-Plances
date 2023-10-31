@@ -1,0 +1,11 @@
+.navbar-brand img{
+   width:120px;
+}
+.nav-item a{
+   font-size: 0.9em;
+}
+#hero h1 span{
+   position:relative;
+   bottom: 9px;
+   font-size: 0.4em;
+}
