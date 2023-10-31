@@ -1,0 +1,48 @@
+<div class="col-5 card p-0 mb-3 border border-info">
+                  <img src="https://picsum.photos/200/200?random=1" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Voluptate quasi quod dolore, velit reiciendis officiis suscipit ipsa aut 
+                        explicabo natus autem facilis officia similique voluptatum sint a corrupti 
+                        quis possimus.
+                     </p>
+                     <a href="#" class="btn btn-info">Prenota</a>
+                  </div>
+               </div>
+               <div class="col-5 card p-0 mb-3 border border-info">
+                  <img src="https://picsum.photos/200/200?random=2" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Voluptate quasi quod dolore, velit reiciendis officiis suscipit ipsa aut 
+                        explicabo natus autem facilis officia similique voluptatum sint a corrupti 
+                        quis possimus.
+                     </p>
+                     <a href="#" class="btn btn-info">Prenota</a>
+                  </div>
+               </div>
+               <div class="col-5 card p-0 mb-3 border border-info">
+                  <img src="https://picsum.photos/200/200?random=3" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Voluptate quasi quod dolore, velit reiciendis officiis suscipit ipsa aut 
+                        explicabo natus autem facilis officia similique voluptatum sint a corrupti 
+                        quis possimus.
+                     </p>
+                     <a href="#" class="btn btn-info">Prenota</a>
+                  </div>
+               </div>
+               <div class="col-5 card p-0 mb-3 border border-info">
+                  <img src="https://picsum.photos/200/200?random=4" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Voluptate quasi quod dolore, velit reiciendis officiis suscipit ipsa aut 
+                        explicabo natus autem facilis officia similique voluptatum sint a corrupti 
+                        quis possimus.
+                     </p>
+                     <a href="#" class="btn btn-info">Prenota</a>
+                  </div>
+               </div>
