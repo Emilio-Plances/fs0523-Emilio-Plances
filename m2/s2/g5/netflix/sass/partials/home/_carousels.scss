@@ -1,0 +1,18 @@
+.carousel-inner .carousel-item img{
+   width:105%;
+   z-index: 0;
+   transition: all 0.1s linear;
+   filter: brightness(50%);
+   &:hover{
+      width:106%;
+      z-index:2;
+      filter: brightness(100%);
+   }
+}
+
+button.carousel-control-prev,
+button.carousel-control-next{
+   background-color: rgba(0, 0, 0, 0.212);
+   color:white;
+   width:80px;
+}

@@ -1,0 +1,40 @@
+@mixin createButton($width:50px,$height:25px,$bgColor:white,$textColor:black){
+   width:$width;
+   height:$height;
+   background-color: $bgColor;
+   line-height: $height;
+   color: $textColor;
+}
+
+@mixin floating($border-rad:0,$sPositionx:0,$sPositiony:0,$sSpread:5px,$sColor:grey,$bThick:1px,$bType:'solid',$bColor:black){
+   border-radius: $border-rad;
+   box-shadow: $sPositionx $sPositiony $sSpread $sColor;
+   border: $bThick $bType $bColor;
+}
+
+@mixin grid($num:2){
+   display: flex;
+   flex-wrap: wrap;
+   >div{
+      flex-basis:calc(100%/$num);
+   }
+}
+
+@mixin animationFadeIn($time:1,$start:100px,$end:0px,$delay:1s,$name:animazione){
+
+   @keyframes #{$name} {
+      from{
+         top:$start;
+         opacity: 0;
+      }
+      to{
+         top:$end;
+         opacity:1;
+      }
+   }
+
+   animation-name:$name ;
+   animation-duration: $time;
+   animation-delay: $delay;
+   animation-fill-mode: forwards;
+}

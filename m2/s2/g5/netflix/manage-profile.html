@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+   <link rel="stylesheet" href="css/style.css">
+   <title>Manage profile | Netflix</title>
+</head>
+
+<body>
+   <header id="header-manage-profile" class="navbar navbar-expand-lg px-4 bg-black">
+      <a class="navbar-brand" href="index.html"><img src="assets/assets/netflix_logo.png" alt="Logo Netflix"></a>
+   </header>
+   <main id="main-manage-profile"class="pt-3">
+      <div class="container mt-5">
+         <h1 class="text-center text-md-start">Edit Profile</h1>
+         <div class="row pt-4 border-top border-info">
+            <div class="col-3 col-md-4"><img id="profile-image" src="assets/assets/avatar.png" alt=""></div>
+            <div class="col-8 col-md-7">
+
+               <div class="border-bottom border-secondary pb-3">
+                  <input id="change-name" class="mb-4 ps-3 bg-info text-white" type="text" value="Current Name">
+                  <label class="d-block mb-1 text-info" for="language">Language:</label>
+                  <select id=change-language class="form-select form-select-lg bg-black text-white border-white" id="language">
+                     <option class="" value="English">English</option>
+                     <option class="" value="Italian">Italian</option>
+                     <option class="" value="French">French</option>
+                     <option class="" value="German">German</option>
+                  </select>
+               </div>
+               <div class="border-bottom border-info pb-4">
+                  <h3 class="my-3 text-info">Maturity Settings:</h3>
+                  <button class="btn bg-info text-white"><b>ALL MATURITY RATINGS</b></button>
+                  <p class="mt-3">Show titles of all maturity ratings for this profile</p>
+                  <button id="maturity-edit-button" class="btn px-4 rounded-0">EDIT</button>
+               </div>
+
+               <div class="mt-3 pb-3">
+                  <div class="form-check mb-2">
+                     <input class="form-check-input me-2 border-info bg-transparent rounded-0" type="checkbox" name="next" id="next-episode">
+                     <label class="form-check-label"for="next-episode">Autoplay next episode in a series on all devices</label>
+                  </div>
+                  <div class="form-check align-items-center">
+                     <input class="form-check-input me-2 border-info bg-transparent rounded-0" type="checkbox" name="previews" id="previews">
+                     <label class="form-check-label"for="previews">Autoplay previews while browsing on all devices</label>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div id="final-buttons" class="row justify-content-center justify-content-lg-start border-top border-info py-3">
+            <button class="btn col-8 mb-2 col-lg-3 me-lg-3 bg-white text-black">SAVE</button>
+            <button class="btn col-8 mb-2 col-lg-3 me-lg-3 rounded-0">CANCEL</button>
+            <button class="btn col-8 mb-2 col-lg-5 rounded-0">DELETE PROFILE</button>
+         </div>
+      </div>
+   </main>
+
+  
+   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

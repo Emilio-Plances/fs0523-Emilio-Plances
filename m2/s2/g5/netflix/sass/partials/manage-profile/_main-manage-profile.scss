@@ -1,0 +1,59 @@
+#main-manage-profile{
+   h1{
+      font-size: 4em;
+   }
+
+   @media screen and (min-width:600px){
+      .container{
+         width: 600px;
+         }     
+      }
+   #profile-image{
+      width:150px;
+   }
+
+   #change-name{
+      color:$grey;
+      width:90%;
+      height:40px;
+   }
+
+   #change-language{
+      width: 150px;    
+   }
+
+   #maturity-edit-button{
+      letter-spacing: 3px;
+      color:$grey;
+      border:1px solid $grey;
+         &:hover{
+            color:white;
+            border-color: white;
+         }
+   }
+
+   .form-check{
+      &:hover{
+         cursor: pointer;
+      }
+      label{
+         line-height: 39px;
+         font-size: 0.8em;
+         &:hover{
+            cursor: pointer;
+         }
+      }
+      input{
+         width: 30px;
+         height: 30px;
+         &:hover{
+            cursor: pointer;
+         }
+      }
+   } 
+   
+   #final-buttons button{
+      @extend #maturity-edit-button;
+      height: 35px;
+   }
+}

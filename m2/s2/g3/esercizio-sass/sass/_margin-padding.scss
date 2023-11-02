@@ -1,0 +1,43 @@
+@each $s in $sizes{
+   .mt-#{$s}{
+      margin-top: $s + px;
+   }
+   .mb-#{$s}{
+      margin-bottom:$s + px;
+   }
+   .ml-#{$s}{
+      margin-left:$s + px;
+   }
+   .mr-#{$s}{
+      margin-right:$s + px;
+   }
+   .mx-#{$s}{
+      margin-right:$s + px;
+      margin-left:$s + px;
+   }
+   .my-#{$s}{
+      margin-top: $s + px;
+      margin-bottom:$s + px;
+   }
+
+   .pt-#{$s}{
+      padding-top: $s + px;
+   }
+   .pb-#{$s}{
+      padding-bottom:$s + px;
+   }
+   .pl-#{$s}{
+      padding-left:$s + px;
+   }
+   .pr-#{$s}{
+      padding-right:$s + px;
+   }
+   .px-#{$s}{
+      padding-right:$s + px;
+      padding-left:$s + px;
+   }
+   .py-#{$s}{
+      padding-top:$s + px;
+      padding-bottom:$s + px;
+   }
+}

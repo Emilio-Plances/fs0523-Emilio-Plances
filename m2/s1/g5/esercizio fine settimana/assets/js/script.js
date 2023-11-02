@@ -84,14 +84,14 @@ for(let i=0; i<arrayNames.length; i++){
 
    arrayNames[i].addEventListener(`mouseover`,()=>{
       profilePopup.classList.remove(`hidden`);
-      console.dir(arrayNames[i]);
+      
       insideName=true;
       setCoordinates(i);
       createBlock(i);
    })
 
    arrayNames[i].addEventListener(`mouseleave`,()=>{
-      insideName=false
+      insideName=false;
       control();
    })
 
@@ -179,4 +179,3 @@ function control(){
    },500);
    
 }
-
