@@ -66,7 +66,7 @@
    </header>
 
    <main id="main-settings">
-      <div class="container pt-5">
+      <div class="container border-bottom border-info  pt-5">
          <h1>Account</h1>
          <div class="row border-top border-info justify-content-between justify-content-md-start align-items-center align-items-lg-start border-info pt-4">
             <div class="col-5 col-lg-3">
@@ -80,16 +80,16 @@
                   <p class="text-info">password: <span>*************</span></p>
                   <p class="text-info">Phone: 321 044 1279</p>
                </div>
-               <div class="border-bottom border-info d-lg-flex justify-content-lg-between align-items-lg center">
+               <div class="border-bottom border-info d-md-flex justify-content-md-between align-items-md center">
                   <div class="text-end text-md-start">
                      <p id="paypal" class="mt-3"><i class="bi bi-paypal me-3"><b>PayPal</b></i> <b>admin@strive.school</b></p>
                   </div>
-                  <div class="text-end text-md-start text-lg-end mb-3 mt-lg-3">
+                  <div class="text-end mb-3 mt-md-3">
                      <a class="settings-link d-block text-primary mb-3" href="#">Update payment info</a>
                      <a class="settings-link d-block text-primary" href="#">Billing details</a>
                   </div>
                </div>
-               <div class="text-end text-md-start text-lg-end mt-3">
+               <div class="text-end mt-3">
                   <a class="settings-link d-block text-primary mb-3" href="#">Redeem gift card or promo cose</a>
                   <a class="settings-link d-block text-primary" href="#">Where to buy gift cards</a>
                </div>
@@ -103,7 +103,7 @@
             </div>
 
             <div class="d-flex justify-content-between col-7 col-lg-9 ">
-               <p>Premium <span id="ultraHD" class="d-inline-block border border-info">ULTRA <b>HD</b></span></p>
+               <p>Premium <span id="ultraHD" class="d-inline-block px-1 border border-info">ULTRA <b>HD</b></span></p>
                <a class="settings-link d-block text-primary" href="#">Change Plan</a>
             </div>
          </div>
@@ -125,23 +125,36 @@
 
 
 
-         <div class="row">
+         <div class="row border-top border-info justify-content-between justify-content-md-start border-info py-4">
+
             <div class="col-5 col-lg-3">
                <h6 class="text-info">MY PROFILE</h6>
             </div>
 
-            <div class="col-7 col-lg-9 d-flex justify-content-between">
-
-               <div class="d-flex justify-content-between">
-                  <img id="image-profile" src="assets/assets/avatar.png" >
-                  <a class="settings-link d-block text-primary" href="#">Change Plan</a>
-               </div>
+            <div class="col-7 col-lg-9 row justify-content-between m-0 p-0">
                
+               <div class="d-flex col-md-6 justify-content-between justify-content-md-start align-items-center ">
+                  <img id="image-profile" src="assets/assets/avatar.png" >
+                  <a class="settings-link d-block text-black m-md-2" href="#"><b>Strive Student</b></a>
+               </div>
+
+               <div class="col-md-6 text-end mt-3 mt-md-0 ">
+                  <a class="settings-link d-block text-primary" href="#">Manage profiles</a>
+                  <a class="settings-link d-block text-primary" href="#">Add profile email</a>
+               </div>
+
+               <div class="col-12 row mt-4 mx-0 p-0">
+                  <a class="col-5 col-md-6 col-lg-5 col-xl-3 mb-3 settings-link d-block text-primary" href="#">Language</a>
+                  <a class="col-7 col-md-6 col-lg-7 col-xl-9 mb-3 text-end text-md-start settings-link d-block text-primary" href="#">Viewing Activity</a>
+                  <a class="col-7 col-md-6 col-lg-5 col-xl-3 mb-3 settings-link d-block text-primary" href="#">Playback settings</a>
+                  <a class="col-5 col-md-6 col-lg-7 col-xl-9 text-end text-md-start settings-link d-block text-primary" href="#">Ratings</a>
+                  <a class="col-8 col-md-6 settings-link d-block text-primary" href="#">Subtitle appearance</a>
+               </div>
             </div>
          </div>
       </div>
+      <div id="void-space"></div>
    </main>
-   
    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </body>
 </html>
