@@ -11939,6 +11939,10 @@ img {
   max-width: 235px;
 }
 
+#select-Genres {
+  width: 150px;
+}
+
 .carousel-inner .carousel-item img {
   width: 100%;
   transition: transform 0.1s linear;
