@@ -1,11 +1,9 @@
 .carousel-inner .carousel-item img{
-   width:105%;
-   z-index: 0;
-   transition: all 0.1s linear;
-   filter: brightness(50%);
+   width:100%;
+   transition: transform 0.1s linear;
+   filter: brightness(65%);
    &:hover{
-      width:106%;
-      z-index:2;
+      transform: scale(1.1) ;
       filter: brightness(100%);
    }
 }
@@ -15,4 +13,8 @@ button.carousel-control-next{
    background-color: rgba(0, 0, 0, 0.212);
    color:white;
    width:80px;
+   height:98.5%;
+   @media screen and (min-width:1200px) {
+      height:96%;
+   }
 }
