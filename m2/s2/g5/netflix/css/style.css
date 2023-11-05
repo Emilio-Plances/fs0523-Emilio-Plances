@@ -11863,6 +11863,7 @@ body {
 
 a, button {
   font-family: "Roboto", sans-serif;
+  text-decoration: none;
 }
 
 img {
@@ -11887,6 +11888,15 @@ img {
 }
 #header-home button:enabled {
   border: none;
+}
+#header-home .nav-link {
+  filter: brightness(50%);
+}
+#header-home .nav-link:hover {
+  filter: brightness(100%);
+}
+#header-home .nav-link.active {
+  filter: brightness(100%);
 }
 
 #profile-dropdown #profile-image {
@@ -12034,9 +12044,6 @@ body {
   background-color: #E2E2E2;
   box-shadow: 0 3px 10px grey;
   font-size: 0.9em;
-}
-#main-settings .settings-link {
-  text-decoration: none;
 }
 #main-settings #image-profile {
   width: 50px;

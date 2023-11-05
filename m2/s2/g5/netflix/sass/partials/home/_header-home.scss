@@ -12,7 +12,17 @@
    button:enabled{
       border:none;
    }
+   .nav-link{
+      filter: brightness(50%);
+      &:hover{
+         filter: brightness(100%);
+      }
+   }
+   .nav-link.active{
+      filter: brightness(100%);
+   }
 }
+
 #profile-dropdown{
    #profile-image{
       width: 50px;
