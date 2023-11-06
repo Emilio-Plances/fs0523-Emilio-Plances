@@ -1,9 +1,14 @@
 class Pets{
    constructor(container){
       this.container=document.querySelector(container);
+
+      this.name='';
+      this.owner='';
+      this.species='';
+      this.breed='';
+
       this.getText();
       this.createRow();
-      
    }
 
    getText(){
@@ -38,11 +43,20 @@ class Pets{
 
       this.container.append(tr);
    }
+   sameOwner(pet){
+      if(this.owner === pet.owner){
+         return true;
+      }else{
+         return false;
+      }
+   }
 }
 
 document.querySelector('#submit').addEventListener('click',function(e){
    e.preventDefault();
-   let namePet= document.querySelector('#pet-name');
-   new Pets('#pet-table tbody');
+   let namePet= document.querySelector('#pet-name').value;
+
+   window[`${namePet}`] = new Pets('#pet-table tbody');
+
    document.querySelector(`#pet-table`).classList.remove(`hidden`);
 });
