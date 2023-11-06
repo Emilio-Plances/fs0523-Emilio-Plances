@@ -10,7 +10,6 @@ class Pets{
       this.getText();
       this.createRow();
    }
-
    getText(){
       let slotName=document.querySelector('#pet-name');
       let slotOwner=document.querySelector('#pet-owner');
@@ -27,7 +26,6 @@ class Pets{
       slotSpecies.value='';
       slotBreed.value='';
    }
-
    createRow(){
       let tr=document.createElement('tr');
       let td1=document.createElement('td');
@@ -55,8 +53,6 @@ class Pets{
 document.querySelector('#submit').addEventListener('click',function(e){
    e.preventDefault();
    let namePet= document.querySelector('#pet-name').value;
-
    window[`${namePet}`] = new Pets('#pet-table tbody');
-
    document.querySelector(`#pet-table`).classList.remove(`hidden`);
 });
