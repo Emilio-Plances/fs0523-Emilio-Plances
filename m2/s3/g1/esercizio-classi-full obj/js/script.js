@@ -1,10 +1,10 @@
 class Pets{
    constructor(container){
       this.container=document.querySelector(container);
-      this.getText();
+      this.getInfo();
       this.createRow();
    }
-   getText(){
+   getInfo(){
       let slotName=document.querySelector('#pet-name');
       let slotOwner=document.querySelector('#pet-owner');
       let slotSpecies=document.querySelector('#pet-species');
