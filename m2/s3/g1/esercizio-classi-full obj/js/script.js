@@ -1,25 +1,13 @@
 class Pets{
-   constructor(container){
+   constructor(container,name,owner,species,breed){
       this.container=document.querySelector(container);
-      this.getInfo();
+      this.name=name;
+      this.owner=owner;
+      this.species=species;
+      this.breed=breed;
       this.createRow();
    }
-   getInfo(){
-      let slotName=document.querySelector('#pet-name');
-      let slotOwner=document.querySelector('#pet-owner');
-      let slotSpecies=document.querySelector('#pet-species');
-      let slotBreed=document.querySelector('#pet-breed');
 
-      this.name=slotName.value;
-      this.owner=slotOwner.value;
-      this.species=slotSpecies.value;
-      this.breed=slotBreed.value;
-      
-      slotName.value='';
-      slotOwner.value='';
-      slotSpecies.value='';
-      slotBreed.value='';
-   }
    createRow(){
       let tr=document.createElement('tr');
       let td1=document.createElement('td');
@@ -40,9 +28,39 @@ class Pets{
    }
 }
 
+function getName(){
+   let slotName=document.querySelector('#pet-name');
+   let name=slotName.value;
+   slotName.value='';
+   return name;
+}
+function getOwner(){
+   let slotOwner=document.querySelector('#pet-owner');
+   let owner=slotOwner.value;
+   slotOwner.value='';
+   return owner;
+}
+function getSpecies(){
+   let slotSpecies=document.querySelector('#pet-species');
+   let species=slotSpecies.value;
+   slotSpecies.value='';
+   return species;
+}
+function getBreed(){
+   let slotBreed=document.querySelector('#pet-breed');
+   let breed=slotBreed.value;
+   slotBreed.value='';
+   return breed;
+}
+
 document.querySelector('#submit').addEventListener('click',function(e){
    e.preventDefault();
-   let namePet= document.querySelector('#pet-name').value;
-   window[`${namePet}`] = new Pets('#pet-table tbody');
+   
+   let name=getName();
+   let owner=getOwner();
+   let species=getSpecies();
+   let breed=getBreed();
+   
+   window[`${name}`] = new Pets('#pet-table tbody',name,owner,species,breed);
    document.querySelector(`#pet-table`).classList.remove(`hidden`);
 });
