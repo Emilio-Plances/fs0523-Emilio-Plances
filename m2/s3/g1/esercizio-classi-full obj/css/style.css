@@ -1,0 +1,11 @@
+td,th{
+   width:200px;
+   padding-bottom: 20px;
+}
+table{
+   margin-top:100px;
+   text-align: center;
+}
+.hidden{
+   display: none;
+}
