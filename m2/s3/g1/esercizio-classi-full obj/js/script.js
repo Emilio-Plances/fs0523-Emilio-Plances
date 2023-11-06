@@ -1,12 +1,6 @@
 class Pets{
    constructor(container){
       this.container=document.querySelector(container);
-
-      this.name='';
-      this.owner='';
-      this.species='';
-      this.breed='';
-
       this.getText();
       this.createRow();
    }
