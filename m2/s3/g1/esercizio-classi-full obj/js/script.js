@@ -36,11 +36,7 @@ class Pets{
       this.container.append(tr);
    }
    sameOwner(pet){
-      if(this.owner === pet.owner){
-         return true;
-      }else{
-         return false;
-      }
+      return this.owner === pet.owner? true : false;
    }
 }
 
