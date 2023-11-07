@@ -4,7 +4,6 @@ let deleteButton = document.querySelector(`#delete`);
 let inputName=document.querySelector(`#input-name`);
 
 let i= localStorage.getItem(`index`)!=null ? localStorage.getItem(`index`)-1 : 1;
-let counter=sessionStorage.getItem(`timer`)!=null? sessionStorage.getItem(`timer`):0;
 
 previousInput.innerText=localStorage.getItem(`nome${i}`);
 class getName{
@@ -38,8 +37,9 @@ deleteButton.addEventListener(`click`, (e) => {
    localStorage.removeItem(`nome${i}`);
    previousInput.innerText=localStorage.getItem(`nome${i-1}`);
    localStorage.setItem(`index`,i);
-   
 })
+
+let counter=sessionStorage.getItem(`timer`)!=null ? sessionStorage.getItem(`timer`):0;
 
 setInterval(() => {
    counter++;

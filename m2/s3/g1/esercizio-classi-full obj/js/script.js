@@ -28,39 +28,21 @@ class Pets{
    }
 }
 
-function getName(){
-   let slotName=document.querySelector('#pet-name');
-   let name=slotName.value;
-   slotName.value='';
-   return name;
-}
-function getOwner(){
-   let slotOwner=document.querySelector('#pet-owner');
-   let owner=slotOwner.value;
-   slotOwner.value='';
-   return owner;
-}
-function getSpecies(){
-   let slotSpecies=document.querySelector('#pet-species');
-   let species=slotSpecies.value;
-   slotSpecies.value='';
-   return species;
-}
-function getBreed(){
-   let slotBreed=document.querySelector('#pet-breed');
-   let breed=slotBreed.value;
-   slotBreed.value='';
-   return breed;
+
+function getData(slot){
+   let value=slot.value;
+   slot.value='';
+   return value;
 }
 
 document.querySelector('#submit').addEventListener('click',function(e){
    e.preventDefault();
    
-   let name=getName();
-   let owner=getOwner();
-   let species=getSpecies();
-   let breed=getBreed();
-   
+   let name=getData(document.querySelector('#pet-name'));
+   let owner=getData(document.querySelector('#pet-owner'));
+   let species=getData(document.querySelector('#pet-species'));
+   let breed=getData(document.querySelector('#pet-breed'));
+    
    window[`${name}`] = new Pets('#pet-table tbody',name,owner,species,breed);
    document.querySelector(`#pet-table`).classList.remove(`hidden`);
 });
