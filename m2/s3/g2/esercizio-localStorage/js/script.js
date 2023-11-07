@@ -2,6 +2,7 @@ let previousInput=document.querySelector(`#previous-input`);
 let saveButton = document.querySelector(`#save`);
 let deleteButton = document.querySelector(`#delete`);
 let inputName=document.querySelector(`#input-name`);
+
 let i= localStorage.getItem(`index`)!=null ? localStorage.getItem(`index`)-1 : 1;
 let counter=sessionStorage.getItem(`timer`)!=null? sessionStorage.getItem(`timer`):0;
 
