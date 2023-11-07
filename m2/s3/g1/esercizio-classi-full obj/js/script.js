@@ -42,7 +42,12 @@ document.querySelector('#submit').addEventListener('click',function(e){
    let owner=getData(document.querySelector('#pet-owner'));
    let species=getData(document.querySelector('#pet-species'));
    let breed=getData(document.querySelector('#pet-breed'));
-    
+   
+   if(!name ||!owner ||!species ||!breed){
+      alert('Please fill in all fields');
+      return;
+   }
+   
    window[`${name}`] = new Pets('#pet-table tbody',name,owner,species,breed);
    document.querySelector(`#pet-table`).classList.remove(`hidden`);
 });
