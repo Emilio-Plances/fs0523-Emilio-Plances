@@ -135,7 +135,6 @@ class CartElement{
       let price = cart.reduce((a,b)=>a + b.price ,0);
       price=price.toFixed(2);
       slotTotalPrice.innerText=price;
-      console.log(slotTotalPrice.innerText);
    }
 
 }
