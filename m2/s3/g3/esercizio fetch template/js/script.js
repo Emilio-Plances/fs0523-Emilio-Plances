@@ -1,9 +1,12 @@
 class Book{
-   constructor(_title, _img, _price, _category){
+   constructor(_asin,_title, _img, _price, _category){
+      this.asin = _asin;
       this.title = _title;
       this.img = _img;
       this.price = _price;
       this.category = _category;
+      this.quantity=1;
+
       this.HTMLinit();
    }
    
@@ -51,21 +54,39 @@ class Book{
    }
    
    addToCart(){ 
-      cart.push(this);
-      localStorage.setItem(`cart`,JSON.stringify(cart));
-      new CartElement(this.img,this.title,this.price);
+      let index= this.checkExist();
+
+      if(index==null){
+         cart.push(this);
+         localStorage.setItem(`cart`,JSON.stringify(cart));
+         new CartElement(this.asin,this.img,this.title,this.price);
+      }else{
+         cart[index].quantity++;
+         localStorage.setItem(`cart`,JSON.stringify(cart));
+      }     
    }
+
+   checkExist(){
+      if(cart.includes(this))
+         return cart.indexOf(this);
+      
+      return null;
+   }
+
 }
 
 class CartElement{
-   constructor(_img,_title,_price){
+   constructor(_asin,_img,_title,_price,_quantity=1){
+      this.asin = _asin;
       this.img = _img;
       this.title = _title;
       this.price = _price;
-      
+      this.quantity = _quantity;
+
       this.HTMLinit();
       this.newPrice();
    }
+
 
    HTMLinit(){
       let temp= document.querySelector(`#template-cart`);
@@ -89,10 +110,12 @@ class CartElement{
       let cloneImg=clone.querySelector(`.book-image`);
       let cloneTitle= clone.querySelector(`.book-title`);
       let clonePrice= clone.querySelector(`.book-price`);
+      let cloneQuantity= clone.querySelector(`.book-quantity `);
 
       cloneImg.src = this.img;
       cloneTitle.innerText= this.title;
       clonePrice.innerText= `€${this.price}`;
+      cloneQuantity.innerText= this.quantity;
    }
 
    deleteButtonConfig(button,box){
@@ -105,7 +128,10 @@ class CartElement{
    }
 
    newPrice(){
-      let price = cart.reduce((a,b)=>a + b.price ,0);
+      let price=0;
+      cart.forEach(element => {
+         price+= parseFloat(element.price)*parseFloat(element.quantity);
+      })
       price=price.toFixed(2);
       slotTotalPrice.innerText=price;
    }
@@ -121,12 +147,16 @@ fetch(`https://striveschool-api.herokuapp.com/books`)
 .then(res=>res.json())
 .then(library=>{
    library.forEach(element => {
-      new Book(element.title,element.img,element.price,element.category);
+      new Book(element.asin,element.title,element.img,element.price,element.category);
    });
 })
 
+
+
 if(cart){
    cart.forEach(element => {
-      new CartElement(element.img,element.title,element.price);
+      new CartElement(element.asin, element.img,element.title,element.price,element.quantity);
    })
 }
+
+
