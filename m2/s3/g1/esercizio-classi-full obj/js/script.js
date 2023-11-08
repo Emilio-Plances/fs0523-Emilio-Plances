@@ -24,10 +24,10 @@ class Pets{
       this.container.append(tr);
    }
    sameOwner(pet){
-      return this.owner === pet.owner? true : false;
+      return this.owner == pet.owner ? true : false;
    }
 }
-
+let pets={}
 
 function getData(slot){
    let value=slot.value;
@@ -47,7 +47,7 @@ document.querySelector('#submit').addEventListener('click',function(e){
       alert('Please fill in all fields');
       return;
    }
-   
-   window[`${name}`] = new Pets('#pet-table tbody',name,owner,species,breed);
+
+   pets[`${name}`] = new Pets('#pet-table tbody',name,owner,species,breed);
    document.querySelector(`#pet-table`).classList.remove(`hidden`);
 });

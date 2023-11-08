@@ -6,7 +6,8 @@ let inputName=document.querySelector(`#input-name`);
 let i= localStorage.getItem(`index`)!=null ? localStorage.getItem(`index`)-1 : 1;
 
 previousInput.innerText=localStorage.getItem(`nome${i}`);
-class getName{
+
+class Utente{
    constructor(name,id){
       this.id = id;
       this.name = name;
@@ -24,7 +25,8 @@ saveButton.addEventListener(`click`, (e) => {
       alert(`Inserire un campo`);
       return;
    }
-   new getName(inputName.value,i);
+
+   new Utente(inputName.value,i);
    previousInput.innerText=localStorage.getItem(`nome${i}`);
    i++;
    inputName.value=``;
