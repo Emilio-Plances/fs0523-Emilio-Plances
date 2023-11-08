@@ -1,6 +1,5 @@
 class Book{
-   constructor(asin,title, img, price, category){
-      this.asin = asin;
+   constructor(title, img, price, category){
       this.title = title;
       this.img = img;
       this.price = price;
@@ -21,7 +20,7 @@ class Book{
       let buttonDiv = document.createElement(`div`);
 
       book.classList.add(`card`,`col-3`,`pt-3`);
-      
+
       bookImg.src = this.img;
       bookImg.alt = this.title;
       bookImg.classList.add(`card-img-top`);
@@ -124,13 +123,17 @@ class CartElement{
    deleteButtonConfig(button,box){
       button.addEventListener(`click`,()=> {
          cart.splice(cart.indexOf(this), 1);
+         localStorage.setItem(`cart`,JSON.stringify(cart));
          box.remove();
+         
          this.newPrice();
+         
       })
    }
 
    newPrice(){
       let price = cart.reduce((a,b)=>a + b.price ,0);
+      price=price.toFixed(2);
       slotTotalPrice.innerText=price;
       console.log(slotTotalPrice.innerText);
    }
@@ -146,7 +149,7 @@ fetch(`https://striveschool-api.herokuapp.com/books`)
 .then(res=>res.json())
 .then(library=>{
    library.forEach(element => {
-      new Book(element.asin,element.title,element.img,element.price,element.category);
+      new Book(element.title,element.img,element.price,element.category);
    });
 })
 
