@@ -1,9 +1,9 @@
 class Book{
-   constructor(title, img, price, category){
-      this.title = title;
-      this.img = img;
-      this.price = price;
-      this.category = category;
+   constructor(_title, _img, _price, _category){
+      this.title = _title;
+      this.img = _img;
+      this.price = _price;
+      this.category = _category;
       this.HTMLinit();
    }
    
@@ -73,10 +73,10 @@ class Book{
 }
 
 class CartElement{
-   constructor(img,title,price){
-      this.img = img;
-      this.title = title;
-      this.price = price;
+   constructor(_img,_title,_price){
+      this.img = _img;
+      this.title = _title;
+      this.price = _price;
       this.HTMLinit();
    }
 
