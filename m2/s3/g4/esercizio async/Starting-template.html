@@ -74,15 +74,15 @@
           them in a cool way!
         </p>
         <p>
-          <a href="#" class="btn btn-primary my-2">Load Images</a>
-          <a href="#" class="btn btn-secondary my-2">Load Secondary Images</a>
+          <button id="btn-query1" class="btn btn-primary my-2">Load Images</button>
+          <button id="btn-query2" class="btn btn-secondary my-2">Load Secondary Images</button>
         </p>
       </div>
     </section>
 
     <div class="album py-5 bg-light">
       <div class="container">
-        <div class="row">
+        <div id="images-container" class="row">
           <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
               <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
@@ -381,6 +381,45 @@
     </div>
   </footer>
   
+
+  <template id="template-images">
+
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <img class="card-image" src="#" alt="">
+        <div class="card-body">
+          <h5 class="card-title">Lorem Ipsum</h5>
+          <p class="card-text">
+            This is a wider card with supporting text below as a natural
+            lead-in to additional content. This content is a little bit
+            longer.
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">
+                View
+              </button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">
+                Edit
+              </button>
+            </div>
+            <small class="text-muted">9 mins</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </template>
+
+
+
+
+
+
+
+
+
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
@@ -389,7 +428,7 @@
     crossorigin="anonymous"></script>
 
   <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
-  <script src="js/scripts.js"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>
