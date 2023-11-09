@@ -19,9 +19,11 @@ class Image{
 
    setVariables(clone){
       let cloneImg= clone.querySelector(`.card-image`);
+      let idSlot= clone.querySelector(`.id-slot`);
       
       cloneImg.src= this.src;
       cloneImg.alt= this.alt;
+      idSlot.innerText= this.id;
    }
 
    setButtons(clone){
@@ -52,25 +54,33 @@ class Image{
 let containerImages=document.querySelector(`#images-container`)
 let btnQuery1=document.querySelector(`#btn-query1`);
 let btnQuery2=document.querySelector(`#btn-query2`);  
+let inputQueryButton= document.querySelector(`#input-query-button`);
+let inputQuery= document.querySelector(`#input-query`);
 
 let query1=`japan`;
 let query2=`pizza`;
 
+inputQueryButton.addEventListener(`click`,()=>{
+   let declaredQuery= inputQuery.value;
+   inputQuery.value= ``;
+   changeImgs(declaredQuery);
+});
+
+
 btnQuery1.addEventListener(`click`,()=>{
-   while(containerImages.firstChild){
-      containerImages.removeChild(containerImages.firstChild);
-   }
-   getImages(query1);
+   changeImgs(query1);
 })
 
 btnQuery2.addEventListener(`click`,()=>{
+   changeImgs(query2);
+})
+
+function changeImgs(query) {
    while(containerImages.firstChild){
       containerImages.removeChild(containerImages.firstChild);
    }
-   getImages(query2);
-})
-
-
+   getImages(query);
+}
 
 
 
