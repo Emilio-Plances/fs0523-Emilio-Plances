@@ -1,7 +1,7 @@
 class Image{
    constructor(_id,_src,_alt){
       this.id=_id;
-      this.url=_src;
+      this.src=_src;
       this.alt=_alt;
       this.HTMLinit();
       
@@ -11,6 +11,8 @@ class Image{
       let temp= document.querySelector(`#template-images`);
       let clone= temp.content.cloneNode(true);
 
+      this.setButtons(clone);
+
       this.setVariables(clone);
       containerImages.append(clone);
    }
@@ -18,8 +20,32 @@ class Image{
    setVariables(clone){
       let cloneImg= clone.querySelector(`.card-image`);
       
-      cloneImg.src= this.url;
+      cloneImg.src= this.src;
       cloneImg.alt= this.alt;
+   }
+
+   setButtons(clone){
+      let origin= clone.querySelector(`.origin`);
+      let viewButton= clone.querySelector(`.view-button`);
+      let hideButton= clone.querySelector(`.hide-button`);
+
+      this.configViewButton(viewButton);
+      this.configHideButton(hideButton,origin);
+   }
+
+   configViewButton(button){
+      button.addEventListener(`click`,()=>{
+         Swal.fire({
+         imageUrl: this.src,
+         imageAlt: this.alt
+         });
+      });
+   }
+
+   configHideButton(button,box){
+      button.addEventListener(`click`,()=>{
+         box.remove();
+      });
    }
 }
 
