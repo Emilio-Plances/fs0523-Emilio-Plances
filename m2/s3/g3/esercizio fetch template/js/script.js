@@ -57,9 +57,10 @@ class Book{
       let index= this.checkExist();
 
       if(index==null){
+         this.quantity=1;
          cart.push(this);
          localStorage.setItem(`cart`,JSON.stringify(cart));
-         new CartElement(this.asin,this.img,this.title,this.price);
+         new CartElement(this.asin,this.img,this.title,this.price,this.quantity);
       }else{
          cart[index].quantity++;
          localStorage.setItem(`cart`,JSON.stringify(cart));
@@ -163,8 +164,6 @@ fetch(`https://striveschool-api.herokuapp.com/books`)
       new Book(element.asin,element.title,element.img,element.price,element.category);
    });
 })
-
-
 
 if(cart){
    while(containerCart.firstChild){
