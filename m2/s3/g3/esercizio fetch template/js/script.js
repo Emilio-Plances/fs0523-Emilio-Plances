@@ -63,16 +63,30 @@ class Book{
       }else{
          cart[index].quantity++;
          localStorage.setItem(`cart`,JSON.stringify(cart));
+         this.createNewCart();
       }     
    }
 
    checkExist(){
-      if(cart.includes(this))
-         return cart.indexOf(this);
+      let verify=null;
+
+      cart.forEach(element => {
+         if(element.asin==this.asin){
+            verify=cart.indexOf(element);
+         }
+      });
       
-      return null;
+      return verify;
    }
 
+   createNewCart(){
+      while(containerCart.firstChild){
+         containerCart.removeChild(containerCart.firstChild);
+      }
+      cart.forEach(element => {
+         new CartElement(element.asin, element.img,element.title,element.price,element.quantity);
+      })
+   }
 }
 
 class CartElement{
@@ -135,7 +149,6 @@ class CartElement{
       price=price.toFixed(2);
       slotTotalPrice.innerText=price;
    }
-
 }
 
 let containerBooks = document.querySelector(`#library`);
@@ -154,6 +167,9 @@ fetch(`https://striveschool-api.herokuapp.com/books`)
 
 
 if(cart){
+   while(containerCart.firstChild){
+      containerCart.removeChild(containerCart.firstChild);
+   }
    cart.forEach(element => {
       new CartElement(element.asin, element.img,element.title,element.price,element.quantity);
    })
