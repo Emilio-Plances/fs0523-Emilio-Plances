@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/TantoLogo.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-secondary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img id="logo-tanto" src="img/TantoLogo.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item ms-5">
+                            <a class="nav-link text-primary active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item ms-5">
+                            <a class="nav-link text-primary" href="#">Aggiungi Telefono</a>
+                        </li>
+                    </ul>
+                    <div class="form-check form-switch">
+                        <label class="form-check-label text-primary" for="flexSwitchCheckDefault">Modalità
+                            moderatore</label>
+                        <input class="form-check-input " type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container mt-5 pt-5 text-center">
+        <h1>NEW TELEPHONE</h1>
+        <div id="form-box">
+            <form class="text-start needs-validation mt-5">
+                <div class="mb-3">
+                    <label for="model">Nome:</label>
+                    <input id="model" type="text" class="form-control has-validation" required>
+                    <div class="invalid-feedback">
+                        Inserire un nome valido.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="brand">Brand:</label>
+                    <input id="brand" type="text" class="form-control has-validation" required>
+                    <div class="invalid-feedback">
+                        Inserire un brand valido.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="price">Prezzo:</label>
+                    <input id="price" type="number" class="form-control has-validation" required>
+                    <div class="invalid-feedback">
+                        Inserire un prezzo valido.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="image">Image(url):</label>
+                    <input id="image" type="text" class="form-control has-validation" required>
+                    <div class="invalid-feedback">
+                        Inserire un URL valido.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="d-block has-validation">Description:</label>
+                    <textarea id="description" class="form-control" required></textarea>
+                    <div class="invalid-feedback">
+                        Inserire una descrizione.
+                    </div>
+                </div>
+                <button id="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script src="js/formValidation.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="js/script.js"></script>
+</body>
+
+</html>

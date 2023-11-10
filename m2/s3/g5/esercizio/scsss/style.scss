@@ -1,0 +1,14 @@
+$primary: #BF9F63;
+$secondary:#000000;
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+#logo-tanto{
+
+    width: 75px;
+    height: 75px;
+}
+
+#form-box{
+   margin:0 auto;
+   width:300px;
+}
