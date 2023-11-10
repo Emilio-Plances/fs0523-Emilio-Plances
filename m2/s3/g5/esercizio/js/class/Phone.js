@@ -23,7 +23,7 @@ export class Phone{
 
        nameInput.value=``;
        brandInput.value=``;
-       description.value=``;
+       descriptionInput.value=``;
        priceInput.value=``;
        imageInput.value=``;
    }

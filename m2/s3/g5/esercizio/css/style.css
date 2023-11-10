@@ -11863,4 +11863,16 @@ textarea.form-control-lg {
 #form-box {
   margin: 0 auto;
   width: 300px;
+}
+
+.swal2-loader .swal2-confirm {
+  background-color: #000000;
+  color: #BF9F63;
+}
+
+.card {
+  flex-basis: 26%;
+}
+.card .card-img {
+  height: 350px;
 }/*# sourceMappingURL=style.css.map */

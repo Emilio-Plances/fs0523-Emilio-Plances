@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/TantoLogo.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Tanto | Perché Tanto siamo noi!</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-secondary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"><img id="logo-tanto" src="img/TantoLogo.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item ms-5">
+                            <a class="nav-link text-primary active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item ms-5">
+                            <a class="nav-link text-primary" href="addphone.html">Aggiungi Telefono</a>
+                        </li>
+                    </ul>
+                    <div class="form-check form-switch">
+                        <label class="form-check-label text-primary" for="flexSwitchCheckDefault">Modalità
+                            moderatore</label>
+                        <input id="moderator" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container pt-5">
+            <div id="card-container" class="d-flex flex-wrap justify-content-evenly g-3"></div>
+        </div>
+    </main>
+
+    <template id="card-template">
+        <div class="card bg-secondary text-primary mb-3">
+            <a href="#"><img src="" class="card-img" alt=""></a>
+            <div class="card-body">
+                <a href="#"><h5 class="card-name">Tanto Bello</h5></a>
+                <h6 class="card-brand"></h6>
+                <p class="card-description">È veramente Tanto Bello</p>
+                <p>Prezzo: <span class="card-price"></span></p>
+                <div class="d-flex justify-content-between">
+                    <a href="#" class="link-edit btn btn-primary">Modifica</a>
+                    <a href="#" class="link-details btn btn-primary">Info Prodotto</a>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>
