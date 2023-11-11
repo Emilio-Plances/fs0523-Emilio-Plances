@@ -11855,6 +11855,22 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+a {
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.loading-spinner {
+  position: absolute;
+  top: 50vh;
+  color: black;
+  margin: 0 auto;
+  width: 100px;
+}
+
 #logo-tanto {
   width: 75px;
   height: 75px;
@@ -11865,14 +11881,45 @@ textarea.form-control-lg {
   width: 300px;
 }
 
-.swal2-loader .swal2-confirm {
-  background-color: #000000;
+.card {
+  box-shadow: 1px 5px 15px -1px rgba(0, 0, 0, 0.3);
+}
+.card .card-img {
+  width: 100%;
+  height: 300px;
+}
+.card .card-name {
+  font-size: 1.7em;
+}
+
+#home {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.product {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(53deg, rgb(0, 0, 0) 23%, rgb(135, 133, 133) 79%);
+}
+
+.admin {
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
   color: #BF9F63;
 }
 
-.card {
-  flex-basis: 26%;
+#details {
+  width: 1000px;
 }
-.card .card-img {
-  height: 350px;
+
+.label-email {
+  width: 70px;
+}
+
+#delete, #reset {
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
+  color: #242424;
 }/*# sourceMappingURL=style.css.map */

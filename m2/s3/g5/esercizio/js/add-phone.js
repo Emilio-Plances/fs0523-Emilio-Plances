@@ -4,6 +4,7 @@ const KEY=`Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTRkMmU2YjI1N
 
 let submit=document.querySelector(`#submit`);
 let reset=document.querySelector(`#reset`);
+let admin=document.querySelector(`#admin`);
 
 reset.addEventListener(`click`, (e)=>{
     e.preventDefault();
@@ -16,6 +17,7 @@ submit.addEventListener(`click`, (e)=>{
     Swal.fire({
         title: "Salvare il nuovo prodotto",
         showDenyButton: true,
+        confirmButtonColor: '#bf9f63',
         confirmButtonText: `Salva`,
         denyButtonText: `Non Salvare`
       }).then((result) => {
@@ -26,9 +28,16 @@ submit.addEventListener(`click`, (e)=>{
           addProduct(phone);
 
         }
-      });
+    });
     
 });
+
+admin.addEventListener(`change`, function(){
+    Swal.fire({
+       icon: "error",
+       text: `Non hai più i permessi per stare qui!`
+   }).then(() => {location.href=`index.html`});
+ });
 
 function addProduct(phone){
     fetch(`${LINK}`, {

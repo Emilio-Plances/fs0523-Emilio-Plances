@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/TantoLogo.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Tanto | Dettagli</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-secondary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"><img id="logo-tanto" src="img/TantoLogo.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item ms-5">
+                            <a class="nav-link text-primary active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item ms-5">
+                            <a class="nav-link text-primary" href="addphone.html">Aggiungi Telefono</a>
+                        </li>
+                    </ul>
+                    <div class="form-check form-switch">
+                        <label class="form-check-label text-primary" for="admin">Modalità moderatore</label>
+                        <input id="admin" class="form-check-input" type="checkbox" role="switch" id="admin">
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <div id="details" class="container">
+            <div class="d-flex mt-5 align-items-center">
+                <h1 id="model" class="me-4"></h1>
+                <a id="link-edit" href="#" class="hidden btn btn-warning">Modifica</a>
+            </div>
+            <div class="row mt-5 align-items-center mb-5">
+                <div class="col-lg-4">
+                    <img id="image" src="" >
+                </div>
+                <div class="col-lg-8">
+                    <p>
+                        <span id="description"></span> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic consectetur ullam perspiciatis alias, eos cumque molestiae autem exercitationem natus obcaecati corporis reprehenderit possimus. Minus sed saepe nulla, ab voluptatem quasi.
+                        Ab ullam officiis, commodi, cupiditate, reprehenderit ratione autem dolorum veniam neque atque nostrum harum! Explicabo in dolor quam, quia distinctio obcaecati totam laboriosam quas, magni minus doloremque eos quis praesentium.
+                        Quaerat sunt vero rem molestias pariatur iure cum suscipit repellat assumenda, harum earum, impedit neque porro. Voluptatum consequuntur ea, at illum deleniti, libero doloribus nihil pariatur voluptatem commodi, saepe nobis.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error obcaecati asperiores nostrum id debitis, animi reiciendis possimus accusantium qui voluptatibus ratione nobis nam. Rerum eum a placeat magnam dignissimos quia?
+                        Rem voluptatem, id debitis distinctio accusantium fuga voluptate alias quidem minus, aut sit deserunt? Deleniti error adipisci nemo dolore consequatur quod repellat enim similique. Corrupti numquam delectus exercitationem enim. Eius.
+                        quuntur quidem, sint, quia sequi maxime repudiandae quasi dolor commodi nulla nam dolorem corrupti enim similique molestiae provident magnam pariatur iusto magni blanditiis quisquam earum? Corrupti libero saepe id ducimus?
+                    </p>
+                </div>
+                <div class="d-flex align-items-center mt-4 justify-content-end">
+                    <div class="me-4">Prezzo: <span id="price"></span>€</div>
+                    <a class="btn btn-primary">Acquista!</a>
+                </div>
+            </div>
+        </div>
+
+        <template id="loginTemplate">
+                <label class="label-email" for="email">Email</label>
+                <input type="email" id="email" class="swal2-input" placeholder="Enter your email" value="Michele@pizza.com">
+                <label for="password">Password</label>
+                <input type="password" id="password" class="swal2-input" placeholder="Enter your password" value="Diavola">    
+        </template>
+
+
+
+
+
+        <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+        <script src="js/details.js"></script>
+    </main>
+</body>
+</html>

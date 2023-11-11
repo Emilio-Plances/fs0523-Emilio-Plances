@@ -24,40 +24,53 @@
                         <li class="nav-item ms-5">
                             <a class="nav-link text-primary active" aria-current="page" href="index.html">Home</a>
                         </li>
-                        <li class="nav-item ms-5">
+                        <li class="link-add-product hidden nav-item ms-5">
                             <a class="nav-link text-primary" href="addphone.html">Aggiungi Telefono</a>
                         </li>
                     </ul>
                     <div class="form-check form-switch">
-                        <label class="form-check-label text-primary" for="flexSwitchCheckDefault">Modalità
-                            moderatore</label>
-                        <input id="moderator" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                        <label class="form-check-label text-primary" for="admin">Modalità moderatore</label>
+                        <input id="admin" class="form-check-input" type="checkbox" role="switch" >
                     </div>
                 </div>
             </div>
         </nav>
     </header>
     <main>
-        <div class="container pt-5">
-            <div id="card-container" class="d-flex flex-wrap justify-content-evenly g-3"></div>
+        <div id="home" class="pt-5">
+            <div id="card-container" class="row justify-content-evenly">
+                <div id="event-details" class="loading-spinner">
+                    <div class="spinner-border text-success" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
     <template id="card-template">
-        <div class="card bg-secondary text-primary mb-3">
-            <a href="#"><img src="" class="card-img" alt=""></a>
-            <div class="card-body">
-                <a href="#"><h5 class="card-name">Tanto Bello</h5></a>
+        <div class="product col-3 card text-primary mb-5 mx-3 p-0">
+            <a href="#"><img src="" class="card-img rounded-0" alt=""></a>
+            <div class="card-body p-4">
+                <a href="#"><h2 class="card-name">Tanto Bello</h2></a>
                 <h6 class="card-brand"></h6>
                 <p class="card-description">È veramente Tanto Bello</p>
-                <p>Prezzo: <span class="card-price"></span></p>
-                <div class="d-flex justify-content-between">
-                    <a href="#" class="link-edit btn btn-primary">Modifica</a>
+                <p>Prezzo: <span class="card-price"></span>€</p>
+                <div class="d-flex justify-content-end">             
                     <a href="#" class="link-details btn btn-primary">Info Prodotto</a>
+                    <a href="#" class="link-edit btn btn-primary hidden ms-3">Modifica</a>
                 </div>
             </div>
         </div>
     </template>
+
+    <template id="loginTemplate">
+        <label class="label-email" for="email">Email</label>
+        <input type="email" id="email" class="swal2-input" placeholder="Enter your email" value="Michele@pizza.com">
+        <label for="password">Password</label>
+        <input type="password" id="password" class="swal2-input" placeholder="Enter your password" value="Diavola">    
+</template>
+
 
     <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
     <script type="module" src="js/script.js"></script>
