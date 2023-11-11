@@ -22,10 +22,11 @@ async function getProducts(){
            Authorization: KEY
        }
    })
-
+   let eventDetails=document.querySelector(`#event-details`);
    let products= await res.json();
    console.log(products);
 
+   eventDetails.classList.add(`hidden`);
    products.forEach(element => {
       new ProductCard(element._id,element.name,element.brand,element.price,element.imageUrl,element.description,cardContainer);
    });

@@ -77,6 +77,9 @@ function rightData (email, password){
 
 function hideElements(){
    let linkEdit=document.querySelector(`#link-edit`);
+   let linkAddProduct=document.querySelector(`.link-add-product`);
+   
+   linkAddProduct.classList.toggle(`hidden`);
    linkEdit.href= `edit.html?id=${selectedID}`;
    linkEdit.classList.toggle(`hidden`);
 }

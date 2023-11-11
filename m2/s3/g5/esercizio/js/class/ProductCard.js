@@ -37,8 +37,9 @@ export class ProductCard{
 
    setLinks(clone){
       let linkEdit=clone.querySelector(`.link-edit`);
-      let linkDetails=clone.querySelector(`.link-details`);
+      let linksDetails=clone.querySelectorAll(`.link-details`);
+      
       linkEdit.href=`edit.html?id=${this._id}`;
-      linkDetails.href=`details.html?id=${this._id}`;
+      linksDetails.forEach(element=>element.href=`details.html?id=${this._id}`);
    }
 }
