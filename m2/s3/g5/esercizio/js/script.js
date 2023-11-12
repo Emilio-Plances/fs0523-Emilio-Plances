@@ -5,14 +5,26 @@ const KEY=`Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTRkMmU2YjI1N
 let cardContainer=document.querySelector(`#card-container`);
 let admin=document.querySelector(`#admin`);
 
+
+getProducts();
+
+function controlIfLoggedIn(){
+    if(sessionStorage.getItem(`loggedIn`)==`true`){  
+        admin.checked=true;
+        hideElements();
+    }else{
+        admin.checked=false;
+    }
+}
+
 admin.addEventListener(`change`, function(){
     if(admin.checked)
         loginRequest();
-    else
+    else{
         hideElements();
+        sessionStorage.setItem(`loggedIn`, ``);
+    }
 })
-
-getProducts();
 
 async function getProducts(){ 
    let res= await fetch(`${LINK}`, {
@@ -30,6 +42,7 @@ async function getProducts(){
    products.forEach(element => {
       new ProductCard(element._id,element.name,element.brand,element.price,element.imageUrl,element.description,cardContainer);
    });
+   controlIfLoggedIn();
 }
 
 function loginRequest(){
@@ -49,6 +62,7 @@ function loginRequest(){
         console.log(result);
         if (result.isConfirmed) {
            hideElements();
+           sessionStorage.setItem(`loggedIn`, true);
         } else {
            admin.checked = false;
         }

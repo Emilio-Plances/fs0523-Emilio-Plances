@@ -10,9 +10,20 @@ getSelected(selectedID);
 admin.addEventListener(`change`, function(){
    if(admin.checked)
        loginRequest();
-   else
-       hideElements();
+   else{
+      hideElements();
+      sessionStorage.setItem(`loggedIn`, ``);
+   }
 })
+
+function controlIfLoggedIn(){
+   if(sessionStorage.getItem(`loggedIn`)==`true`){  
+       admin.checked=true;
+       hideElements();
+   }else{
+       admin.checked=false;
+   }
+}
 
 function getSelected(selectedID) {
    fetch(`${LINK}/${selectedID}`, {
@@ -25,6 +36,7 @@ function getSelected(selectedID) {
    .then(res => res.json())
    .then(selectedItem => {
       setVariables(selectedItem);
+      controlIfLoggedIn()
    })
 }
 
@@ -57,6 +69,7 @@ function loginRequest() {
       console.log(result);
       if (result.isConfirmed) {
          hideElements();
+         sessionStorage.setItem(`loggedIn`, true);
       } else {
          admin.checked = false;
       }
@@ -65,8 +78,8 @@ function loginRequest() {
 
 function rightData (email, password){
    email=email.toLowerCase();
-   let rightEmail=`michele@pizza.com`;
-   let rightPassword=`Diavola`;
+   let rightEmail=`michele@pizza.com`; //queste andrebbero prese da Back-end
+   let rightPassword=`Diavola`;        //queste andrebbero prese da Back-end
    if(email==rightEmail && password==rightPassword)
        return {email, password};
    else{
@@ -77,9 +90,9 @@ function rightData (email, password){
 
 function hideElements(){
    let linkEdit=document.querySelector(`#link-edit`);
+   linkEdit.href= `edit.html?id=${selectedID}`;
    let linkAddProduct=document.querySelector(`.link-add-product`);
    
    linkAddProduct.classList.toggle(`hidden`);
-   linkEdit.href= `edit.html?id=${selectedID}`;
    linkEdit.classList.toggle(`hidden`);
 }
