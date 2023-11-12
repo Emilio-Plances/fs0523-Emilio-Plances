@@ -59,7 +59,7 @@ function loginRequest() {
       showCancelButton: true,
       confirmButtonText: 'Login',
       confirmButtonColor: '#bf9f63',
-      cancelButtonText: 'Cancel',
+      cancelButtonText: 'Annulla',
       preConfirm: () => {
          const email = Swal.getPopup().querySelector('#email').value;
          const password = Swal.getPopup().querySelector('#password').value;
