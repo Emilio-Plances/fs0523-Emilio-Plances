@@ -19,7 +19,6 @@ class UsefulFunctions{
       if (diff1 == diff2)
          return `Questo è un pareggio!`
       return `Nessuno di voi due ha indovinato ma si è avvicinato di più ${diff1 < diff2 ? g1.name : g2.name}!`;
-      
    }
 
    getPlayers(){
@@ -39,7 +38,7 @@ class UsefulFunctions{
    }
 }
 let compare=new UsefulFunctions();
-let btnCompare:HTMLInputElement|null= document.querySelector(`#submit`);
+let btnCompare:HTMLButtonElement|null= document.querySelector(`#submit`);
 
 btnCompare?.addEventListener(`click`, () => {
    console.log(compare.closer());
