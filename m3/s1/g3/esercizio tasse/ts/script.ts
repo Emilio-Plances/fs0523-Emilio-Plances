@@ -41,4 +41,4 @@ abstract class Tassa{
 
 class Lavoratore extends Tassa{}
 
-let Mauro=new Lavoratore(78,27000);
+let Mauro:Lavoratore=new Lavoratore(78,27000);
