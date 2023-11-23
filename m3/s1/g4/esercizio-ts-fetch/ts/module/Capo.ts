@@ -38,9 +38,11 @@ export class Capo {
          this.disponibile=disponibile;
          this.saldo=saldo;
    }
+
    get getSaldo():number{
       return this.saldo;
    }
+   
    get getAcquisto():number{
       return this.prezzoivainclusa-(this.saldo*0.01);
    }

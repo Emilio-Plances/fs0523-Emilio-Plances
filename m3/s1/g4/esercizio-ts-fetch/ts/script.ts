@@ -6,12 +6,11 @@ class App{
       getAbbigliamenti(`../Abbigliamento.json`)
       .then(abbigliamenti=>{
          console.log(abbigliamenti)
-         abbigliamenti.forEach(element=>products.push(new Capo(element)))
+         abbigliamenti.forEach(element=>products.push(new Capo(element)));
          console.log(products);
       });
    }
 }
 
-let products:{}[]=[];
-
+let products:Capo[]=[];
 new App();
