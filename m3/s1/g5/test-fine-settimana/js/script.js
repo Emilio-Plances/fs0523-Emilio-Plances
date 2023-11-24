@@ -3,10 +3,7 @@ import { utenti } from "./modules/variables.js";
 let emilio = new Phone(10, 0.20);
 let mauro = new Phone(10, 0.20);
 let emanuele = new Phone(10, 0.20);
-emilio.ricarica(30);
-emilio.numero404;
-emilio.getNumeroChiamate;
-emilio.azzeraChiamate();
+/*_____________________________COLLEGAMENTI CON L'HTML_________________________________________*/
 let callBtn = document.querySelector(`#call-btn`);
 let mostraStorico = document.querySelector(`#mostra-storico`);
 let minutes = document.querySelector(`#minuti`);
@@ -15,6 +12,10 @@ let called = document.querySelector(`#called`);
 let user = document.querySelector(`#storico`);
 let searchBTN = document.querySelector(`#find`);
 let search = document.querySelector(`#search`);
+// emilio.ricarica(30);
+// emilio.numero404;
+// emilio.getNumeroChiamate
+// emilio.azzeraChiamate();
 callBtn === null || callBtn === void 0 ? void 0 : callBtn.addEventListener("click", () => {
     let tempoChiamata = Number(minutes === null || minutes === void 0 ? void 0 : minutes.value);
     let callerID = Number(caller === null || caller === void 0 ? void 0 : caller.value);

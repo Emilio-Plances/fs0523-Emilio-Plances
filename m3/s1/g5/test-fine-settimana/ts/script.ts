@@ -1,15 +1,11 @@
 import {Phone} from "./modules/Phone.js";
-import {utenti} from "./modules/variables.js";
+import {utenti,getSelector} from "./modules/variables.js";
 
 let emilio:Phone= new Phone(10,0.20);
 let mauro:Phone= new Phone(10,0.20);
 let emanuele:Phone= new Phone(10,0.20);
 
-emilio.ricarica(30);
-emilio.numero404;
-emilio.getNumeroChiamate
-emilio.azzeraChiamate();
-
+/*_____________________________COLLEGAMENTI CON L'HTML_________________________________________*/
 let callBtn:HTMLButtonElement|null=document.querySelector(`#call-btn`);
 let mostraStorico:HTMLButtonElement|null=document.querySelector(`#mostra-storico`)
 let minutes:HTMLInputElement|null=document.querySelector(`#minuti`);
@@ -18,6 +14,12 @@ let called:HTMLSelectElement|null=document.querySelector(`#called`);
 let user:HTMLSelectElement|null= document.querySelector(`#storico`);
 let searchBTN:HTMLButtonElement|null=document.querySelector(`#find`);
 let search:HTMLInputElement|null=document.querySelector(`#search`);
+
+
+// emilio.ricarica(30);
+// emilio.numero404;
+// emilio.getNumeroChiamate
+// emilio.azzeraChiamate();
 
 callBtn?.addEventListener("click",()=>{
    let tempoChiamata:number=Number(minutes?.value);
