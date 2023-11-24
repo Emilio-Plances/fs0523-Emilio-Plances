@@ -53,6 +53,7 @@ export class Phone implements ISim{
       let minuti:number = dataCorrente.getMinutes();
       let orarioChiamata:string=`${mese}/${giorno} - ${ora}:${minuti}`
       new Chiamata(durata,orarioChiamata,destinatario,this.id);
+   
    }
 
    chiamata(min: number): void {

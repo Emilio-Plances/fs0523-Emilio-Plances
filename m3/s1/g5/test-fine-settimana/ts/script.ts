@@ -1,5 +1,5 @@
 import {Phone} from "./modules/Phone.js";
-import {utenti,getSelector} from "./modules/variables.js";
+import {utenti} from "./modules/variables.js";
 
 let emilio:Phone= new Phone(10,0.20);
 let mauro:Phone= new Phone(10,0.20);
