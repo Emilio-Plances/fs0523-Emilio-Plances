@@ -6,6 +6,46 @@
    <title>Document</title>
 </head>
 <body>
-   <script src="js/script.js"></script>
+   <div>
+      <label for="caller">Chi sei?</label>
+      <select name="caller" id="caller">
+         <option value="0">Emilio</option>
+         <option value="1">Mauro</option>
+         <option value="2">Emanuele</option>
+      </select>
+   </div>
+
+   <div>
+      <label for="called">A chi stai chiamando?</label>
+      <select name="called" id="called">
+         <option value="0">Emilio</option>
+         <option value="1" selected>Mauro</option>
+         <option value="2">Emanuele</option>
+      </select>
+   </div>
+
+   <div>
+      <label for="minuti">Minuti di chiamata</label>
+      <input id="minuti" type="number">
+   </div>
+
+   <button id="call-btn">Chiama</button>
+
+   <div>
+      <label for="storico">Di chi vuoi mostrare lo storico chiamate?</label>
+      <select name="storico" id="storico">
+         <option value="0">Emilio</option>
+         <option value="1">Mauro</option>
+         <option value="2">Emanuele</option>
+      </select>
+   </div>
+   <button id="mostra-storico">Mostra</button>
+
+   <div>
+      <label for="search">Cosa cerchi nello storico?</label>
+      <input id="search" type="text">
+   </div>
+   <button id="find">Cerca</button>
+   <script type="module" src="js/script.js"></script>
 </body>
 </html>

@@ -1,46 +1,42 @@
-interface ISim{
-   carica:number;
-   numeroChiamate:number;
-   costoMinuto:number;
-   
-   get numero404():string;
-   get getNumeroChiamate():number;
-   ricarica(euro:number):void;
-   chiamata(min:number):void;
-   azzeraChiamate():void;
-}
+import {Phone} from "./modules/Phone.js";
+import {utenti} from "./modules/variables.js";
 
-class Phone implements ISim{
-   constructor(
-      public carica: number=0,
-      public numeroChiamate: number,
-      public costoMinuto: number
-   ){}
+let emilio:Phone= new Phone(10,0.20);
+let mauro:Phone= new Phone(10,0.20);
+let emanuele:Phone= new Phone(10,0.20);
 
-   ricarica(euro: number): void {
-      this.carica+=euro;
+emilio.ricarica(30);
+emilio.numero404;
+emilio.getNumeroChiamate
+emilio.azzeraChiamate();
+
+let callBtn:HTMLButtonElement|null=document.querySelector(`#call-btn`);
+let mostraStorico:HTMLButtonElement|null=document.querySelector(`#mostra-storico`)
+let minutes:HTMLInputElement|null=document.querySelector(`#minuti`);
+let caller:HTMLSelectElement|null=document.querySelector(`#caller`);
+let called:HTMLSelectElement|null=document.querySelector(`#called`);
+let user:HTMLSelectElement|null= document.querySelector(`#storico`);
+let searchBTN:HTMLButtonElement|null=document.querySelector(`#find`);
+let search:HTMLInputElement|null=document.querySelector(`#search`);
+
+callBtn?.addEventListener("click",()=>{
+   let tempoChiamata:number=Number(minutes?.value);
+   let callerID:number=Number(caller?.value);
+   let calledID:number=Number(called?.value);
+   if(callerID==calledID){
+      alert(`Non puoi chiamarti da solo`)
+      return
    }
+   utenti[callerID].effettuaChiamata(utenti[calledID].id,tempoChiamata);
+   console.log(utenti);
+})
 
-   get numero404(): string {
-      return `${this.carica}€`;
-   }
+mostraStorico?.addEventListener("click",()=>{
+   let userID:number = Number(user?.value);
+   utenti[userID].mostraRegistroChiamate();
+});
 
-   get getNumeroChiamate(): number {
-      return this.numeroChiamate;
-   }
-
-   chiamata(min: number): void {
-      let costoChiamata:number=min*this.costoMinuto;
-      this.numeroChiamate ++;
-      console.log(`Costo chiamate: ${costoChiamata}€`);
-      this.carica -= costoChiamata
-   }
-
-   azzeraChiamate(): void {
-      this.numeroChiamate = 0;
-   }
-}
-
-let telefono1:Phone= new Phone(10,0,0.20);
-let telefono2:Phone= new Phone(10,0,0.20);
-let telefono3:Phone= new Phone(10,0,0.20);
+searchBTN?.addEventListener("click",()=>{
+   if(!search?.value) return
+   emilio.filtraChiamatePerDataOra(search?.value)
+})
