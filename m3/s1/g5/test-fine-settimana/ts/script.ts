@@ -14,7 +14,7 @@ let called:HTMLSelectElement|null=document.querySelector(`#called`);
 let user:HTMLSelectElement|null= document.querySelector(`#storico`);
 let searchBTN:HTMLButtonElement|null=document.querySelector(`#find`);
 let search:HTMLInputElement|null=document.querySelector(`#search`);
-
+let filterStorico:HTMLSelectElement|null=document.querySelector(`#select-filter-storico`);
 
 // emilio.ricarica(30);
 // emilio.numero404;
@@ -39,6 +39,7 @@ mostraStorico?.addEventListener("click",()=>{
 });
 
 searchBTN?.addEventListener("click",()=>{
+   let filterStoricoID:number=Number(filterStorico?.value); //
    if(!search?.value) return
-   emilio.filtraChiamatePerDataOra(search?.value)
+      utenti[filterStoricoID].filtraChiamatePerDataOra(search?.value)
 })

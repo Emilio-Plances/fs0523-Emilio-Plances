@@ -12,6 +12,7 @@ let called = document.querySelector(`#called`);
 let user = document.querySelector(`#storico`);
 let searchBTN = document.querySelector(`#find`);
 let search = document.querySelector(`#search`);
+let filterStorico = document.querySelector(`#select-filter-storico`);
 // emilio.ricarica(30);
 // emilio.numero404;
 // emilio.getNumeroChiamate
@@ -32,8 +33,9 @@ mostraStorico === null || mostraStorico === void 0 ? void 0 : mostraStorico.addE
     utenti[userID].mostraRegistroChiamate();
 });
 searchBTN === null || searchBTN === void 0 ? void 0 : searchBTN.addEventListener("click", () => {
+    let filterStoricoID = Number(filterStorico === null || filterStorico === void 0 ? void 0 : filterStorico.value); //
     if (!(search === null || search === void 0 ? void 0 : search.value))
         return;
-    emilio.filtraChiamatePerDataOra(search === null || search === void 0 ? void 0 : search.value);
+    utenti[filterStoricoID].filtraChiamatePerDataOra(search === null || search === void 0 ? void 0 : search.value);
 });
 //# sourceMappingURL=script.js.map
