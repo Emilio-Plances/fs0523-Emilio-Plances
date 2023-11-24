@@ -56,7 +56,6 @@ export class Phone implements ISim{
    }
 
    chiamata(min: number): void {
-      this.numeroChiamate ++;
       this.carica -= min*this.costoMinuto;
       console.log(`Nuovo credito: ${this.carica}€`);
    }

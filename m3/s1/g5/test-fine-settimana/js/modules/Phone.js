@@ -32,7 +32,6 @@ export class Phone {
         new Chiamata(durata, orarioChiamata, destinatario, this.id);
     }
     chiamata(min) {
-        this.numeroChiamate++;
         this.carica -= min * this.costoMinuto;
         console.log(`Nuovo credito: ${this.carica}€`);
     }
