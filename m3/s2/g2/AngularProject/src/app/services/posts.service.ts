@@ -8,31 +8,31 @@ export class PostsService {
   posts:IPost[]=[
     {
       "id":1,
-      "body":"lorem ipsum dolor sit am",
+      "body":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi quae aspernatur ipsa harum magni atque necessitatibus esse officiis vero, architecto eveniet sed omnis quas error molestiae, natus beatae? Modi, consectetur.",
       "title":"lorem ipsum dolor sit",
       "active":true
    },
    {
       "id":2,
-      "body":"lorem ipsum dolor sit am",
+      "body":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi quae aspernatur ipsa harum magni atque necessitatibus esse officiis vero, architecto eveniet sed omnis quas error molestiae, natus beatae? Modi, consectetur.",
       "title":"lorem ipsum dolor sit",
       "active":true
    },
    {
       "id":3,
-      "body":"lorem ipsum dolor sit am",
+      "body":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi quae aspernatur ipsa harum magni atque necessitatibus esse officiis vero, architecto eveniet sed omnis quas error molestiae, natus beatae? Modi, consectetur.",
       "title":"lorem ipsum dolor sit",
       "active":true
    },
    {
       "id":4,
-      "body":"lorem ipsum dolor sit am",
+      "body":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi quae aspernatur ipsa harum magni atque necessitatibus esse officiis vero, architecto eveniet sed omnis quas error molestiae, natus beatae? Modi, consectetur.",
       "title":"lorem ipsum dolor sit",
       "active":false
    },
    {
       "id":5,
-      "body":"lorem ipsum dolor sit am",
+      "body":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi quae aspernatur ipsa harum magni atque necessitatibus esse officiis vero, architecto eveniet sed omnis quas error molestiae, natus beatae? Modi, consectetur.",
       "title":"lorem ipsum dolor sit",
       "active":false
    }

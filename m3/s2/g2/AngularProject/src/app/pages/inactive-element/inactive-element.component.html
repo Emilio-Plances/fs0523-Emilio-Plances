@@ -1,16 +1,8 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Title</th>
-      <th>Body</th>
-      <th>Active</th>
-    </tr>
-    <tr *ngFor="let post of inactivePosts; let i=index">
-      <td>{{i+1}}</td>
-      <td>{{post.title}}</td>
-      <td>{{post.body}}</td>
-      <td>{{post.active}}</td>
-    </tr>
-  </thead>
-</table>
+<div class="container mt-4">
+  <div class="card mb-3" *ngFor="let post of inactivePosts">
+    <div class="card-body">
+      <h5 class="card-title">{{post.title}}</h5>
+      <p class="card-text">{{post.body}}</p>
+    </div>
+  </div>
+</div>
