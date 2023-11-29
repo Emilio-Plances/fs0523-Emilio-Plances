@@ -1,0 +1,7 @@
+<div class="card mb-3" *ngFor="let post of posts">
+  <div class="card-body" [style.backgroundColor]="post.type== 'news' ? 'lightgrey' : post.type== 'politic'? 'lightblue':'lightyellow'">
+    <h5 class="card-title">{{post.title}} {{post.id}}</h5>
+    <p class="card-text">{{post.body}}</p>
+    <button [innerText]="post.active ? 'Disattiva' : 'Attiva'" (click)="toggleActive(post)"></button>
+  </div>
+</div>
