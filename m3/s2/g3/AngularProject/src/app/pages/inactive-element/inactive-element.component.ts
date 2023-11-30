@@ -14,7 +14,4 @@ export class InactiveElementComponent {
   ngOnInit(){
     this.inactivePosts=this.postSvc.getInactive();
   }
-  toggleActive(post:IPost){
-    this.postSvc.changeActive(post.id);
-  }
 }

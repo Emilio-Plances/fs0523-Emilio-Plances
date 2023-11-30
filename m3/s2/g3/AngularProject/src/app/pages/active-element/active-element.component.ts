@@ -9,14 +9,10 @@ import { IPost } from '../../Models/IPost';
 })
 export class ActiveElementComponent {
   activePosts:IPost[]=[];
-  allPosts:IPost[]=[];
 
   constructor(private postSvc:PostsService){}
 
   ngOnInit(){
     this.activePosts=this.postSvc.getActive();
-  }
-  toggleActive(post:IPost){
-    this.postSvc.changeActive(post.id);
   }
 }

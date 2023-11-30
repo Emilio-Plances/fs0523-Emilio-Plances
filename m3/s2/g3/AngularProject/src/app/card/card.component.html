@@ -2,6 +2,6 @@
   <div class="card-body" [style.backgroundColor]="post.type== 'news' ? 'lightgrey' : post.type== 'politic'? 'lightblue':'lightyellow'">
     <h5 class="card-title">{{post.title}} {{post.id}}</h5>
     <p class="card-text">{{post.body}}</p>
-    <button [innerText]="post.active ? 'Disattiva' : 'Attiva'" (click)="toggleActive(post)"></button>
+    <button [innerText]="post.active ? 'Disattiva' : 'Attiva'" (click)="post.active=!post.active"></button>
   </div>
 </div>

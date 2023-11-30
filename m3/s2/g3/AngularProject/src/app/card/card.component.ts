@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { IPost } from '../../../Models/IPost';
+import { IPost } from '../Models/IPost';
 
 @Component({
   selector: 'app-card',
@@ -8,10 +8,4 @@ import { IPost } from '../../../Models/IPost';
 })
 export class CardComponent {
   @Input () posts:IPost[]=[];
-  @Output() onActiveClick:EventEmitter<IPost>= new EventEmitter();
-
-  toggleActive(post:IPost){
-    this.onActiveClick.emit(post);
-
-  }
 }
