@@ -1,13 +1,11 @@
-<app-form (onCreateClick)="newToDoCreate($event)"></app-form>
+<app-form *ngIf="!editing" (onCreateClick)="newToDoCreate($event)"></app-form>
+<app-form *ngIf="editing" [newToDo]="editingToDo" (onCreateClick)="finishEditToDo($event)"></app-form>
 
 <div *ngIf="loading">Uploading...</div>
 
 <app-to-do-list [toDoArr]="notCompletedArr"
 (onDeleteClick)="deleteToDo($event)"
 (onCompleteClick)="completeToDo($event)"
-(onEditClick)="editToDo($event)"></app-to-do-list>
+(onEditClick)="startEditToDo($event)"></app-to-do-list>
 
-<div *ngIf="editing">
-  Edit To Do: <app-form (onCreateClick)="edit"></app-form>
-</div>
-<div *ngIf="edit" [newToDo]="editingToDo">Uploading...</div>
+<div *ngIf="edit">Uploading...</div>

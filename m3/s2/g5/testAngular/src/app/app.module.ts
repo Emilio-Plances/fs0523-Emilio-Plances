@@ -8,6 +8,7 @@ import { FormComponent } from './form/form.component';
 import { FormsModule } from '@angular/forms';
 import { CompletedComponent } from './pages/completed/completed.component';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ToDoListComponent } from './to-do-list/to-do-list.component';
     HomeComponent,
     FormComponent,
     CompletedComponent,
-    ToDoListComponent
+    ToDoListComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

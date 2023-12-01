@@ -5,7 +5,12 @@ import { CompletedComponent } from './pages/completed/completed.component';
 
 const routes: Routes = [
   {
-    path:"",
+    path: '',
+    pathMatch:'full',
+    redirectTo: '/incomplete',
+  },
+  {
+    path:"incomplete",
     title:"To Do List",
     component: HomeComponent
   },
@@ -14,6 +19,11 @@ const routes: Routes = [
     title:"Completed To Do",
     component: CompletedComponent
   }
+  // {
+  //   path:"**",
+  //   title:"page404",
+
+  // }
 ];
 
 @NgModule({

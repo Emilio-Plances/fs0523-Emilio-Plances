@@ -1,6 +1,7 @@
 <table *ngIf="toDoArr">
   <thead>
     <tr>
+      <th>#</th>
       <th>Title</th>
       <th>Create Date</th>
       <th>Complete Date</th>
@@ -8,7 +9,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let td of toDoArr">
+    <tr *ngFor="let td of toDoArr, index as i">
+      <td>{{i+1}}</td>
       <td>{{td.title}}</td>
       <td>{{td.createDate | date:"d/M/yy, h:mm"}}</td>
       <td *ngIf="td.completeDate">{{td.completeDate | date:"d/M/yy, h:mm"}}</td>

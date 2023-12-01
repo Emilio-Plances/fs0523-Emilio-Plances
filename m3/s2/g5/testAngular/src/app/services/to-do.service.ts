@@ -36,7 +36,7 @@ export class ToDoService {
     }).then(res=>res.json())
   }
 
-  edit(toDo:IToDo):Promise<IToDo>{
+  edit(toDo:IToDo|Partial<IToDo>):Promise<IToDo>{
     return fetch(this.API+`/${toDo.id}`,{
       method:"PUT",
       headers:{

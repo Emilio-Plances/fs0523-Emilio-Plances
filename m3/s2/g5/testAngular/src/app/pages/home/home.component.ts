@@ -11,14 +11,14 @@ export class HomeComponent {
   constructor(private toDoSrv:ToDoService){}
   toDoArr!:IToDo[];
   notCompletedArr!:IToDo[];
-  editingToDo!:string;
+  editingToDo!:IToDo;
   loading:boolean=false;
   edit:boolean=false;
   editing:boolean=false;
 
   ngOnInit(){
     this.toDoSrv.getAll().then(res=>{
-      this.notCompletedArr=res.filter(element=>element.completed==false)
+      this.notCompletedArr=res.filter(element=>!element.completed)
     });
   }
 
@@ -46,22 +46,26 @@ export class HomeComponent {
     })
   }
 
-  completeToDo(ToDo:IToDo){
+  completeToDo(toDo:IToDo){
     this.edit=true;
-    ToDo.completed=true;
-    ToDo.completeDate=new Date();
+    toDo.completed=true;
+    toDo.completeDate=new Date();
 
-    this.toDoSrv.edit(ToDo).then(() =>{
-      let index=this.notCompletedArr.findIndex(element=>element.id==ToDo.id);
+    this.toDoSrv.edit(toDo).then(() =>{
+      let index=this.notCompletedArr.findIndex(element=>element.id==toDo.id);
       this.notCompletedArr.splice(index,1);
       alert(`Modificato con successo`)
       this.edit=false;
     })
   }
 
-  editToDo(toDo:IToDo){
+  startEditToDo(toDo:IToDo){
     this.editing=true;
-    this.editingToDo=toDo.title
+    this.editingToDo=toDo
+  }
 
+  finishEditToDo(toDo:Partial<IToDo>){
+    this.editing=false;
+    this.toDoSrv.edit(toDo).then(() =>{});
   }
 }

@@ -10,17 +10,17 @@ import { IToDo } from '../Models/IToDo';
 
 export class FormComponent {
 
-  @Output() onCreateClick:EventEmitter<Partial<IToDo>> = new EventEmitter()
-
   @Input() newToDo:Partial<IToDo>={
     title: '',
     completed: false,
   }
+  @Output() onCreateClick:EventEmitter<Partial<IToDo>> = new EventEmitter()
+
 
   sendNewToDo(){
-    this.newToDo.createDate = new Date();
+    if(!this.newToDo.createDate) this.newToDo.createDate = new Date();
     this.onCreateClick.emit(this.newToDo)
-    this.newToDo.title='';
+    if(!this.newToDo.id) this.newToDo.title =``;
   }
 }
 
