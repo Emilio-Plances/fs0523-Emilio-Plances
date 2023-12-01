@@ -1,0 +1,9 @@
+<div class="card mb-3"
+[style.backgroundColor]="post.type== 'news' ? 'lightgrey' : post.type== 'politic'? 'lightblue':'lightyellow'"
+*ngFor="let post of posts">
+  <div class="card-body" [routerLink]="['/active','details',post.id]">
+    <h5 class="card-title" appHighlight>{{post.title | uppercase}} {{post.id}}</h5>
+    <p class="card-text">{{post.body}}</p>
+  </div>
+  <button class="btn btn-primary" [innerText]="post.active ? 'Disattiva' : 'Attiva'" (click)="post.active=!post.active"></button>
+</div>

@@ -1,0 +1,25 @@
+<table *ngIf="toDoArr">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Create Date</th>
+      <th>Complete Date</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let td of toDoArr">
+      <td>{{td.title}}</td>
+      <td>{{td.createDate | date:"d/M/yy, h:mm"}}</td>
+      <td *ngIf="td.completeDate">{{td.completeDate | date:"d/M/yy, h:mm"}}</td>
+      <td *ngIf="!td.completeDate">Not done</td>
+      <td>
+        <button (click)="switchComplete(td)">Completa</button>
+        <button (click)="editToDo(td)">Modifica</button>
+        <button (click)="sendIdDelete(td.id)">Elimina</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="!toDoArr">Loading...</div>
