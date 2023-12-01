@@ -30,7 +30,6 @@ export class CompletedComponent {
 
     this.toDoSrv.create(newToDo).then(res=>{
       this.loading=false;
-      this.completedArr.push(res);
       alert(`${res.title} è stato creato`)
     });
   }
