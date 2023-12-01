@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+$yellow:#ecdd7b;
+$red:#561d25;
+
+body{
+  background-color: $yellow;
+}
+a{
+  text-decoration: none;
+}

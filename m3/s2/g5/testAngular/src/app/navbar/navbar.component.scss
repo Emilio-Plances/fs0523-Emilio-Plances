@@ -1,3 +1,22 @@
+$yellow:#ecdd7b;
+$red:#561d25;
+$green:#d3e298;
 nav{
   margin:30px 0;
+  justify-content: center;
+  display:flex;
+}
+a{
+  display:block;
+  width:100px;
+  height:30px;
+  line-height: 30px;
+  background-color: $red;
+  color:$yellow;
+  margin:0 10px;
+  border:solid 1px black;
+}
+.active{
+  background-color: $green;
+  color:$red
 }

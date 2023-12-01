@@ -8,7 +8,7 @@ import { IToDo } from '../Models/IToDo';
 })
 
 export class ToDoListComponent {
-  @Input() toDoArr!:IToDo[];
+  @Input() toDoArr:IToDo[]=[];
   @Output() onDeleteClick:EventEmitter<number> = new EventEmitter()
   @Output() onCompleteClick:EventEmitter<IToDo> = new EventEmitter()
   @Output() onEditClick:EventEmitter<IToDo> = new EventEmitter()
