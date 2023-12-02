@@ -9,16 +9,20 @@ import { IToDo } from '../../Models/IToDo';
 })
 export class HomeComponent {
   constructor(private toDoSrv:ToDoService){}
-  toDoArr!:IToDo[];
   notCompletedArr!:IToDo[];
   editingToDo!:IToDo;
   loading:boolean=false;
   edit:boolean=false;
   editing:boolean=false;
+  check:boolean=false;
 
   ngOnInit(){
+    this.loading=true;
     this.toDoSrv.getAll().then(res=>{
-      this.notCompletedArr=res.filter(element=>!element.completed)
+      this.loading=false;
+      this.notCompletedArr=res.filter(element=>!element.completed);
+
+      if(this.notCompletedArr.length==0) this.check=true;
     });
   }
 
@@ -41,7 +45,8 @@ export class HomeComponent {
 
       let index=this.notCompletedArr.findIndex(element=>element.id==id);
       this.notCompletedArr.splice(index,1);
-      alert(`Eliminato con successo!`)
+      alert(`Eliminato con successo!`);
+      if(this.notCompletedArr.length==0) this.check=true;
       this.edit=false;
     })
   }
@@ -56,6 +61,7 @@ export class HomeComponent {
       this.notCompletedArr.splice(index,1);
       alert(`Modificato con successo`)
       this.edit=false;
+      if(this.notCompletedArr.length==0) this.check=true;
     })
   }
 

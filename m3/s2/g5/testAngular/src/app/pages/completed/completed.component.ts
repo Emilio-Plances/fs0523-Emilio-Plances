@@ -9,16 +9,20 @@ import { ToDoService } from '../../services/to-do.service';
 })
 export class CompletedComponent {
   constructor(private toDoSrv:ToDoService){}
-  toDoArr!:IToDo[];
   completedArr!:IToDo[];
   editingToDo!:IToDo;
   loading:boolean=false;
   edit:boolean=false;
   editing:boolean=false;
+  check:boolean=false;
 
   ngOnInit(){
+    this.loading=true;
     this.toDoSrv.getAll().then(res=>{
+      this.loading=false;
       this.completedArr=res.filter(element=>element.completed)
+
+      if(this.completedArr.length==0) this.check=true;
     });
   }
 
@@ -40,7 +44,8 @@ export class CompletedComponent {
 
       let index=this.completedArr.findIndex(element=>element.id==id);
       this.completedArr.splice(index,1);
-      alert(`Eliminato con successo!`)
+      alert(`Eliminato con successo!`);
+      if(this.completedArr.length==0) this.check=true;
       this.edit=false;
     })
   }
@@ -53,7 +58,8 @@ export class CompletedComponent {
     this.toDoSrv.edit(toDo).then(() =>{
       let index=this.completedArr.findIndex(element=>element.id==toDo.id);
       this.completedArr.splice(index,1);
-      alert(`Modificato con successo`)
+      alert(`Modificato con successo`);
+      if(this.completedArr.length==0) this.check=true;
       this.edit=false;
     })
   }

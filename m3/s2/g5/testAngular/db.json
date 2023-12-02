@@ -2,15 +2,17 @@
   "todo": [
     {
       "title": "complete",
-      "completed": false,
+      "completed": true,
       "createDate": "2023-12-01T16:00:37.905Z",
-      "id": 1
+      "id": 1,
+      "completeDate": "2023-12-02T09:03:33.675Z"
     },
     {
       "title": "test",
-      "completed": false,
+      "completed": true,
       "createDate": "2023-12-01T16:01:11.697Z",
-      "id": 2
+      "id": 2,
+      "completeDate": "2023-12-02T09:03:37.619Z"
     }
   ]
 }
