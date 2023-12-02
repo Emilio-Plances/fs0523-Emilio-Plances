@@ -23,6 +23,7 @@ export class HomeComponent {
       this.notCompletedArr=res.filter(element=>!element.completed);
 
       if(this.notCompletedArr.length==0) this.check=true;
+      else this.check=false
     });
   }
 
@@ -36,6 +37,7 @@ export class HomeComponent {
       this.loading=false;
       this.notCompletedArr.push(res);
       alert(`${res.title} è stato creato`)
+      this.check=false
     });
   }
 
@@ -47,6 +49,7 @@ export class HomeComponent {
       this.notCompletedArr.splice(index,1);
       alert(`Eliminato con successo!`);
       if(this.notCompletedArr.length==0) this.check=true;
+      else this.check=false
       this.edit=false;
     })
   }
@@ -62,6 +65,7 @@ export class HomeComponent {
       alert(`Modificato con successo`)
       this.edit=false;
       if(this.notCompletedArr.length==0) this.check=true;
+      else this.check=false
     })
   }
 
