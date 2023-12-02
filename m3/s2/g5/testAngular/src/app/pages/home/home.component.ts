@@ -12,7 +12,7 @@ export class HomeComponent {
   notCompletedArr!:IToDo[];
   editingToDo!:IToDo;
   loading:boolean=false;
-  edit:boolean=false;
+
   editing:boolean=false;
   check:boolean=false;
 
@@ -42,7 +42,7 @@ export class HomeComponent {
   }
 
   deleteToDo(id:number){
-    this.edit=true;
+    this.editing=true;
     this.toDoSrv.delete(id).then(()=>{
 
       let index=this.notCompletedArr.findIndex(element=>element.id==id);
@@ -50,12 +50,12 @@ export class HomeComponent {
       alert(`Eliminato con successo!`);
       if(this.notCompletedArr.length==0) this.check=true;
       else this.check=false
-      this.edit=false;
+      this.editing=false;
     })
   }
 
   completeToDo(toDo:IToDo){
-    this.edit=true;
+    this.editing=true;
     toDo.completed=true;
     toDo.completeDate=new Date();
 
@@ -63,7 +63,7 @@ export class HomeComponent {
       let index=this.notCompletedArr.findIndex(element=>element.id==toDo.id);
       this.notCompletedArr.splice(index,1);
       alert(`Modificato con successo`)
-      this.edit=false;
+      this.editing=false;
       if(this.notCompletedArr.length==0) this.check=true;
       else this.check=false
     })

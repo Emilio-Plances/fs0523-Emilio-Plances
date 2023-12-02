@@ -12,7 +12,6 @@ export class CompletedComponent {
   completedArr!:IToDo[];
   editingToDo!:IToDo;
   loading:boolean=false;
-  edit:boolean=false;
   editing:boolean=false;
   check:boolean=false;
 
@@ -39,19 +38,19 @@ export class CompletedComponent {
   }
 
   deleteToDo(id:number){
-    this.edit=true;
+    this.editing=true;
     this.toDoSrv.delete(id).then(()=>{
 
       let index=this.completedArr.findIndex(element=>element.id==id);
       this.completedArr.splice(index,1);
       alert(`Eliminato con successo!`);
       if(this.completedArr.length==0) this.check=true;
-      this.edit=false;
+      this.editing=false;
     })
   }
 
   completeToDo(toDo:IToDo){
-    this.edit=true;
+    this.editing=true;
     toDo.completed=false;
     toDo.completeDate=undefined;
 
@@ -60,7 +59,7 @@ export class CompletedComponent {
       this.completedArr.splice(index,1);
       alert(`Modificato con successo`);
       if(this.completedArr.length==0) this.check=true;
-      this.edit=false;
+      this.editing=false;
     })
   }
 
