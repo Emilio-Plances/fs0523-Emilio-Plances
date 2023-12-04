@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IProduct } from '../../Modules/iproduct';
 import { ProductsService } from '../../services/products.service';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-products',
@@ -22,7 +23,7 @@ export class ProductsComponent {
   }
 
   addFav(product:IProduct){
-    this.productsSVC.favourites$.subscribe(val => {
+    this.productsSVC.favourites$.pipe(take(1)).subscribe(val => {
       const newArr = [...val, product];
       this.productsSVC.newFavArr(newArr);
     })
