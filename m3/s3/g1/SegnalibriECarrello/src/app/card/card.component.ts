@@ -7,6 +7,5 @@ import { IProduct } from '../Modules/iproduct';
   styleUrl: './card.component.scss'
 })
 export class CardComponent {
-    @Input() productsArr:IProduct[]=[]
-
+  @Input() product!:IProduct
 }
