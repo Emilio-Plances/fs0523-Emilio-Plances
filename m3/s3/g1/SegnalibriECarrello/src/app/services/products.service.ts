@@ -10,8 +10,8 @@ import { IProduct } from '../Modules/iproduct';
 export class ProductsService {
   API:string=`https://dummyjson.com/products`;
 
-  subject:BehaviorSubject<IProduct[]> = new BehaviorSubject<IProduct[]>([]);
-  favourites$ = this.subject.asObservable();
+  favouritesSubject:BehaviorSubject<IProduct[]> = new BehaviorSubject<IProduct[]>([]);
+  favourites$ = this.favouritesSubject.asObservable();
 
   constructor(private http:HttpClient) { }
 
@@ -19,6 +19,6 @@ export class ProductsService {
     return this.http.get<IDbres>(this.API);
   }
   newFavArr(newArr:IProduct[]){
-    this.subject.next(newArr);
+    this.favouritesSubject.next(newArr);
   }
 }

@@ -1,0 +1,58 @@
+<form [formGroup]="form">
+  <div class="mt-3">
+    <label for="name">Nome: </label>
+    <input id="name" formControlName="name" type="text" class="form-control">
+  </div>
+  <div *ngIf="isValidAndTouched('name')">Non è un nome valido</div>
+
+  <div class="mt-3">
+    <label for="surname">Cognome: </label>
+    <input id="surname" formControlName="surname" type="text" class="form-control">
+  </div>
+  <div *ngIf="isValidAndTouched('surname')">Non è un cognome valido</div>
+
+  <div formGroupName="authData">
+    <div class="mt-3">
+      <label for="username">Username: </label>
+      <input id="username" formControlName="username" type="text" class="form-control">
+    </div>
+    <div *ngIf="isValidAndTouched('authData.username')">Non è uno username valido</div>
+
+    <div class="mt-3">
+      <label for="password">Password: </label>
+      <input id="password" formControlName="password" type="password" class="form-control">
+    </div>
+    <div *ngIf="isValidAndTouched('authData.password')">Non è una password valida</div>
+
+    <div class="mt-3">
+      <label for="confirmPassword">Confirma Password: </label>
+      <input id="confirmPassword" formControlName="confirmPassword" type="password" class="form-control">
+    </div>
+    <div *ngIf="!isValid('authData.confirmPassword')">{{getCustomMessage('authData.confirmPassword')}}</div>
+
+  </div>
+
+  <div class="mt-3 d-flex">
+    Genere:
+    <div class="form-check ms-3" *ngFor="let g of genres">
+      <input formControlName="genre" [id]="g" [value]="g" class="form-check-input"
+      type="radio" name="genre">
+      <label [for]="g">{{g}}</label>
+    </div>
+  </div>
+  <div *ngIf="isValidAndTouched('bio')">Non è una bio valida</div>
+
+  <div class="mt-3">
+    <label for="profileImg">Immagine Profilo (URL): </label>
+    <input id="profileImg" type="text" formControlName="profileImg" class="form-control">
+  </div>
+  <div *ngIf="isValidAndTouched('profileImg')">Non è un'immagine valida</div>
+
+  <div class="mt-3">
+    <label for="bio">Biografia: </label>
+    <input id="bio" type="textarea" formControlName="bio" class="form-control">
+  </div>
+  <div *ngIf="isValidAndTouched('bio')">Non è una bio valida</div>
+
+  <button [disabled]="!form.valid" class="btn btn-primary mt-3" (click)="submit()">Submit</button>
+</form>
