@@ -7,8 +7,6 @@ import { FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } fro
   styleUrl: './home.component.scss'
 })
 
-
-
 export class HomeComponent {
   form!:FormGroup;
 
