@@ -1,0 +1,24 @@
+<form>
+
+  <div>
+    <label for="name">Nome:</label>
+    <input class="form-control" type="text" id="name" name="name" [(ngModel)]="registerData.name">
+  </div>
+
+  <div>
+    <label for="username">Username:</label>
+    <input class="form-control" type="text" id="username" name="username" [(ngModel)]="registerData.username">
+  </div>
+
+  <div>
+    <label for="email">Email:</label>
+    <input class="form-control" type="text" id="email" name="email" [(ngModel)]="registerData.email">
+  </div>
+
+  <div>
+    <label for="password">Password:</label>
+    <input class="form-control" type="password" id="password" name="password" [(ngModel)]="registerData.password">
+  </div>
+
+  <button class="btn btn-primary" (click)="register()">Registrati</button>
+</form>
