@@ -1,25 +1,40 @@
-<form>
-
+<form [formGroup]="form">
   <div>
     <label for="name">Nome:</label>
-    <input class="form-control" type="text" id="name" name="name" [(ngModel)]="registerData.name">
+    <input class="form-control" type="text" id="name" formControlName="name" >
   </div>
+  <div *ngIf="isValidAndTouched('name')" class="alert alert-warning">Non è un nome valido</div>
 
   <div>
     <label for="surname">Cognome:</label>
-    <input class="form-control" type="text" id="surname" name="surname" [(ngModel)]="registerData.surname">
+    <input class="form-control" type="text" id="surname" formControlName="surname">
   </div>
+  <div *ngIf="isValidAndTouched('surname')" class="alert alert-warning">Non è un cognome valido</div>
 
   <div>
     <label for="email">Email:</label>
-    <input class="form-control" type="text" id="email" name="email" [(ngModel)]="registerData.email">
+    <input class="form-control" type="text" id="email" formControlName="email">
   </div>
+  <div *ngIf="isValidAndTouched('email')" class="alert alert-warning">Non è una mail valida</div>
 
   <div>
     <label for="password">Password:</label>
-    <input class="form-control" type="password" id="password" name="password" [(ngModel)]="registerData.password">
+    <input class="form-control" type="password" id="password" formControlName="password">
+  </div>
+  <div *ngIf="isValidAndTouched('password')" class="alert alert-warning">Non è una password valida</div>
+
+  <div>
+    <label for="confirmPassword">Conferma Password:</label>
+    <input class="form-control" type="password" id="confirmPassword" formControlName="confirmPassword">
+  </div>
+  <div *ngIf="isValidAndTouched('confirmPassword')" class="alert alert-warning">
+    {{getCustomMessage('confirmPassword')}}
   </div>
 
-  <button class="btn btn-primary" (click)="register()">Registrati</button>
+  <button [disabled]="!form.valid" class="btn btn-primary mt-3" (click)="submit()">Registrati</button>
 </form>
+<div *ngIf="loading">Caricamento...</div>
+<div *ngIf="success">Complimenti {{registeredName}}! Ti sei registrato/a!</div>
+
+
 

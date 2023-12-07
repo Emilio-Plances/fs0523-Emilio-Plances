@@ -1,4 +1,33 @@
 {
-  "users":{},
-  "cities":{}
+  "users": [
+    {
+      "email": "emilio.plances@gmail.com",
+      "password": "$2a$10$cPqM17mpVRPxDBmc3fEdcuB4s7KvK3oAwEkghX3i1jtjGvxCOBqw6",
+      "name": "Emilio",
+      "surname": "Plances",
+      "id": 1
+    },
+    {
+      "email": "roqu@mailinator.com",
+      "password": "$2a$10$MB4z.q.MxvROq4GYuoroYOF4UdRxcLYpIuYfNlDLlAqYPkHmmbDGC",
+      "name": "Nevada Burris",
+      "surname": "Garrison",
+      "id": 2
+    },
+    {
+      "email": "xerusuvab@mailinator.com",
+      "password": "$2a$10$0ZsR6DTCV8DGmzBYwzQNLutPxb7fSUq0.YDYuNSFdX1LHWrk0V1ma",
+      "name": "Karleigh Sanders",
+      "surname": "Page",
+      "id": 3
+    },
+    {
+      "email": "kenakije@mailinator.com",
+      "password": "$2a$10$HdelQrtVpZ.flLUNaLfGVeHRe28/yJXMkkFnBbJNC5/uNYAIZxPWK",
+      "name": "Angelica Norris",
+      "surname": "Evans",
+      "id": 4
+    }
+  ],
+  "cities": []
 }
