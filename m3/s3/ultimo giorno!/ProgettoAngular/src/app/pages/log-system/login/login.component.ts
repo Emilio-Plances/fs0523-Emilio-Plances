@@ -26,6 +26,7 @@ export class LoginComponent {
       password: this.fb.control(null,[Validators.required]),
     })
   }
+
   submit(){
     this.loading=true;
     this.LSS.login(this.form.value)

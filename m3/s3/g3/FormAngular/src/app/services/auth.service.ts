@@ -17,8 +17,10 @@ export class AuthService {
   user$=this.authorized.asObservable()
   userBoolean$=this.user$.pipe(map(user=>!!user))
 
-  constructor(private http:HttpClient,
-    private router:Router) {
+  constructor(
+    private http:HttpClient,
+    private router:Router
+  ) {
     this.logged()
   }
 

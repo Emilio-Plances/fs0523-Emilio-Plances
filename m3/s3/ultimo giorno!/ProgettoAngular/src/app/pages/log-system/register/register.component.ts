@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { LogSystemService } from '../../../services/log-system.service';
 import { Router } from '@angular/router';
-import { catchError } from 'rxjs';
+import { catchError, tap } from 'rxjs';
 
 @Component({
   selector: 'app-register',
@@ -12,9 +12,8 @@ import { catchError } from 'rxjs';
 export class RegisterComponent {
   confirmPassword!:string;
   form!: FormGroup;
-  registeredName!:string;
   loading!:boolean;
-  success:boolean = false;
+  emailExist: boolean=false;
 
 
   constructor(
@@ -37,12 +36,14 @@ export class RegisterComponent {
     this.loading=true;
     delete this.form.value.confirmPassword;
 
-    this.LSS.register(this.form.value).subscribe(data=>{
-      this.success=true;
+    this.LSS.register(this.form.value).pipe(tap(()=>{
       this.loading=false;
-      this.registeredName=`${data.user.name} ${data.user.surname}`
       this.router.navigate(['/LogSystem/login']);
-    });
+    }),catchError(err=>{
+      this.loading=false
+      this.emailExist=true
+      throw err
+    })).subscribe()
   }
 
   isValid(nameForm:string):boolean|undefined{

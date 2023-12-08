@@ -15,7 +15,8 @@
     <label for="email">Email:</label>
     <input class="form-control" type="text" id="email" formControlName="email">
   </div>
-  <div *ngIf="isValidAndTouched('email')" class="alert alert-warning">Non è una mail valida</div>
+  <div *ngIf="isValidAndTouched('email') && !emailExist" class="alert alert-warning">Non è una mail valida</div>
+  <div *ngIf="emailExist" class="alert alert-warning">Questa email è già registrata</div>
 
   <div>
     <label for="password">Password:</label>
@@ -34,7 +35,7 @@
   <button [disabled]="!form.valid" class="btn btn-primary mt-3" (click)="submit()">Registrati</button>
 </form>
 <div *ngIf="loading">Caricamento...</div>
-<div *ngIf="success">Complimenti {{registeredName}}! Ti sei registrato/a!</div>
+
 
 
 

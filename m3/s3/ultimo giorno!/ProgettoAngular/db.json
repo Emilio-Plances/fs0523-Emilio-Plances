@@ -27,6 +27,13 @@
       "name": "Angelica Norris",
       "surname": "Evans",
       "id": 4
+    },
+    {
+      "email": "emilio.plances@gmail.co",
+      "password": "$2a$10$NlQ3iYecOz0ehfmadsv8CeZS4Rfpg7z1CGc7eIeJlKWRms2eOHMOC",
+      "name": "Dante Cortez",
+      "surname": "Pena",
+      "id": 5
     }
   ],
   "cities": []
