@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IGeodata } from '../Modules/igeodata';
 import { IWeatherCity } from '../Modules/iweather-city';
+import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class WeatherService {
 
 
 
-  KEY:string=`48a439792976e29661584c00419eb394`;
+  KEY:string=environment.APIKEY;
 
   getGeoData(city:string):Observable<IGeodata[]>{
     let geodataURL:string=`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${this.KEY}`;
