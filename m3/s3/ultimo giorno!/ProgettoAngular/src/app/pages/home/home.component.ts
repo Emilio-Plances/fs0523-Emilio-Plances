@@ -2,20 +2,23 @@ import { Component } from '@angular/core';
 
 import { WeatherService } from '../../services/weather.service';
 import { IGeodata } from '../../Modules/igeodata';
-import { IList } from '../../Modules/iweather-city';
+import { IList, IWeatherCity } from '../../Modules/iweather-city';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
+
 export class HomeComponent {
 
   city:string =``;
   searchDone:boolean=false;
-  foundCities!:IGeodata[]
-  weatherList!:IList[]
-  citySelected:boolean=false
+  citySelected:boolean=false;
+  foundCities!:IGeodata[];
+  weatherList!:IList[];
+  choosenCity!:IGeodata;
+
 
   constructor(
     private WeatherS:WeatherService
@@ -31,12 +34,15 @@ export class HomeComponent {
   }
 
   getWeather(city:IGeodata){
+    this.choosenCity=city
     this.searchDone=false;
-    this.citySelected=true
+    this.citySelected=true;
+
     let cityName=city.local_names?.it? city.local_names?.it:city.name
     this.city=`${cityName},${city.country},${city.state}`;
+
     this.WeatherS.getWeather(city.lat,city.lon).subscribe(data =>{
-      this.weatherList=data.list
+      this.weatherList=data.list;
       console.log(data)
     })
   }

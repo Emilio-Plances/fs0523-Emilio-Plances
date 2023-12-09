@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { Subject, Observable, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IGeodata } from '../Modules/igeodata';
@@ -11,6 +11,13 @@ export class WeatherService {
 
   constructor(private http:HttpClient) {}
 
+  cityWeather= new Subject<IWeatherCity>();
+  cityGeodata=  new Subject<IGeodata>()
+  citySelectedWeather$= this.cityWeather.asObservable()
+  citySelectedGeoData$= this.cityGeodata.asObservable()
+
+
+
   KEY:string=`48a439792976e29661584c00419eb394`;
 
   getGeoData(city:string):Observable<IGeodata[]>{
@@ -20,6 +27,6 @@ export class WeatherService {
 
   getWeather(lat:number,lon:number){
     let weatherURL:string=`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${this.KEY}`;
-    return this.http.get<IWeatherCity>(weatherURL);
+    return this.http.get<IWeatherCity>(weatherURL).pipe(tap(data=>this.cityWeather.next(data)));
   }
 }

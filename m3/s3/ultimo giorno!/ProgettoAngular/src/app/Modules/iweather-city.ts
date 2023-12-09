@@ -19,6 +19,17 @@ export interface IList {
   dt_txt: string
 }
 
+export interface ICity {
+  id: number
+  name: string
+  coord: ICoord
+  country: string
+  population: number
+  timezone: number
+  sunrise: number
+  sunset: number
+}
+
 interface IMain {
   temp: number
   feels_like: number
@@ -54,17 +65,6 @@ interface IRain {
 
 interface ISys {
   pod: string
-}
-
-interface ICity {
-  id: number
-  name: string
-  coord: ICoord
-  country: string
-  population: number
-  timezone: number
-  sunrise: number
-  sunset: number
 }
 
 interface ICoord {

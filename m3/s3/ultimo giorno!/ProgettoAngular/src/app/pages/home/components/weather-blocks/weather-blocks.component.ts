@@ -13,13 +13,13 @@ export class WeatherBlocksComponent {
     let output!:string;
     switch(weather){
       case `Clear`:
-        output="../../../../../assets/sunny-weather-Icon.jpg";
+        output="../../../../../assets/sunny-weather-Icon.png";
         break;
       case `Rain`:
-        output="../../../../../assets/rain-weather-Icon.jpg";
+        output="../../../../../assets/rain-weather-Icon.png";
         break;
       case `Clouds`:
-        output="../../../../../assets/cloudy-weather-Icon.jpg";
+        output="../../../../../assets/cloudy-weather-Icon.png";
         break;
       default:
         output="";

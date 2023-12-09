@@ -11,8 +11,8 @@
     </div>
   </div>
 
-  <div *ngIf="citySelected" class="border border-primary">
-
+  <div *ngIf="citySelected" class="mt-2 border border-primary">
+    <app-info-city [cityGeodata]="choosenCity"></app-info-city>
   </div>
 
   <div id="weatherContainer" class="d-flex mt-3">
