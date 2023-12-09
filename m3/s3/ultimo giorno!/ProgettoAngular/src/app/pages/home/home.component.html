@@ -1,1 +1,25 @@
-<p>home works!</p>
+<div class="container">
+  <form>
+    <label for="city"></label>
+    <input id="city" [(ngModel)]="city" name="city" type="text">
+    <button (click)="submit()">Cerca</button>
+  </form>
+
+  <div class="text-start" *ngIf="searchDone">
+    <div *ngFor="let city of foundCities">
+      <button (click)="getWeather(city)">{{city.local_names?.it? city.local_names?.it:city.name}}, {{city.country}}, {{city.state}}</button>
+    </div>
+  </div>
+
+  <div *ngIf="citySelected" class="border border-primary">
+
+  </div>
+
+  <div id="weatherContainer" class="d-flex mt-3">
+    <div class="weatherBlock border border-primary me-lg-2" *ngFor="let time of weatherList">
+      <app-weather-blocks [weather]="time"></app-weather-blocks>
+    </div>
+  </div>
+</div>
+
+

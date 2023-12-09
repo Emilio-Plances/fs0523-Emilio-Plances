@@ -1,0 +1,4 @@
+<h2>{{weather.dt_txt | date:"MM/dd"}}</h2>
+<h2>{{weather.dt_txt | date:"h:mm a"}}</h2>
+<img [src]="selectPicture(weather.weather[0].main)" alt="">
+<p>{{weather.weather[0].main}}</p>

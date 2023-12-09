@@ -1,6 +1,8 @@
-<nav>
-  <a class="btn btn-primary ms-2" routerLink="/Home">Home</a>
-  <a *ngIf="!logged" class="btn btn-primary ms-2" routerLink="/LogSystem">Login/register</a>
-  <button *ngIf="logged" (click)="logOut()">Disconnettiti</button>
-</nav>
+<div class="container text-center">
+  <nav class="mb-3">
+    <a class="btn btn-primary ms-2" routerLink="/Home">Home</a>
+    <a *ngIf="!logged" class="btn btn-primary ms-2" routerLink="/LogSystem">Login/register</a>
+    <button *ngIf="logged" (click)="logOut()">Disconnettiti</button>
+  </nav>
+</div>
 <router-outlet></router-outlet>

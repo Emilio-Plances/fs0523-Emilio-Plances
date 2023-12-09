@@ -1,0 +1,9 @@
+#weatherContainer{
+  flex-wrap: wrap;
+  gap:5px;
+  .weatherBlock{
+    flex: 1 0 24%;
+    height:175px ;
+    text-align: center;
+  }
+}
