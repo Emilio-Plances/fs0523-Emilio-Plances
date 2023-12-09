@@ -19,7 +19,6 @@ export class HomeComponent {
   weatherList!:IList[];
   choosenCity!:IGeodata;
 
-
   constructor(
     private WeatherS:WeatherService
   ){}

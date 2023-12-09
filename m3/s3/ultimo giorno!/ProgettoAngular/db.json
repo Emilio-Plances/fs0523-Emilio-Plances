@@ -8,33 +8,13 @@
       "id": 1
     },
     {
-      "email": "roqu@mailinator.com",
-      "password": "$2a$10$MB4z.q.MxvROq4GYuoroYOF4UdRxcLYpIuYfNlDLlAqYPkHmmbDGC",
-      "name": "Nevada Burris",
-      "surname": "Garrison",
+      "email": "MauroCassoni@gmail.com",
+      "password": "$2a$10$q7iZ8u2PAqjs3vgF0fhmO.H.U/5UQYWmw5/kGqV1dw/Ypm1ZI5Ciy",
+      "name": "Mauro",
+      "surname": "Cassoni",
       "id": 2
-    },
-    {
-      "email": "xerusuvab@mailinator.com",
-      "password": "$2a$10$0ZsR6DTCV8DGmzBYwzQNLutPxb7fSUq0.YDYuNSFdX1LHWrk0V1ma",
-      "name": "Karleigh Sanders",
-      "surname": "Page",
-      "id": 3
-    },
-    {
-      "email": "kenakije@mailinator.com",
-      "password": "$2a$10$HdelQrtVpZ.flLUNaLfGVeHRe28/yJXMkkFnBbJNC5/uNYAIZxPWK",
-      "name": "Angelica Norris",
-      "surname": "Evans",
-      "id": 4
-    },
-    {
-      "email": "emilio.plances@gmail.co",
-      "password": "$2a$10$NlQ3iYecOz0ehfmadsv8CeZS4Rfpg7z1CGc7eIeJlKWRms2eOHMOC",
-      "name": "Dante Cortez",
-      "surname": "Pena",
-      "id": 5
     }
   ],
-  "cities": []
+  "prefCities": [
+  ]
 }

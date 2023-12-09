@@ -1,11 +1,13 @@
 <div class="d-flex justify-content-between p-2">
-  <div>
+  <div id="cityNameBox" class="">
     <h2>{{cityName}}</h2>
+    <h6>{{cityCountry}}, {{cityState}} </h6>
+    <button (click)="addPref()">pref</button>
   </div>
   <div class="text-end">
     <p>Popolazione: {{population}}</p>
     <p>Umidità: {{humidity}}</p>
-    <p>Massima: {{tempMax}}</p>
-    <p>Minima: {{tempMin}}</p>
+    <p>Massima: {{tempMax}}°C</p>
+    <p class="m-0">Minima: {{tempMin}}°C</p>
   </div>
 </div>

@@ -63,7 +63,6 @@ export class LogSystemService {
   autoLogOut(token:string){
     let expiringDate=this.jwt.getTokenExpirationDate(token) as Date;
     let remainingTimeMs=expiringDate.getTime() - new Date().getTime();
-    console.log(remainingTimeMs)
     setTimeout(() => {
       this.logOut()
     }, remainingTimeMs)
