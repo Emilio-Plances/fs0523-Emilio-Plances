@@ -6,6 +6,7 @@ import { IGeodata } from '../../../../Modules/igeodata';
 import { IPref } from '../../../../Modules/ipref';
 import { LogSystemService } from '../../../../services/log-system.service';
 import { IUserAuth } from '../../../../Modules/iuser-auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-info-city',
@@ -25,22 +26,25 @@ export class InfoCityComponent {
   cityState!:string;
   logged!:boolean;
   loggedUser!:IUserAuth|null;
+  userPrefArr!:IPref[]
   pref:IPref={
     geodataCity: undefined,
     weatherCity: undefined,
-    IDUser: `0`
+    IDUser: `0`,
   }
 
-
   constructor(
+    private router:Router,
     private WeatherS:WeatherService,
     private PrefS:PrefService,
     private LSS:LogSystemService
   ){}
 
   ngOnInit(){
-    this.LSS.booleanUser$.subscribe(user =>this.logged=!!user)
-    this.LSS.user$.subscribe(user=>this.loggedUser=user)
+    this.LSS.user$.subscribe(user=>this.loggedUser=user);
+    this.LSS.booleanUser$.subscribe(user =>{
+      this.logged=!!user;
+    });
 
     this.WeatherS.citySelectedWeather$.subscribe(city=>{
       if(!city)return;
@@ -60,7 +64,12 @@ export class InfoCityComponent {
     this.pref.geodataCity=this.cityGeodata;
     this.pref.weatherCity=this.weatherCity;
 
-    if(this.logged)
+    if(!this.logged){
+      alert(`Non hai effettuato l'accesso!`);
+      this.router.navigate([`/LogSystem/login`])
+      return;
+    }
+
     this.pref.IDUser=this.loggedUser?.user.id;
     this.PrefS.addPreference(this.pref).subscribe(data=>console.log(data)
     )

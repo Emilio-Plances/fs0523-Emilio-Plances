@@ -31,6 +31,7 @@
   <div *ngIf="isValidAndTouched('confirmPassword')" class="alert alert-warning">
     {{getCustomMessage('confirmPassword')}}
   </div>
+  <p>Sei già registrato?<a routerLink="/LogSystem/login">Accedi!</a></p>
 
   <button [disabled]="!form.valid" class="btn btn-primary mt-3" (click)="submit()">Registrati</button>
 </form>

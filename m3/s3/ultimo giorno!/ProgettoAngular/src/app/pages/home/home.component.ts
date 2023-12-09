@@ -3,6 +3,10 @@ import { Component } from '@angular/core';
 import { WeatherService } from '../../services/weather.service';
 import { IGeodata } from '../../Modules/igeodata';
 import { IList, IWeatherCity } from '../../Modules/iweather-city';
+import { LogSystemService } from '../../services/log-system.service';
+import { IPref } from '../../Modules/ipref';
+import { IUserAuth } from '../../Modules/iuser-auth';
+import { PrefService } from '../../services/pref.service';
 
 @Component({
   selector: 'app-home',
@@ -11,18 +15,31 @@ import { IList, IWeatherCity } from '../../Modules/iweather-city';
 })
 
 export class HomeComponent {
-
   city:string =``;
   searchDone:boolean=false;
   citySelected:boolean=false;
   foundCities!:IGeodata[];
   weatherList!:IList[];
   choosenCity!:IGeodata;
+  loggedUser!:IUserAuth|null;
+  userPrefArr!:IPref[]
+  logged!:boolean;
 
   constructor(
-    private WeatherS:WeatherService
+    private WeatherS:WeatherService,
+    private LSS:LogSystemService,
+    private PrefS:PrefService
   ){}
 
+  ngOnInit(){
+    this.LSS.user$.subscribe(user=>this.loggedUser=user);
+    this.LSS.booleanUser$.subscribe(user =>{
+      this.logged=!!user;
+    });
+    if(this.logged&&this.loggedUser){
+      this.PrefS.getPreferencesByUserID(this.loggedUser.user.id).subscribe(data=>console.log(data))
+    }
+  }
   submit(){
     if(this.city==``) return
     this.WeatherS.getGeoData(this.city).subscribe(data =>{
@@ -42,7 +59,6 @@ export class HomeComponent {
 
     this.WeatherS.getWeather(city.lat,city.lon).subscribe(data =>{
       this.weatherList=data.list;
-      console.log(data)
     })
   }
 }

@@ -1,9 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { environment } from '../../environments/environment.development';
 import { IPref } from '../Modules/ipref';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +19,10 @@ export class PrefService {
     return this.http.get<IPref[]>(this.APIPref)
   }
 
-  getPreferenceID(prefID:number):Observable<IPref>{
-    return this.http.get<IPref>(`${this.APIPref}/${prefID}`)
+  getPreferencesByUserID(userID:string):Observable<IPref[]|undefined>{
+    return this.http.get<IPref[]>(this.APIPref).pipe(map(dataArr=>
+      dataArr.filter(data=>data.IDUser==userID)
+    ));
   }
 
   addPreference(pref:IPref):Observable<IPref>{

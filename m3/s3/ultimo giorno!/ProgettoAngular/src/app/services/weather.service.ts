@@ -17,8 +17,6 @@ export class WeatherService {
   citySelectedWeather$= this.cityWeather.asObservable()
   citySelectedGeoData$= this.cityGeodata.asObservable()
 
-
-
   KEY:string=environment.APIKEY;
 
   getGeoData(city:string):Observable<IGeodata[]>{
