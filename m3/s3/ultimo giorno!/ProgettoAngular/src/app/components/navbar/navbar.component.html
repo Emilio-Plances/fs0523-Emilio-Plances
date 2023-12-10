@@ -1,0 +1,8 @@
+<div class="container d-flex text-center align-items-center justify-content-center">
+  <nav class="mb-3">
+    <h3 class="mt-3">ER METEO!</h3>
+    <a class="btn btn-primary" routerLink="/Home">Home</a>
+    <a *ngIf="!logged" class="btn btn-primary ms-2" routerLink="/LogSystem">Accedi/Registrati</a>
+    <button class="btn btn-primary ms-2" *ngIf="logged" (click)="logOut()">Disconnettiti</button>
+  </nav>
+</div>

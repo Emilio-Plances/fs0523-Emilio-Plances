@@ -8,3 +8,30 @@
     border-radius: 50px;
   }
 }
+.search-bar{
+  width:220px;
+  padding:0 10px
+}
+#search-button{
+  background-color: transparent;
+  border:none;
+}
+#search-results-box{
+  position: relative;
+  right: 14px;
+  border: 1px solid black;
+  width:220px;
+  margin:0 auto
+}
+.search-results{
+  background-color: transparent;
+  width:100%;
+  border:none;
+  border-bottom: 1px solid grey;
+  &:last-of-type{
+    border-bottom: none;
+  }
+  &:hover{
+    background-color: rgba(6,219,238,45);
+  }
+}

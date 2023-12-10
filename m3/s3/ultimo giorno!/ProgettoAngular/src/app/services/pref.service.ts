@@ -30,6 +30,6 @@ export class PrefService {
   }
 
   deletePreference(prefID:number):Observable<IPref[]>{
-    return this.http.get<IPref[]>(`${this.APIPref}/${prefID}`)
+    return this.http.delete<IPref[]>(`${this.APIPref}/${prefID}`)
   }
 }

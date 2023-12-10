@@ -1,9 +1,20 @@
-<div class="container d-flex text-center align-items-center">
-  <h3>ER METEO!</h3>
-  <nav class="mb-3">
-    <a class="btn btn-primary ms-2" routerLink="/Home">Home</a>
-    <a *ngIf="!logged" class="btn btn-primary ms-2" routerLink="/LogSystem">Login/register</a>
-    <button *ngIf="logged" (click)="logOut()">Disconnettiti</button>
-  </nav>
-</div>
+<app-navbar></app-navbar>
 <router-outlet></router-outlet>
+<div id="user-box" class="btn-group dropup" *ngIf="logged">
+  <span *ngIf="!show" id="fav-length" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">{{userPrefArr?.length}}</span>
+
+  <button id="user-button" type="button"
+  (click)="show=!show"
+  class="btn btn-secondary dropdown-toggle"
+  data-bs-toggle="dropdown" aria-expanded="false">
+  <fa-icon [icon]="['fas','user']"></fa-icon>
+  </button>
+
+  <div [ngClass]="{show: show}" class="dropdown-menu">
+    <div *ngFor="let fav of userPrefArr">
+      <button class="dropdown-item pref-cities" (click)="search(fav.geodataCity)">{{fav.geodataCity?.local_names?.it? fav.geodataCity?.local_names?.it:fav.geodataCity?.name}}</button>
+      <button (click)="removePref(fav.id)"></button>
+    </div>
+  </div>
+</div>
+

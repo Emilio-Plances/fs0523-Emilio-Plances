@@ -6,7 +6,9 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { WeatherBlocksComponent } from './components/weather-blocks/weather-blocks.component';
 import { InfoCityComponent } from './components/info-city/info-city.component';
-
+import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,12 @@ import { InfoCityComponent } from './components/info-city/info-city.component';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule,
   ]
 })
-export class HomeModule { }
+export class HomeModule {
+  constructor(library: FaIconLibrary) {
+    library.addIconPacks(far,fas)
+  }
+}

@@ -22,7 +22,7 @@ export class HomeComponent {
   weatherList!:IList[];
   choosenCity!:IGeodata;
   loggedUser!:IUserAuth|null;
-  userPrefArr!:IPref[]
+  userPrefArr!:IPref[]|undefined;
   logged!:boolean;
 
   constructor(
@@ -37,15 +37,15 @@ export class HomeComponent {
       this.logged=!!user;
     });
     if(this.logged&&this.loggedUser){
-      this.PrefS.getPreferencesByUserID(this.loggedUser.user.id).subscribe(data=>console.log(data))
+      this.PrefS.getPreferencesByUserID(this.loggedUser.user.id).subscribe(data=>this.userPrefArr=data)
     }
   }
+
   submit(){
     if(this.city==``) return
     this.WeatherS.getGeoData(this.city).subscribe(data =>{
       this.searchDone=true;
       this.foundCities=data;
-      console.log(data)
     })
   }
 
@@ -57,8 +57,9 @@ export class HomeComponent {
     let cityName=city.local_names?.it? city.local_names?.it:city.name
     this.city=`${cityName},${city.country},${city.state}`;
 
-    this.WeatherS.getWeather(city.lat,city.lon).subscribe(data =>{
+    this.WeatherS.getWeather(city).subscribe(data =>{
       this.weatherList=data.list;
     })
   }
+
 }

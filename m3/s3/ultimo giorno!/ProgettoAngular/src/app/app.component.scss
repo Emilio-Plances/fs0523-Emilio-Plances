@@ -1,0 +1,31 @@
+#user-box{
+  position: fixed;
+  bottom:10px;
+  right:10px;
+}
+#user-button{
+  height:50px;
+  width:50px;
+}
+fa-icon{
+  font-size: 1.5em;
+}
+.hidden{
+  display:none;
+}
+.dropdown-menu{
+  right:0;
+  bottom:51px
+}
+#fav-length{
+  z-index:5;
+}
+.pref-cities{
+  background-color: transparent;
+  padding:0 5px;
+  border:none;
+  width:100%;
+  &:hover{
+    background-color: rgba(6,219,238,45);
+  }
+}

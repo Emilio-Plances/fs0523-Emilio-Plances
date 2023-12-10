@@ -21,11 +21,17 @@ export class WeatherService {
 
   getGeoData(city:string):Observable<IGeodata[]>{
     let geodataURL:string=`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${this.KEY}`;
-    return this.http.get<IGeodata[]>(geodataURL);
+    return this.http.get<IGeodata[]>(geodataURL)
   }
 
-  getWeather(lat:number,lon:number){
-    let weatherURL:string=`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${this.KEY}`;
-    return this.http.get<IWeatherCity>(weatherURL).pipe(tap(data=>this.cityWeather.next(data)));
+  getWeather(city:IGeodata){
+
+    this.citySelectedGeoData$.subscribe(data=>console.log(data)
+    )
+    let weatherURL:string=`http://api.openweathermap.org/data/2.5/forecast?lat=${city.lat}&lon=${city.lon}&appid=${this.KEY}`;
+    return this.http.get<IWeatherCity>(weatherURL).pipe(tap(data=>{
+      this.cityGeodata.next(city);
+      this.cityWeather.next(data)
+    }));
   }
 }

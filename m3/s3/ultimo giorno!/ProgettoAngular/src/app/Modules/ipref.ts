@@ -5,4 +5,5 @@ export interface IPref {
   geodataCity:IGeodata|undefined,
   weatherCity:IWeatherCity|undefined,
   IDUser:string|undefined
+  id?:number|undefined
 }

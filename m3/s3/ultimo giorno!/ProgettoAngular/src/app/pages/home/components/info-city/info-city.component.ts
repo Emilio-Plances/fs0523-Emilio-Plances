@@ -15,7 +15,8 @@ import { Router } from '@angular/router';
 })
 export class InfoCityComponent {
 
-  @Input() cityGeodata!:IGeodata;
+  @Input() prefArr!:IPref[]|undefined
+  cityGeodata!:IGeodata;
   weatherCity!:IWeatherCity;
   cityName!:string;
   population!:number;
@@ -26,19 +27,21 @@ export class InfoCityComponent {
   cityState!:string;
   logged!:boolean;
   loggedUser!:IUserAuth|null;
-  userPrefArr!:IPref[]
+  alreadyPreferred!: boolean;
   pref:IPref={
     geodataCity: undefined,
     weatherCity: undefined,
     IDUser: `0`,
   }
 
+
   constructor(
     private router:Router,
     private WeatherS:WeatherService,
     private PrefS:PrefService,
     private LSS:LogSystemService
-  ){}
+  ){
+  }
 
   ngOnInit(){
     this.LSS.user$.subscribe(user=>this.loggedUser=user);
@@ -46,11 +49,21 @@ export class InfoCityComponent {
       this.logged=!!user;
     });
 
+    this.WeatherS.citySelectedGeoData$.subscribe(geodata=>{
+
+      this.cityGeodata=geodata;
+      this.cityName=geodata.local_names?.it ? geodata.local_names?.it:geodata.name
+      this.cityCountry=geodata.country;
+      this.cityState=geodata.state;
+      this.prefArr?.forEach(element=>{
+        if(element.geodataCity?.name===geodata.name){
+          this.alreadyPreferred=true;
+        }
+      })
+    })
+
     this.WeatherS.citySelectedWeather$.subscribe(city=>{
       if(!city)return;
-      this.cityName=this.cityGeodata.local_names?.it? this.cityGeodata.local_names?.it:this.cityGeodata.name
-      this.cityCountry=this.cityGeodata.country;
-      this.cityState=this.cityGeodata.state;
       this.weatherCity=city;
       this.population=city.city.population;
       this.humidity=city.list[0].main.humidity;
@@ -63,15 +76,28 @@ export class InfoCityComponent {
     if(!this.weatherCity && !this.cityGeodata) return;
     this.pref.geodataCity=this.cityGeodata;
     this.pref.weatherCity=this.weatherCity;
-
     if(!this.logged){
       alert(`Non hai effettuato l'accesso!`);
       this.router.navigate([`/LogSystem/login`])
       return;
     }
-
     this.pref.IDUser=this.loggedUser?.user.id;
-    this.PrefS.addPreference(this.pref).subscribe(data=>console.log(data)
-    )
+    this.PrefS.addPreference(this.pref).subscribe(()=>this.alreadyPreferred=true)
+  }
+
+  removePref(){
+    this.prefArr?.forEach(element=>{
+      if(element.IDUser==this.loggedUser?.user.id && element.geodataCity?.name==this.cityGeodata.name){
+        if(!element.id) return;
+        console.log(`ciao`);
+
+        this.PrefS.deletePreference(element.id).subscribe(()=>{
+          this.alreadyPreferred=false;
+          let index:number|undefined=this.prefArr?.indexOf(element)
+          if(!index) return;
+          this.prefArr?.splice(index,1);
+        })
+      }
+    })
   }
 }

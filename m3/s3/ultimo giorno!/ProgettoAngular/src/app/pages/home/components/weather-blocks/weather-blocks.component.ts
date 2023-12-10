@@ -21,6 +21,9 @@ export class WeatherBlocksComponent {
       case `Clouds`:
         output="../../../../../assets/cloudy-weather-Icon.png";
         break;
+      case `Snow`:
+        output="../../../../../assets/snowy-weather-Icon.png";
+        break;
       default:
         output="";
         break;

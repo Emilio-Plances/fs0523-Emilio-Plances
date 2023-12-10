@@ -1,18 +1,18 @@
 <div class="container">
-  <form>
-    <label for="city"></label>
-    <input id="city" [(ngModel)]="city" name="city" type="text">
-    <button (click)="submit()">Cerca</button>
+  <form class="text-center">
+    <input id="city" class="search-bar" [(ngModel)]="city" name="city" type="text" placeholder="Cerca una città">
+    <button id="search-button" (click)="submit()"><fa-icon [icon]="['fas','magnifying-glass']"></fa-icon></button>
+
+    <div id="search-results-box" *ngIf="searchDone">
+      <div *ngFor="let city of foundCities">
+        <button class="search-results" (click)="getWeather(city)">{{city.local_names?.it? city.local_names?.it:city.name}}, {{city.country}}, {{city.state}}</button>
+      </div>
+    </div>
   </form>
 
-  <div class="text-start" *ngIf="searchDone">
-    <div *ngFor="let city of foundCities">
-      <button (click)="getWeather(city)">{{city.local_names?.it? city.local_names?.it:city.name}}, {{city.country}}, {{city.state}}</button>
-    </div>
-  </div>
 
   <div *ngIf="citySelected" class="mt-2 border border-primary">
-    <app-info-city [cityGeodata]="choosenCity"></app-info-city>
+    <app-info-city [prefArr]="userPrefArr"></app-info-city>
   </div>
 
   <div id="weatherContainer" class="d-flex mt-3">
