@@ -2,13 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment.development';
 import { IPref } from '../Modules/ipref';
-import { Observable, map } from 'rxjs';
+import { Observable, Subject, map, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PrefService {
 
+  favorite=  new Subject<IPref>()
+  cityPreferred$= this.favorite.asObservable()
   constructor(
     private http:HttpClient
   ){}
@@ -26,7 +28,7 @@ export class PrefService {
   }
 
   addPreference(pref:IPref):Observable<IPref>{
-    return this.http.post<IPref>(this.APIPref,pref)
+    return this.http.post<IPref>(this.APIPref,pref).pipe(tap(data=>this.favorite.next(data)))
   }
 
   deletePreference(prefID:number):Observable<IPref[]>{

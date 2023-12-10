@@ -25,13 +25,10 @@ export class WeatherService {
   }
 
   getWeather(city:IGeodata){
-
-    this.citySelectedGeoData$.subscribe(data=>console.log(data)
-    )
     let weatherURL:string=`http://api.openweathermap.org/data/2.5/forecast?lat=${city.lat}&lon=${city.lon}&appid=${this.KEY}`;
     return this.http.get<IWeatherCity>(weatherURL).pipe(tap(data=>{
       this.cityGeodata.next(city);
-      this.cityWeather.next(data)
+      this.cityWeather.next(data);
     }));
   }
 }

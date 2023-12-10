@@ -20,6 +20,16 @@ fa-icon{
 #fav-length{
   z-index:5;
 }
+.erase-pref{
+  width:30px;
+  height: 30px;
+  background-color: rgb(197, 7, 7);
+  fa-icon{
+    position:relative;
+    right:2px;
+    font-size: 1em;
+  }
+}
 .pref-cities{
   background-color: transparent;
   padding:0 5px;

@@ -41,16 +41,7 @@ export class InfoCityComponent {
     private PrefS:PrefService,
     private LSS:LogSystemService
   ){
-  }
-
-  ngOnInit(){
-    this.LSS.user$.subscribe(user=>this.loggedUser=user);
-    this.LSS.booleanUser$.subscribe(user =>{
-      this.logged=!!user;
-    });
-
     this.WeatherS.citySelectedGeoData$.subscribe(geodata=>{
-
       this.cityGeodata=geodata;
       this.cityName=geodata.local_names?.it ? geodata.local_names?.it:geodata.name
       this.cityCountry=geodata.country;
@@ -58,18 +49,26 @@ export class InfoCityComponent {
       this.prefArr?.forEach(element=>{
         if(element.geodataCity?.name===geodata.name){
           this.alreadyPreferred=true;
+        }else{
+          this.alreadyPreferred=false;
         }
       })
     })
 
     this.WeatherS.citySelectedWeather$.subscribe(city=>{
-      if(!city)return;
       this.weatherCity=city;
       this.population=city.city.population;
       this.humidity=city.list[0].main.humidity;
       this.tempMax=Math.round(city.list[0].main.temp_max-273);
       this.tempMin=Math.floor(city.list[0].main.temp_min-273);
     })
+  }
+
+  ngOnInit(){
+    this.LSS.user$.subscribe(user=>this.loggedUser=user);
+    this.LSS.booleanUser$.subscribe(user =>{
+      this.logged=!!user;
+    });
   }
 
   addPref(){
@@ -82,17 +81,19 @@ export class InfoCityComponent {
       return;
     }
     this.pref.IDUser=this.loggedUser?.user.id;
-    this.PrefS.addPreference(this.pref).subscribe(()=>this.alreadyPreferred=true)
+    this.PrefS.addPreference(this.pref).subscribe(data=>{
+      this.prefArr?.push(data);
+      this.alreadyPreferred=true
+    })
   }
 
   removePref(){
     this.prefArr?.forEach(element=>{
       if(element.IDUser==this.loggedUser?.user.id && element.geodataCity?.name==this.cityGeodata.name){
         if(!element.id) return;
-        console.log(`ciao`);
-
         this.PrefS.deletePreference(element.id).subscribe(()=>{
           this.alreadyPreferred=false;
+          console.log(`ciao`);
           let index:number|undefined=this.prefArr?.indexOf(element)
           if(!index) return;
           this.prefArr?.splice(index,1);

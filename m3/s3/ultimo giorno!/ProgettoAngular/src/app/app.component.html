@@ -11,9 +11,11 @@
   </button>
 
   <div [ngClass]="{show: show}" class="dropdown-menu">
-    <div *ngFor="let fav of userPrefArr">
+    <div class="d-flex mt-2" *ngFor="let fav of userPrefArr">
       <button class="dropdown-item pref-cities" (click)="search(fav.geodataCity)">{{fav.geodataCity?.local_names?.it? fav.geodataCity?.local_names?.it:fav.geodataCity?.name}}</button>
-      <button (click)="removePref(fav.id)"></button>
+      <button class="erase-pref" (click)="removePref(fav.id)">
+        <fa-icon [icon]="['fas','eraser']"></fa-icon>
+      </button>
     </div>
   </div>
 </div>

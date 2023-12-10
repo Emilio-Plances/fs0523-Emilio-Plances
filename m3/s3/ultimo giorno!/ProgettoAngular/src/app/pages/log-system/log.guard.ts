@@ -1,23 +1,24 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable, map } from 'rxjs';
-import { AuthService } from '../../services/auth.service';
+import { LogSystemService } from '../../services/log-system.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthSystemGuard{
-  constructor(private authSVC: AuthService,
-    private router:Router){}
+export class LogGuard {
+  constructor(
+    private LSS:LogSystemService,
+    private router:Router
+    ){}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return this.authSVC.userBoolean$.pipe(map(logged=>{
-      if(!logged) this.router.navigate(['/loginSystem/login']);
-      return logged
-    }));;
+    return this.LSS.booleanUser$.pipe(map(logged=>{
+        if(!logged) this.router.navigate(['/LogSystem/login']);
+        return logged
+      }));;
   }
-
   canActivateChild(
     childRoute: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {

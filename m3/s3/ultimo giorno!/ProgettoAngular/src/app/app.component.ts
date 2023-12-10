@@ -23,7 +23,10 @@ export class AppComponent {
     private LSS:LogSystemService,
     private PrefS:PrefService,
     private WeatherS:WeatherService
-  ){}
+  ){
+    this.PrefS.cityPreferred$.subscribe(data=>this.userPrefArr?.push(data))
+
+  }
 
   ngOnInit(){
     this.LSS.booleanUser$.subscribe(user =>this.logged = user)

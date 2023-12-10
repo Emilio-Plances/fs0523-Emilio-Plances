@@ -3,15 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { LogSystemComponent } from './log-system.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { LogGuard } from './log.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: LogSystemComponent
+    component: LogSystemComponent,
   },
   {
     path:"login",
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
     path:"register",

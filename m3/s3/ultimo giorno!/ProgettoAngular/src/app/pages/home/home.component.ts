@@ -29,13 +29,14 @@ export class HomeComponent {
     private WeatherS:WeatherService,
     private LSS:LogSystemService,
     private PrefS:PrefService
-  ){}
-
-  ngOnInit(){
+  ){
     this.LSS.user$.subscribe(user=>this.loggedUser=user);
     this.LSS.booleanUser$.subscribe(user =>{
       this.logged=!!user;
     });
+  }
+
+  ngOnInit(){
     if(this.logged&&this.loggedUser){
       this.PrefS.getPreferencesByUserID(this.loggedUser.user.id).subscribe(data=>this.userPrefArr=data)
     }
