@@ -20,6 +20,13 @@
       "name": "Emanuele",
       "surname": "Barone",
       "id": 3
+    },
+    {
+      "email": "beqatimisy@mailinator.com",
+      "password": "$2a$10$4yURK7xNiw0rSANnUReX2OS4m1frCvXnqkd4DsQJdZcNWR9J.xlXO",
+      "name": "Tate Hodge",
+      "surname": "Perkins",
+      "id": 4
     }
   ],
   "prefCities": []
